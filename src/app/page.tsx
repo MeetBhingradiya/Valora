@@ -1,3 +1,4 @@
+import "@App/Styles/global.scss";
 import Hero from "../Components/Hero";
 import Navbar from "@App/Components/Navbar";
 import About from "../Components/About";
@@ -9,8 +10,8 @@ import Footer from "../Components/Footer";
 export default function Home() {
     return (
         <>
-            <Hero />
             <Navbar />
+            <Hero />
             <About />
             <Services />
             <Testimonials />

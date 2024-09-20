@@ -6,32 +6,38 @@ const servicesData = [
   {
     title: 'Web Development',
     description: 'We build fast, responsive, and SEO-optimized websites tailored to your business needs.',
-    icon: '/icons/web-development.svg', // Replace with your icon image path
+    icon: 'assets/web.png',
+    moreInfo: 'Our team specializes in modern web technologies to create stunning websites, including responsive designs, custom functionalities, and efficient performance optimizations to ensure a seamless user experience across all devices.',
   },
   {
     title: 'Mobile App Development',
     description: 'Delivering custom mobile solutions for iOS and Android platforms.',
-    icon: '/icons/mobile-app.svg', // Replace with your icon image path
+    icon: 'assets/app.png',
+    moreInfo: 'We develop apps that are user-friendly, scalable, and robust, focusing on intuitive UI/UX designs, integrating cutting-edge technology, and ensuring high performance to meet your business objectives.',
   },
   {
     title: 'Cloud Solutions',
     description: 'Providing scalable and secure cloud services to help your business grow.',
-    icon: '/icons/cloud.svg', // Replace with your icon image path
+    icon: 'assets/cloud.png',
+    moreInfo: 'Our cloud solutions offer flexible, secure, and scalable services, ensuring your business can adapt to changing needs while maintaining high availability and reliability.',
   },
   {
     title: 'UI/UX Design',
     description: 'Designing intuitive and engaging user interfaces to enhance customer experience.',
-    icon: '/icons/ui-ux.svg', // Replace with your icon image path
+    icon: 'assets/user-experience.png',
+    moreInfo: 'We prioritize user experience in our designs, creating intuitive and visually appealing interfaces that engage users and drive conversions across all platforms.',
   },
   {
     title: 'IT Consultancy',
     description: 'Offering expert advice and IT strategies to boost your business’s performance.',
-    icon: '/icons/consultancy.svg', // Replace with your icon image path
+    icon: 'assets/consultancy.png',
+    moreInfo: 'Our consultancy services provide strategic insights and IT solutions tailored to your specific business challenges, helping you leverage technology for optimal performance.',
   },
   {
     title: 'Digital Marketing',
     description: 'Helping you reach a wider audience with effective digital marketing strategies.',
-    icon: '/icons/marketing.svg', // Replace with your icon image path
+    icon: 'assets/marketing.png',
+    moreInfo: 'We implement data-driven digital marketing strategies, focusing on SEO, content marketing, and social media to increase your online visibility and drive targeted traffic to your site.',
   },
 ];
 
@@ -54,14 +60,27 @@ const Services = () => {
           {servicesData.map((service, index) => (
             <motion.div
               key={index}
-              className="p-6 bg-white text-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="group relative w-full h-80 perspective" // Increased height for the card
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <img src={service.icon} alt={service.title} className="h-16 w-16 mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold text-primary mb-4">{service.title}</h3>
-              <p className="text-lg">{service.description}</p>
+              {/* Card */}
+              <div className="card h-full">
+                <div className="card-inner h-full">
+                  {/* Front Side */}
+                  <div className="front flex flex-col items-center justify-center h-full p-6">
+                    <img src={service.icon} alt={service.title} className="h-16 w-16 mx-auto mb-4" />
+                    <h3 className="text-2xl font-semibold text-primary mb-4">{service.title}</h3>
+                    <p className="text-lg">{service.description}</p>
+                  </div>
+
+                  {/* Back Side */}
+                  <div className="back flex items-center justify-center h-full p-6 bg-primary text-white rounded-lg">
+                    <p className="text-lg text-center">{service.moreInfo}</p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
