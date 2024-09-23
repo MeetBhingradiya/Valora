@@ -27,27 +27,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-<<<<<<< HEAD
-                {/* Add meta tags, fonts, and favicons here */}
-                <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-                />
-                <meta httpEquiv="Content-Security-Policy" content="
-                    default-src 'self';
-                    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-                    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net;
-                    frame-src 'self' https://www.google.com;"
-                />
-                <script
-                    src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
-                    defer
-                ></script>
-=======
                 <meta charSet="utf-8" />
                 <script defer src="/js/particles.js"></script>
                 <GoogleAnalytics gaId="G-1MLJGLLSTX" />
->>>>>>> 46ede6246f8c7a4831198d8be264864f4a1aa1c7
             </head>
             <body className="bg-gray-100 text-gray-900 font-poppins">
                 {children}
