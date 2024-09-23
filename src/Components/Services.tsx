@@ -18,7 +18,7 @@ const servicesData = [
   {
     title: 'Cloud Solutions',
     description: 'Providing scalable and secure cloud services to help your business grow.',
-    icon: 'assets/cloud.png',
+    icon: 'assets/cloud.png', 
     moreInfo: 'Our cloud solutions offer flexible, secure, and scalable services, ensuring your business can adapt to changing needs while maintaining high availability and reliability.',
   },
   {

@@ -84,7 +84,7 @@ const Contact = () => {
                 height="250"
                 className="rounded-lg"
                 loading="lazy"
-              ></iframe>
+              ></iframe>  
             </div>
           </div>
         </div>
