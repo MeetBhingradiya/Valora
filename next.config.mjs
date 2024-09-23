@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    reactStrictMode: false,
     async headers() {
         return [
             {
@@ -21,10 +22,10 @@ const nextConfig = {
                         key: 'Referrer-Policy',
                         value: 'same-origin',
                     },
-                    {
-                        key: 'Content-Security-Policy',
-                        value: `default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; frame-src 'self'; base-uri 'self'; form-action 'self';`,
-                    },
+                    // {
+                    //     key: 'Content-Security-Policy',
+                    //     value: `default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; frame-src 'self'; base-uri 'self'; form-action 'self';`,
+                    // },
                 ],
             },
         ];
