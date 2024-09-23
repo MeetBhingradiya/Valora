@@ -14,7 +14,7 @@ const Hero = () => {
           We empower businesses with cutting-edge IT solutions tailored to your needs.
         </p>
         <div className="mt-8 flex justify-center space-x-4">
-          <a href="/services" className="bg-primary text-white px-6 py-3 rounded-md shadow-md hover:bg-yellow-500">
+          <a href="#services" className="bg-primary text-white px-6 py-3 rounded-md shadow-md hover:bg-yellow-500">
             Our Services
           </a>
           <a href="/contact" className="bg-white text-gray-900 px-6 py-3 rounded-md shadow-md hover:bg-gray-200">

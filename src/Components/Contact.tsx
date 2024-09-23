@@ -79,7 +79,7 @@ const Contact = () => {
               <h4 className="text-xl font-semibold mb-2">Find Us Here</h4>
               <iframe
                 title="Company Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1234567891234!2d-122.12345678901234!3d37.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f1f23456789ab%3A0x1234567890abcdef!2sValora%20Infotech!5e0!3m2!1sen!2sus!4v1234567890123"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31512.4305670692!2d-122.0513309784727!3d37.33436857819836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbcde2f929eeb%3A0x48d6e88ae1d93d3f!2s123%20Tech%20Lane%2C%20Suite%20456%2C%20Silicon%20Valley%2C%20CA!5e0!3m2!1sen!2sus!4v1626854976230!5m2!1sen!2sus"
                 width="100%"
                 height="250"
                 className="rounded-lg"

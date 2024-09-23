@@ -77,7 +77,7 @@ const Services = () => {
 
                   {/* Back Side */}
                   <div className="back flex items-center justify-center h-full p-6 bg-primary text-white rounded-lg">
-                    <p className="text-lg text-center">{service.moreInfo}</p>
+                    <p className="text-xl text-center">{service.moreInfo}</p>
                   </div>
                 </div>
               </div>

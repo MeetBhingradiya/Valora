@@ -22,10 +22,16 @@ export default function RootLayout({
                     rel="stylesheet"
                     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
                 />
+                <meta httpEquiv="Content-Security-Policy" content="
+                    default-src 'self';
+                    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+                    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net;
+                    frame-src 'self' https://www.google.com;"
+                />
                 <script
-          src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
-          defer
-        ></script>
+                    src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
+                    defer
+                ></script>
             </head>
             <body className="bg-gray-100 text-gray-900 font-poppins">
                 {/* You can also add a global Navbar or Sidebar here */}

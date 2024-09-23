@@ -53,7 +53,7 @@ const Navbar = () => {
             <Link href="/#services" onClick={handleLinkClick}>Services</Link>
           </li>
           <li>
-            <Link href="/portfolio" onClick={handleLinkClick}>Portfolio</Link>
+            <Link href="#portfolio" onClick={handleLinkClick}>Portfolio</Link>
           </li>
           <li>
             <Link href="/contact" onClick={handleLinkClick}>Contact</Link>
@@ -67,7 +67,7 @@ const Navbar = () => {
           <li><Link href="/" onClick={handleLinkClick}>Home</Link></li>
           <li><Link href="/#about" onClick={handleLinkClick}>About</Link></li>
           <li><Link href="/#services" onClick={handleLinkClick}>Services</Link></li>
-          <li><Link href="/portfolio" onClick={handleLinkClick}>Portfolio</Link></li>
+          <li><Link href="#portfolio" onClick={handleLinkClick}>Portfolio</Link></li>
           <li><Link href="/contact" onClick={handleLinkClick}>Contact</Link></li>
         </ul>
       </div>
