@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import "@App/Styles/global.scss"; // Ensure the path is correct and includes your global styles
+import "@App/Styles/global.sass"; // Ensure the path is correct and includes your global styles
 import { ReactNode } from "react";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Poppins } from 'next/font/google'
