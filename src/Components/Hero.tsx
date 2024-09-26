@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section className="relative w-full h-screen flex flex-col justify-center items-center text-white">
       <ParticlesBackground />
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-50"></div>
 
       <div className="relative z-10 text-center max-w-3xl px-4">
         <h1 className="text-4xl md:text-6xl font-bold">

@@ -1,6 +1,6 @@
 import Hero from './Hero';
 import About from './About';
-import Services from './Services';
+import Services from './ServicesCards';
 import Testimonials from './Testimonials';
 import Portfolio from './Portfolio';
 import Footer from './Footer';

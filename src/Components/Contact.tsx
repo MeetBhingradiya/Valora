@@ -22,7 +22,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-16 bg-gray-100 text-gray-900">
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
+      <div className="container mx-auto px-6 py-7 md:px-12 lg:px-24 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">Contact <span className="text-primary">Us</span></h2>
         <p className="mb-12 text-lg">We'd love to hear from you! Please fill out the form below or reach out to us directly.</p>
 
@@ -70,16 +70,16 @@ const Contact = () => {
           {/* Company Details */}
           <div className="bg-white p-8 rounded-lg shadow-md">
             <h3 className="text-2xl font-semibold mb-4">Our Contact Information</h3>
-            <p className="mb-2"><strong>Email:</strong> info@valorainfotech.com</p>
-            <p className="mb-2"><strong>Phone:</strong> +1 (123) 456-7890</p>
-            <p className="mb-4"><strong>Address:</strong> 123 Tech Lane, Suite 456, Silicon Valley, CA</p>
+            <p className="mb-2"><strong>Email:</strong> admin@valorainfotech.com</p>
+            <p className="mb-2"><strong>Phone:</strong> +1 (123) 456-7890</p> 
+            <p className="mb-4"><strong>Address:</strong> 207, Akshar Square B/h Cancer Hospital, Dabholi Road, Surat, Gujarat</p>
 
             {/* Map Section */}
             <div className="mt-4">
               <h4 className="text-xl font-semibold mb-2">Find Us Here</h4>
               <iframe
                 title="Company Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31512.4305670692!2d-122.0513309784727!3d37.33436857819836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbcde2f929eeb%3A0x48d6e88ae1d93d3f!2s123%20Tech%20Lane%2C%20Suite%20456%2C%20Silicon%20Valley%2C%20CA!5e0!3m2!1sen!2sus!4v1626854976230!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14875.867681707166!2d72.8177033!3d21.2331603!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f967d5d93bb%3A0x77fb537ecd3fbc7!2sValora%20infotech!5e0!3m2!1sen!2sin!4v1727086162788!5m2!1sen!2sin"
                 width="100%"
                 height="250"
                 className="rounded-lg"
