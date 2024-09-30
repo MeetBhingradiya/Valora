@@ -2,6 +2,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const servicesData = [
   {
@@ -19,7 +20,7 @@ const servicesData = [
   {
     title: 'Cloud Solutions',
     description: 'Providing scalable and secure cloud services to help your business grow.',
-    icon: 'assets/cloud.png', 
+    icon: 'assets/cloud.png',
     moreInfo: 'Our cloud solutions offer flexible, secure, and scalable services, ensuring your business can adapt to changing needs while maintaining high availability and reliability.',
   },
   {
@@ -43,8 +44,35 @@ const servicesData = [
 ];
 
 const Services = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  // Update scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Calculate background position based on scroll
+  const backgroundPosition = `center ${scrollPosition * 0.5}px`;
+
   return (
-    <section id="services" className="py-24 bg-gray-900 text-white">
+    <section
+      id="services"
+      className="py-24 text-white relative"
+      style={{
+        backgroundImage: "url('/assets/web-background-2.jpg')",
+        backgroundAttachment: 'fixed', // Fixed background
+        backgroundPosition: backgroundPosition, // Dynamic position
+        backgroundSize: 'cover',
+      }}
+    >
       <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
         {/* Title Section */}
         <motion.h2
@@ -61,7 +89,7 @@ const Services = () => {
           {servicesData.map((service, index) => (
             <motion.div
               key={index}
-              className="group relative w-full h-80 perspective" // Increased height for the card
+              className="group relative w-full h-80 perspective"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
