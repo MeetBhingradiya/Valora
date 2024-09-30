@@ -32,10 +32,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-<<<<<<< HEAD
-=======
     "eslint": "^8",
->>>>>>> 33d358b32e2f39d61b9f477c9de21ef33993efa1
     "autoprefixer": "^10.4.20",
     "eslint-config-next": "14.2.12",
     "postcss": "^8.4.47",
