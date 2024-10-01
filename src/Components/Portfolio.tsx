@@ -56,7 +56,7 @@ const Portfolio = () => {
               />
               <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-2xl font-bold text-primary mb-4">{project.title}</h3>
-                <p className="text-lg mb-4">{project.description}</p>
+                <p className="text-lg mb-4 px-3">{project.description}</p>
                 <a
                   href={project.link}
                   className="px-4 py-2 bg-primary text-white rounded hover:bg-white hover:text-primary transition-colors"
