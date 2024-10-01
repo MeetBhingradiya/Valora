@@ -7,19 +7,19 @@ const portfolioData = [
   {
     title: 'E-commerce Platform',
     description: 'A fully-featured e-commerce platform with seamless user experience and payment gateway integration.',
-    image: '/portfolio/ecommerce-platform.jpg',
+    image: '/assets/portfolio/e-com.jpg',
     link: '/portfolio/ecommerce-platform',
   },
   {
     title: 'Mobile Banking App',
     description: 'A secure and user-friendly mobile banking app for managing finances on the go.',
-    image: '/portfolio/mobile-banking-app.jpg',
+    image: '/assets/portfolio/banking-app.jpg',
     link: '/portfolio/mobile-banking-app',
   },
   {
     title: 'SaaS CRM System',
     description: 'A robust CRM system tailored for small businesses, offering automation and analytics.',
-    image: '/portfolio/saas-crm.jpg',
+    image: '/assets/portfolio/saas.jpg',
     link: '/portfolio/saas-crm',
   },
 ];
@@ -56,7 +56,7 @@ const Portfolio = () => {
               />
               <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-2xl font-bold text-primary mb-4">{project.title}</h3>
-                <p className="text-lg mb-4">{project.description}</p>
+                <p className="text-lg mb-4 px-3">{project.description}</p>
                 <a
                   href={project.link}
                   className="px-4 py-2 bg-primary text-white rounded hover:bg-white hover:text-primary transition-colors"
