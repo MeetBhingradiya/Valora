@@ -99,7 +99,13 @@ const Services = () => {
                 <div className="card-inner h-full">
                   {/* Front Side */}
                   <div className="front flex flex-col items-center justify-center h-full p-6">
-                    <img src={service.icon} alt={service.title} className="h-16 w-16 mx-auto mb-4" />
+                  <motion.img
+                      src={service.icon}
+                      alt={service.title}
+                      className="h-16 w-16 mx-auto mb-4 transition-transform duration-300 group-hover:scale-110"
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{ repeat: Infinity, duration: 4 }}
+                    />
                     <h3 className="text-2xl font-semibold text-primary mb-4">{service.title}</h3>
                     <p className="text-lg">{service.description}</p>
                   </div>
