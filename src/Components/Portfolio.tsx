@@ -7,26 +7,27 @@ const portfolioData = [
   {
     title: 'E-commerce Platform',
     description: 'A fully-featured e-commerce platform with seamless user experience and payment gateway integration.',
-    image: '/portfolio/ecommerce-platform.jpg', // Replace with actual project image
-    link: '/portfolio/ecommerce-platform', // Replace with the project link
+    image: '/portfolio/ecommerce-platform.jpg',
+    link: '/portfolio/ecommerce-platform',
   },
   {
     title: 'Mobile Banking App',
     description: 'A secure and user-friendly mobile banking app for managing finances on the go.',
-    image: '/portfolio/mobile-banking-app.jpg', // Replace with actual project image
+    image: '/portfolio/mobile-banking-app.jpg',
     link: '/portfolio/mobile-banking-app',
   },
   {
     title: 'SaaS CRM System',
     description: 'A robust CRM system tailored for small businesses, offering automation and analytics.',
-    image: '/portfolio/saas-crm.jpg', // Replace with actual project image
+    image: '/portfolio/saas-crm.jpg',
     link: '/portfolio/saas-crm',
   },
 ];
 
+
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="py-16 bg-gray-900 text-white">
+    <section id="portfolio" className="py-16 bg-[#171713] text-white">
       <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
         {/* Title */}
         <motion.h2

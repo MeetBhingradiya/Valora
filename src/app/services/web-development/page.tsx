@@ -26,7 +26,7 @@ const WebDevelopmentPage = () => {
         {/* Uncomment the hero image if needed
         <div className="relative w-full h-72 md:h-96 mb-12">
           <Image 
-            src="/assets/web-development-hero.jpg" // Ensure this image is in your public/assets directory.
+            src="/assets/web/web-development-hero.jpg" // Ensure this image is in your public/assets directory.
             alt="Web Development"
             layout="fill"
             objectFit="cover"
@@ -48,32 +48,32 @@ const WebDevelopmentPage = () => {
           {/* SVG Images with descriptions */}
           {[
               {
-                src: '/assets/svg1.svg',
+                src: '/assets/web/svg1.svg',
                 title: 'World Wide Web Development',
                 description: 'Creating dynamic and responsive web applications that connect users to the vast world of information online. Our team utilizes modern frameworks and technologies to build websites that are not only visually appealing but also optimized for performance. We ensure that your web application is compatible across all devices and browsers, providing a seamless experience for your users.',
               },
               {
-                src: '/assets/svg2.svg',
+                src: '/assets/web/svg2.svg',
                 title: 'Web Design and Development',
                 description: 'Crafting visually appealing and user-friendly websites tailored to meet the unique needs of businesses and users. We focus on user experience (UX) and user interface (UI) design principles, ensuring that every element of your website is designed with your audience in mind. Our design process includes thorough research and analysis to create a customized design that aligns with your brand identity and business goals.',
               },
               {
-                src: '/assets/svg3.svg',
+                src: '/assets/web/svg3.svg',
                 title: 'Team Work',
                 description: 'Collaborating with talented professionals to deliver high-quality web solutions through effective communication and teamwork. Our diverse team brings a wealth of knowledge and experience, allowing us to tackle complex challenges with creativity and innovation. We believe in maintaining open lines of communication with our clients throughout the development process, ensuring that their feedback and ideas are incorporated.',
               },
               {
-                src: '/assets/svg4.svg',
+                src: '/assets/web/svg4.svg',
                 title: 'Web Statistics',
                 description: 'Utilizing analytics and data insights to optimize website performance and improve user engagement and experience. We implement advanced analytics tools to track user behavior, page performance, and conversion rates, providing valuable insights that drive informed decision-making. Our data-driven approach helps identify areas for improvement and allows us to fine-tune your website for better performance.',
               },
               {
-                src: '/assets/svg5.svg',
+                src: '/assets/web/svg5.svg',
                 title: 'Structure of Web Development',
                 description: 'Understanding the foundational principles and technologies that drive effective web development processes. We cover the essential components of web architecture, including front-end and back-end development, database management, and server configurations. Our team stays updated with the latest industry trends and best practices to ensure that your web development process is robust and scalable.',
               },
               {
-                src: '/assets/svg6.svg',
+                src: '/assets/web/svg6.svg',
                 title: 'Comprehensive Web Development',
                 description: 'Providing end-to-end web development services, from initial planning and design to deployment and maintenance. We guide you through every stage of the web development lifecycle, ensuring that your project is completed on time and within budget. Our comprehensive services include project scoping, prototyping, development, quality assurance, and post-launch support.',
               },

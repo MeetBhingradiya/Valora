@@ -12,7 +12,7 @@ const MobileDevelopmentPage = () => {
       <div className="container mx-auto p-4 md:p-8">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-5xl font-bold text-primary mb-4">Mobile Application Development</h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-primary mt-14 mb-4">Mobile Application Development</h1>
           <p className="text-base md:text-lg text-gray-700 mb-8">
             Innovative mobile solutions to enhance user engagement and reach.
           </p>

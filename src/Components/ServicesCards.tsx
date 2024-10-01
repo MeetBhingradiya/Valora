@@ -2,6 +2,8 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import { basename } from 'path/posix';
+import { useEffect, useState } from 'react';
 
 const servicesData = [
   {
@@ -19,7 +21,7 @@ const servicesData = [
   {
     title: 'Cloud Solutions',
     description: 'Providing scalable and secure cloud services to help your business grow.',
-    icon: 'assets/cloud.png', 
+    icon: 'assets/cloud.png',
     moreInfo: 'Our cloud solutions offer flexible, secure, and scalable services, ensuring your business can adapt to changing needs while maintaining high availability and reliability.',
   },
   {
@@ -43,9 +45,39 @@ const servicesData = [
 ];
 
 const Services = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  // Update scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+      backgroundPosition;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Calculate background position based on scroll
+  const backgroundPosition = `center ${scrollPosition * 0.5}px`;
+
+
   return (
-    <section id="services" className="py-24 bg-gray-900 text-white">
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
+    <section
+      id="services"
+      className="py-24 text-white relative"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/web-background-2.jpg')`,
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+      }}
+    >
+      
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center ">
         {/* Title Section */}
         <motion.h2
           className="text-4xl md:text-5xl font-bold mb-12"
@@ -61,7 +93,7 @@ const Services = () => {
           {servicesData.map((service, index) => (
             <motion.div
               key={index}
-              className="group relative w-full h-80 perspective" // Increased height for the card
+              className="group relative w-full h-80 perspective"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -71,14 +103,20 @@ const Services = () => {
                 <div className="card-inner h-full">
                   {/* Front Side */}
                   <div className="front flex flex-col items-center justify-center h-full p-6">
-                    <img src={service.icon} alt={service.title} className="h-16 w-16 mx-auto mb-4" />
+                  <motion.img
+                      src={service.icon}
+                      alt={service.title}
+                      className="h-16 w-16 mx-auto mb-4 transition-transform duration-300 group-hover:scale-110"
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{ repeat: Infinity, duration: 4 }}
+                    />
                     <h3 className="text-2xl font-semibold text-primary mb-4">{service.title}</h3>
                     <p className="text-lg">{service.description}</p>
                   </div>
 
                   {/* Back Side */}
-                  <div className="back flex items-center justify-center h-full p-6 bg-primary text-white rounded-lg">
-                    <p className="text-xl text-center">{service.moreInfo}</p>
+                  <div className="back flex items-center justify-center h-full p-6 bg-primary text-[#171713] rounded-lg">
+                    <p className="text-xl text-center text-[#171713]">{service.moreInfo}</p>
                   </div>
                 </div>
               </div>
