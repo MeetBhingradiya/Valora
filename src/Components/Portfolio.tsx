@@ -7,19 +7,19 @@ const portfolioData = [
   {
     title: 'E-commerce Platform',
     description: 'A fully-featured e-commerce platform with seamless user experience and payment gateway integration.',
-    image: '/portfolio/ecommerce-platform.jpg',
+    image: '/assets/portfolio/e-com.jpg',
     link: '/portfolio/ecommerce-platform',
   },
   {
     title: 'Mobile Banking App',
     description: 'A secure and user-friendly mobile banking app for managing finances on the go.',
-    image: '/portfolio/mobile-banking-app.jpg',
+    image: '/assets/portfolio/banking-app.jpg',
     link: '/portfolio/mobile-banking-app',
   },
   {
     title: 'SaaS CRM System',
     description: 'A robust CRM system tailored for small businesses, offering automation and analytics.',
-    image: '/portfolio/saas-crm.jpg',
+    image: '/assets/portfolio/saas.jpg',
     link: '/portfolio/saas-crm',
   },
 ];
