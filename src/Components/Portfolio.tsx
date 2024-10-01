@@ -24,6 +24,7 @@ const portfolioData = [
   },
 ];
 
+
 const Portfolio = () => {
   return (
     <section id="portfolio" className="py-16 bg-gray-900 text-white">
