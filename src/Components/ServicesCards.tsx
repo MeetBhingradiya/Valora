@@ -2,6 +2,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import { basename } from 'path/posix';
 import { useEffect, useState } from 'react';
 
 const servicesData = [
@@ -50,6 +51,7 @@ const Services = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
+      backgroundPosition;
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -62,6 +64,7 @@ const Services = () => {
   // Calculate background position based on scroll
   const backgroundPosition = `center ${scrollPosition * 0.5}px`;
 
+
   return (
     <section
       id="services"
@@ -73,6 +76,7 @@ const Services = () => {
         backgroundSize: 'cover',
       }}
     >
+      
       <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center ">
         {/* Title Section */}
         <motion.h2
