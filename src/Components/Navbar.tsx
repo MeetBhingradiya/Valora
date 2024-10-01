@@ -33,7 +33,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed w-full top-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-gray-900 text-white' : 'bg-gray-900 text-white opacity-50'}`}>
+    <nav className={`fixed w-full top-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-[#171713] text-white' : 'bg-[#171713] text-white'}`}>
       <div className="flex justify-between items-center px-6 py-4">
         <div className="text-3xl font-bold">
           Valora Infotech
@@ -48,7 +48,7 @@ const Navbar = () => {
         </div>
 
         {/* Menu for Desktop */}
-        <ul className="hidden md:flex space-x-8 text-lg">
+        <ul className="hidden md:flex space-x-8 text-base">
           <li>
             <Link href="/" onClick={handleLinkClick}>Home</Link>
           </li> 
@@ -67,38 +67,44 @@ const Navbar = () => {
 
             {/* Dropdown Menu */}
             {isServicesOpen && (
-              <ul className="absolute left-0 mt-2 w-48 bg-gray-900 border rounded-md shadow-lg">
-                <li>
-                  <Link href="/services/web-development" onClick={handleLinkClick} className="block px-4 py-2 hover:bg-gray-700">
-                    Web Development
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/mobile-development" onClick={handleLinkClick} className="block px-4 py-2 hover:bg-gray-700">
-                    Mobile Application Development
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/ui-ux-design" onClick={handleLinkClick} className="block px-4 py-2 hover:bg-gray-700">
-                    UI/UX Design
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/cloud-solutions" onClick={handleLinkClick} className="block px-4 py-2 hover:bg-gray-700">
-                    Cloud Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/ai-ml" onClick={handleLinkClick} className="block px-4 py-2 hover:bg-gray-700">
-                    Artificial Intelligence & ML
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/digital-marketing" onClick={handleLinkClick} className="block px-4 py-2 hover:bg-gray-700">
-                    Digital Marketing
-                  </Link>
-                </li>
-              </ul>
+             <ul className="absolute left-0 mt-2 w-48 bg-[#e7e4db] text-black border rounded-md shadow-lg">
+             <li>
+               <Link href="/services/web-development" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
+                 <span className="relative z-10">Web Development</span>
+                 <span className="absolute left-1/2 bottom-0 w-10/12 h-[2px] bg-black transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+               </Link>
+             </li>
+             <li>
+               <Link href="/services/mobile-development" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
+                 <span className="relative z-10">Mobile Application Development</span>
+                 <span className="absolute left-1/2 bottom-0 w-10/12 h-[2px] bg-black transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+               </Link>
+             </li>
+             <li>
+               <Link href="/services/ui-ux-design" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
+                 <span className="relative z-10">UI/UX Design</span>
+                 <span className="absolute left-1/2 bottom-0 w-10/12 h-[2px] bg-black transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+               </Link>
+             </li>
+             <li>
+               <Link href="/services/cloud-solutions" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
+                 <span className="relative z-10">Cloud Solutions</span>
+                 <span className="absolute left-1/2 bottom-0 w-10/12 h-[2px] bg-black transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+               </Link>
+             </li>
+             <li>
+               <Link href="/services/ai-ml" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
+                 <span className="relative z-10">Artificial Intelligence & ML</span>
+                 <span className="absolute left-1/2 bottom-0 w-10/12 h-[2px] bg-black transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+               </Link>
+             </li>
+             <li>
+               <Link href="/services/digital-marketing" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
+                 <span className="relative z-10">Digital Marketing</span>
+                 <span className="absolute left-1/2 bottom-0 w-10/12 h-[2px] bg-black transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+               </Link>
+             </li>
+           </ul>           
             )}
           </li>
 

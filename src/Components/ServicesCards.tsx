@@ -67,13 +67,13 @@ const Services = () => {
       id="services"
       className="py-24 text-white relative"
       style={{
-        backgroundImage: "url('/assets/web-background-2.jpg')",
-        backgroundAttachment: 'fixed', // Fixed background
-        backgroundPosition: backgroundPosition, // Dynamic position
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/web-background-2.jpg')`,
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center',
         backgroundSize: 'cover',
       }}
     >
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center ">
         {/* Title Section */}
         <motion.h2
           className="text-4xl md:text-5xl font-bold mb-12"
@@ -111,8 +111,8 @@ const Services = () => {
                   </div>
 
                   {/* Back Side */}
-                  <div className="back flex items-center justify-center h-full p-6 bg-primary text-white rounded-lg">
-                    <p className="text-xl text-center">{service.moreInfo}</p>
+                  <div className="back flex items-center justify-center h-full p-6 bg-primary text-[#171713] rounded-lg">
+                    <p className="text-xl text-center text-[#171713]">{service.moreInfo}</p>
                   </div>
                 </div>
               </div>
