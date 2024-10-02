@@ -2,44 +2,43 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { basename } from 'path/posix';
 import { useEffect, useState } from 'react';
 
 const servicesData = [
   {
     title: 'Web Development',
     description: 'We build fast, responsive, and SEO-optimized websites tailored to your business needs.',
-    icon: 'assets/web.png',
+    icon: 'assets/service-cards/web.png',
     moreInfo: 'Our team specializes in modern web technologies to create stunning websites, including responsive designs, custom functionalities, and efficient performance optimizations to ensure a seamless user experience across all devices.',
   },
   {
     title: 'Mobile App Development',
     description: 'Delivering custom mobile solutions for iOS and Android platforms.',
-    icon: 'assets/app.png',
+    icon: 'assets/service-cards/app.png',
     moreInfo: 'We develop apps that are user-friendly, scalable, and robust, focusing on intuitive UI/UX designs, integrating cutting-edge technology, and ensuring high performance to meet your business objectives.',
   },
   {
     title: 'Cloud Solutions',
     description: 'Providing scalable and secure cloud services to help your business grow.',
-    icon: 'assets/cloud.png',
+    icon: 'assets/service-cards/cloud.png',
     moreInfo: 'Our cloud solutions offer flexible, secure, and scalable services, ensuring your business can adapt to changing needs while maintaining high availability and reliability.',
   },
   {
     title: 'UI/UX Design',
     description: 'Designing intuitive and engaging user interfaces to enhance customer experience.',
-    icon: 'assets/user-experience.png',
+    icon: 'assets/service-cards/user-experience.png',
     moreInfo: 'We prioritize user experience in our designs, creating intuitive and visually appealing interfaces that engage users and drive conversions across all platforms.',
   },
   {
     title: 'IT Consultancy',
     description: 'Offering expert advice and IT strategies to boost your business’s performance.',
-    icon: 'assets/consultancy.png',
+    icon: 'assets/service-cards/consultancy.png',
     moreInfo: 'Our consultancy services provide strategic insights and IT solutions tailored to your specific business challenges, helping you leverage technology for optimal performance.',
   },
   {
     title: 'Digital Marketing',
     description: 'Helping you reach a wider audience with effective digital marketing strategies.',
-    icon: 'assets/marketing.png',
+    icon: 'assets/service-cards/marketing.png',
     moreInfo: 'We implement data-driven digital marketing strategies, focusing on SEO, content marketing, and social media to increase your online visibility and drive targeted traffic to your site.',
   },
 ];
@@ -51,7 +50,6 @@ const Services = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
-      backgroundPosition;
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -68,11 +66,11 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="py-24 text-white relative"
+      className="py-24 text-white relative select-none"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/web-background-2.jpg')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/web-background.jpg')`,
         backgroundAttachment: 'fixed',
-        backgroundPosition: 'center',
+        backgroundPosition: backgroundPosition,
         backgroundSize: 'cover',
       }}
     >
@@ -113,10 +111,9 @@ const Services = () => {
                     <h3 className="text-2xl font-semibold text-primary mb-4">{service.title}</h3>
                     <p className="text-lg">{service.description}</p>
                   </div>
-
                   {/* Back Side */}
-                  <div className="back flex items-center justify-center h-full p-6 bg-primary text-[#171713] rounded-lg">
-                    <p className="text-xl text-center text-[#171713]">{service.moreInfo}</p>
+                  <div className="back flex items-center justify-center h-full p-6 bg-primary text-white rounded-lg">
+                    <p className="text-xl justify-center text-white">{service.moreInfo}</p>
                   </div>
                 </div>
               </div>
