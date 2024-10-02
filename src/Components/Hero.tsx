@@ -13,14 +13,20 @@ const quotes: string[] = [
 
 const Hero: React.FC = () => {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState<number>(0);
+  const [fade, setFade] = useState<boolean>(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
-    }, 5000);
+      setFade(true); // Start fade out
+      setTimeout(() => {
+        setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+        setFade(false); // Start fade in after the old quote has faded out
+      }, 500); // This duration should match the CSS transition duration
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
+
   return (
     <section className="relative w-full h-screen flex flex-col justify-center items-center text-white">
       <ParticlesBackground />
@@ -31,7 +37,9 @@ const Hero: React.FC = () => {
           Welcome to
           <div className="text-primary text-5xl md:text-6xl mt-2 font-extrabold select-none">Valora Infotech</div>
         </h1>
-        <p className="mt-4 text-lg md:text-xl transition-opacity duration-500 ease-in-out text-zinc-300">
+        <p 
+          className={`mt-4 text-lg md:text-xl transition-opacity duration-500 ease-in-out text-zinc-300 ${fade ? 'opacity-0' : 'opacity-100'}`}
+        >
           {quotes[currentQuoteIndex]}
         </p>
         <div className="mt-8 flex justify-center space-x-4">
@@ -43,7 +51,7 @@ const Hero: React.FC = () => {
           </a>
           <a
             href="/contact"
-            className="bg-white relative text-lg px-4 cursor-pointer overflow-hidden text-gray-900 py-2 rounded-md shadow-md hover:bg-gray-200"
+            className="bg-white relative text-lg px-4 cursor-pointer overflow-hidden text-gray-900 py-2 rounded-md shadow-md hover:bg-gray-200 hover:shadow-[0_0_10px_#ffffff,0_0_40px_#ffffff]"
           >
             Get in Touch
           </a>
