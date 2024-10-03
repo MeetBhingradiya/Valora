@@ -1,4 +1,3 @@
-// /app/Tools/page.tsx
 "use client";
 
 import React from "react";
@@ -14,21 +13,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Base64 from "./Base64/page";
 import UUID from "./UUID/page"; // Adjusted import paths
-import URL from "./URL/page";
-import DateAndTime from "./DateAndTime/page";
+import URL from "./URL/page"; 
+import DateAndTime from "./DateAndTime/page"; 
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
 
 const Tools = () => {
     const pathname = usePathname();
     const tool = pathname?.split("/").pop(); // Extract the current tool from the path
-
-    useEffect(() => {
-        console.log("Current tool on mount:", tool); // Log current tool on component mount
-    }, [tool]);
+    console.log("Current pathname:", pathname);
+    console.log("Current tool:", tool);
 
     const renderTool = () => {
-        console.log("Rendering tool for:", tool); // Check what tool is being rendered
         switch (tool) {
             case "base64-encoder-decoder":
                 return <Base64 />;
@@ -39,7 +34,7 @@ const Tools = () => {
             case "date-time-utilities":
                 return <DateAndTime />;
             default:
-                return <Base64 />; // Default to Base64
+                return <Base64 />; // Default to Base64 if no tool is matched
         }
     };
 
@@ -63,14 +58,14 @@ const Tools = () => {
                     <li>
                         <Link href="/" className="block p-2 rounded w-full text-left">
                             <FontAwesomeIcon icon={faArrowLeft} className="mr-4 text-yellow-400" />
-                            Home
+                            Home 
                         </Link>
                     </li>
                     {/* Tools Menu Items */}
                     {tools.map(({ name, label, icon, color }) => (
                         <li key={name}>
                             <Link
-                                href={`/tools/${name}`}  // This should match the expected URL structure
+                                href={`/tools/${name}`}
                                 className={`block p-2 rounded ${tool === name ? "bg-white text-black" : ""} hover:bg-white hover:text-black w-full text-left flex items-center`}
                             >
                                 <FontAwesomeIcon icon={icon} className={`mr-4 ${color}`} />
@@ -83,7 +78,7 @@ const Tools = () => {
 
             {/* Main content */}
             <div className="flex-1 p-6">
-                {renderTool()}
+                {renderTool()} {/* Renders the selected tool */}
             </div>
         </div>
     );

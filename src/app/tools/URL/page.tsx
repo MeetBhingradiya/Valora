@@ -1,5 +1,3 @@
-// app/tools/url-encoder-decoder/page.tsx
-
 "use client";
 import { useState, ChangeEvent } from "react";
 
