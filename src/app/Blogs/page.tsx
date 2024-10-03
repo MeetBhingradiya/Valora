@@ -11,19 +11,19 @@ const blogs = [
     title: 'Understanding React Hooks',
     summary: 'Learn how React hooks can simplify components and enhance reusability.',
     slug: 'understanding-react-hooks',
-    image: '/images/react-hooks.jpg',
+    image: '/assets/blog/React_Hooks.webp',
   },
   {
     title: 'Next.js Routing Explained',
     summary: 'Explore routing in Next.js for efficient page management and navigation.',
     slug: 'next-js-routing-explained',
-    image: '/images/nextjs-routing.jpg',
+    image: '/assets/blog/NextJs_Route.webp',
   },
   {
     title: 'CSS Grid vs. Flexbox',
     summary: 'Discover the key differences between CSS Grid and Flexbox layout systems.',
     slug: 'css-grid-vs-flexbox',
-    image: '/images/css-grid-flexbox.jpg',
+    image: '/assets/blog/flexBox_vs_cssGrid.webp',
   },
   {
     title: 'Building RESTful APIs with Node.js',
