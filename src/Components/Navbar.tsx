@@ -156,11 +156,13 @@ const Navbar = () => {
                             </ul>
                         )}
                     </motion.li>
-
                     <motion.li initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-                        <Link href="#portfolio" onClick={handleLinkClick}>Portfolio</Link>
+                        <Link href="/Blogs" onClick={handleLinkClick}>Blogs</Link>
                     </motion.li>
                     <motion.li initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+                        <Link href="/#portfolio" onClick={handleLinkClick}>Portfolio</Link>
+                    </motion.li>
+                    <motion.li initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
                         <Link href="/contact" onClick={handleLinkClick}>Contact</Link>
                     </motion.li>
                 </ul>
@@ -231,7 +233,10 @@ const Navbar = () => {
                         )}
                     </li>
                     <li>
-                        <Link href="#portfolio" onClick={handleLinkClick} className="block px-4 py-2">Portfolio</Link>
+                        <Link href="/contact" onClick={handleLinkClick} className="block px-4 py-2">Contact</Link>
+                    </li>
+                    <li>
+                        <Link href="/#portfolio" onClick={handleLinkClick} className="block px-4 py-2">Portfolio</Link>
                     </li>
                     <li>
                         <Link href="/contact" onClick={handleLinkClick} className="block px-4 py-2">Contact</Link>
