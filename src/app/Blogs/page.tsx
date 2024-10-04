@@ -29,50 +29,50 @@ const blogs = [
     title: 'Building RESTful APIs with Node.js',
     summary: 'Comprehensive guide on creating RESTful APIs using Node.js and the Express framework effectively.',
     slug: 'building-restful-apis-with-nodejs',
-    image: '/images/nodejs-api.jpg',
+    image: '/assets/blog/rest-api-in-nodejs.webp',
   },
   {
     title: 'An Introduction to TypeScript',
     summary: 'Learn the essential basics of TypeScript and its significant advantages over traditional JavaScript.',
     slug: 'introduction-to-typescript',
-    image: '/images/typescript-intro.jpg',
+    image: '/assets/blog/intro-to-typescript.webp',
   },
   {
     title: 'Deploying a Next.js Application',
     summary: 'Follow these essential steps to successfully deploy your Next.js application with ease.',
     slug: 'deploying-nextjs-application',
-    image: '/images/deploy-nextjs.jpg',
+    image: '/assets/blog/deploy-next-js.webp',
   },
   {
     title: 'State Management in React',
     summary: 'Explore various state management techniques in React applications.',
     slug: 'state-management-in-react',
-    image: '/images/react-state-management.jpg',
+    image: '/assets/blog/deploy-next-js.webp',
   },
   {
     title: 'Understanding Promises in JavaScript',
     summary: 'Learn about JavaScript promises and how to manage asynchronous operations.',
     slug: 'understanding-promises-in-javascript',
-    image: '/images/js-promises.jpg',
+    image: '/assets/blog/deploy-next-js.webp',
   },
   {
     title: 'Creating a Responsive Navbar with Tailwind CSS',
     summary: 'Build a responsive navbar using Tailwind CSS for modern applications.',
     slug: 'responsive-navbar-tailwind-css',
-    image: '/images/tailwind-navbar.jpg',
+    image: '/assets/blog/deploy-next-js.webp',
   },
-  {
-    title: 'Getting Started with GraphQL',
-    summary: 'Introduction to GraphQL and its advantages over traditional REST APIs.',
-    slug: 'getting-started-with-graphql',
-    image: '/images/graphql-intro.jpg',
-  },
-  {
-    title: 'Enhancing Performance with React.memo',
-    summary: 'Learn how React.memo can optimize performance in your React applications.',
-    slug: 'enhancing-performance-react-memo',
-    image: '/images/react-memo.jpg',
-  },
+  // {
+  //   title: 'Getting Started with GraphQL',
+  //   summary: 'Introduction to GraphQL and its advantages over traditional REST APIs.',
+  //   slug: 'getting-started-with-graphql',
+  //   image: '/images/graphql-intro.jpg',
+  // },
+  // {
+  //   title: 'Enhancing Performance with React.memo',
+  //   summary: 'Learn how React.memo can optimize performance in your React applications.',
+  //   slug: 'enhancing-performance-react-memo',
+  //   image: '/images/react-memo.jpg',
+  // },
 ];
 
 
@@ -94,11 +94,11 @@ const Blog = () => {
                 <img
                   src={blog.image}
                   alt={blog.title}
-                  className="w-full h-48 object-cover rounded-md mb-4"
+                  className="w-4/5 h-56 object-cover rounded-md mb-4 mx-auto"
                 />
                 <h2 className="text-xl font-semibold mb-2">{blog.title}</h2>
                 <p className="text-gray-700 mb-4 flex-grow">{blog.summary}</p>
-                <div className="mt-auto"> {/* Pushes 'Read More' link to the bottom */}
+                <div className="mt-auto">
                   <span className="text-blue-500 font-semibold hover:underline">Read More</span>
                 </div>
               </motion.div>
