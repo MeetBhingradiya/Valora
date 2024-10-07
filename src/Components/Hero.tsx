@@ -1,26 +1,27 @@
 "use client";
 
-import ParticlesBackground from "./Particles";
 import React, { useEffect, useState } from "react";
+import ParticlesBackground from "./Particles";
 
 const quotes: string[] = [
-  "Innovative IT solutions for modern challenges.",
-  "Tailored technology to accelerate your growth.",
-  "Empowering your digital transformation journey.",
-  "Bringing your vision to life with creativity and technology.",
-  "Your partner in a connected future."
+  "Innovative IT solutions for modern growth.",
+  "Tailored tech to boost your company growth.",
+  "Empowering your digital journey with technology.",
+  "Bringing your vision to life with technology.",
+  "Your partner for success in the digital world."
 ];
 
 const Hero: React.FC = () => {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState<number>(0);
   const [fade, setFade] = useState<boolean>(false);
+  const [animationClass, setAnimationClass] = useState<string>("fadeIn");
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(true); // Start fade out
+      setAnimationClass("fadeOut"); // Start fade out
       setTimeout(() => {
         setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
-        setFade(false); // Start fade in after the old quote has faded out
+        setAnimationClass("fadeIn"); // Start fade in after the old quote has faded out
       }, 500); // This duration should match the CSS transition duration
     }, 4000);
 
@@ -38,7 +39,7 @@ const Hero: React.FC = () => {
           <div className="text-primary text-5xl md:text-6xl mt-2 font-extrabold select-none">Valora Infotech</div>
         </h1>
         <p 
-          className={`mt-4 text-lg md:text-xl transition-opacity duration-500 ease-in-out text-zinc-300 ${fade ? 'opacity-0' : 'opacity-100'}`}
+          className={`mt-4 text-lg md:text-xl text-zinc-300 ${animationClass}`}
         >
           {quotes[currentQuoteIndex]}
         </p>
@@ -62,3 +63,4 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+
