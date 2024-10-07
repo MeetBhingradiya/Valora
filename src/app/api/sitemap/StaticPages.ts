@@ -9,42 +9,42 @@ export const StaticPages: Array<{
         frequency: "daily",
     },
     {
-        route: '/services/web-development',
+        route: 'services/web-development',
         priority: 0.9,
         frequency: "weekly",
     },
     {
-        route: '/services/mobile-development',
+        route: 'services/mobile-development',
         priority: 0.9,
         frequency: "weekly",
     },
     {
-        route: '/services/ui-ux-design',
+        route: 'services/ui-ux-design',
         priority: 0.9,
         frequency: "weekly",
     },
     {
-        route: '/services/ai-ml',
+        route: 'services/ai-ml',
         priority: 0.9,
         frequency: "weekly",
     },
     {
-        route: '/services/cloud-solutions',
+        route: 'services/cloud-solutions',
         priority: 0.9,
         frequency: "weekly",
     },
     {
-        route: '/services/digital-marketing',
+        route: 'services/digital-marketing',
         priority: 0.9,
         frequency: "weekly",
     },
     {
-        route: '/Blogs',
+        route: 'Blogs',
         priority: 0.8,
         frequency: "daily",
     },
     {
-        route: '/contact',
+        route: 'contact',
         priority: 0.9,
         frequency: "weekly",
     }
