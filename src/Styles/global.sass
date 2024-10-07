@@ -70,6 +70,14 @@
     &:hover::before
         opacity: 0.6
 
+.glow-button
+    &:hover
+        transition: box-shadow 1s
+        box-shadow: 0 0 10px #ffffff, 0 0 40px #ffffff
+
+    &:hover::before
+        opacity: 0.6 
+
 @keyframes shine
     0%
         left: -100%

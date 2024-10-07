@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
           </a>
           <a
             href="/contact"
-            className="bg-white relative text-lg px-4 cursor-pointer overflow-hidden text-gray-900 py-2 rounded-md shadow-md hover:bg-gray-200 hover:shadow-[0_0_10px_#ffffff,0_0_40px_#ffffff]"
+            className="bg-white glow-button relative text-lg px-4 cursor-pointer overflow-hidden text-gray-900 py-2 rounded-md shadow-md transition-all duration-300 hover:bg-gray-200 hover:shadow-[0_0_10px_#ffffff,0_0_40px_#ffffff]"
           >
             Get in Touch
           </a>
