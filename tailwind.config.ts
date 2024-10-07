@@ -6,10 +6,12 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                primary: '#44A5FF',
+                primary: '#5389FF',
                 // primary: '#FFC83A',
-            }
+            },
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 }

@@ -21,10 +21,10 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-[#171713] text-gray-900">
+    <section id="contact" className="py-16 bg-[#ffffff] text-gray-900">
       <div className="container mx-auto px-6 py-7 md:px-12 lg:px-24 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Contact <span className="text-primary">Us</span></h2>
-        <p className="mb-12 text-lg text-white">We&apos;d love to hear from you! Please fill out the form below or reach out to us directly.</p>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">Contact <span className="text-primary">Us</span></h2>
+        <p className="mb-12 text-lg text-black">We&apos;d love to hear from you! Please fill out the form below or reach out to us directly.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Form */}
@@ -71,7 +71,7 @@ const Contact = () => {
           <div className="bg-white p-8 rounded-lg shadow-md">
             <h3 className="text-2xl font-semibold mb-4">Our Contact Information</h3>
             <p className="mb-2"><strong>Email:</strong> admin@valorainfotech.com</p>
-            <p className="mb-2"><strong>Phone:</strong> +1 (123) 456-7890</p> 
+            {/* <p className="mb-2"><strong>Phone:</strong> +1 (123) 456-7890</p>  */}
             <p className="mb-4"><strong>Address:</strong> 207, Akshar Square B/h Cancer Hospital, Dabholi Road, Surat, Gujarat</p>
 
             {/* Map Section */}
