@@ -4,7 +4,7 @@ const About = () => {
     return (
         <section id="about" className="py-32 bg-gray-100 text-gray-900 relative">
             {/* Background pattern or gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-20"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#7BB8FF] to-[#2C5AFF] opacity-20"></div>
             <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center relative z-10">
                 {/* Title Section */}
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -85,7 +85,7 @@ const About = () => {
                         <div className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
                             <h4 className="text-xl font-semibold mb-4 flex items-center">
                                 <FaUsers className="mr-2 text-3xl" />
-                                Customer-Centric
+                                Focused
                             </h4>
                             <p className="text-lg">
                                 Our customers are at the heart of everything we do. We strive to exceed
