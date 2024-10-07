@@ -27,7 +27,7 @@ const Testimonials = () => {
     return (
         <section id="testimonials" className="py-32 relative overflow-hidden">
             {/* Background Layer */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#7BB8FF] to-[#2C5AFF] opacity-20 z-0"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#7BB8FF] to-[#2C5AFF] z-0"></div>
 
             {/* Content */}
             <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-24 text-center">
@@ -38,7 +38,7 @@ const Testimonials = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                 >
-                    What Our <span className="text-primary">Clients </span> Say
+                    What Our <span className="text-white">Clients </span> Say
                 </motion.h2>
 
                 {/* Testimonials */}

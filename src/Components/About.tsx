@@ -1,15 +1,23 @@
+"use client";
+
 import { FaRocket, FaLightbulb, FaUsers } from "react-icons/fa";
+
+import { motion } from 'framer-motion';
 
 const About = () => {
     return (
         <section id="about" className="py-32 bg-gray-100 text-gray-900 relative">
             {/* Background pattern or gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#7BB8FF] to-[#2C5AFF] opacity-20"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#7BB8FF] to-[#2C5AFF] opacity-95"></div>
             <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center relative z-10">
                 {/* Title Section */}
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                    About <span className="text-primary">Valora Infotech</span>
-                </h2>
+                <motion.h2 className="text-4xl md:text-5xl font-bold mb-6"
+                    initial={{ opacity: 0, y: -50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                >
+                    About <span className="text-white">Valora Infotech</span>
+                </motion.h2>
 
                 {/* Description Section */}
                 <p className="text-lg md:text-xl max-w-2xl mx-auto mb-12">
