@@ -91,7 +91,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav id={"Nav"} className={`fixed w-full top-0 z-50 transition-all duration-500 ${State.isScrolled ? 'bg-[#171713] text-white' : 'bg-[#171713] text-white'}`}>
+        <nav id={"Nav"} className={`fixed w-full top-0 z-50 transition-all duration-500 ${State.isScrolled ? 'bg-secondary text-white' : 'bg-secondary text-white'}`}>
             <div className="flex justify-between items-center px-6 py-4">
                 <div className="flex items-center">
                     <Link href="/">
@@ -136,7 +136,7 @@ const Navbar = () => {
                         {State.isServicesOpen && (
                             <ul
                                 ref={servicesMenuRef}
-                                className="absolute left-0 mt-1 py-2 w-56 bg-[#e7e4db] text-black border rounded-md shadow-lg z-10"
+                                className="absolute left-0 mt-1 py-2 w-56 bg-[#ffffff] text-black border rounded-md shadow-lg z-10"
                             >
                                 {[
                                     { href: "/services/web-development", text: "Web Development" },
@@ -175,7 +175,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu */}
-            <div className={`md:hidden ${State.isMenuOpen ? 'fixed' : 'hidden'} top-[4rem] left-0 w-full h-[calc(100%-4rem)] bg-[#171713] z-20`}>
+            <div className={`md:hidden ${State.isMenuOpen ? 'fixed' : 'hidden'} top-[4rem] left-0 w-full h-[calc(100%-4rem)] bg-secondary z-20`}>
                 <ul className="flex flex-col py-4 space-y-2">
                     <li>
                         <Link href="/" onClick={handleLinkClick} className="block px-4 py-2 text-center">Home</Link>
@@ -194,7 +194,7 @@ const Navbar = () => {
                             />
                         </button>
                         {State.isMobileServicesOpen && (
-                            <ul className="relative mt-1 w-full bg-[#171713] text-[#ffffff] shadow-lg z-10 text-center">
+                            <ul className="relative mt-1 w-full bg-secondary text-[#ffffff] shadow-lg z-10 text-center">
                                 {[
                                     { href: "/services/web-development", text: "Web Development" },
                                     { href: "/services/mobile-development", text: "Application Development" },

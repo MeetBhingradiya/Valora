@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const About = () => {
     return (
-        <section id="about" className="py-32 bg-[#171713] text-gray-900 relative">
+        <section id="about" className="py-32 bg-secondary text-gray-900 relative">
             {/* Background pattern or gradient */}
             <div className="absolute inset-0"></div>
             <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center relative z-10">
