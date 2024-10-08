@@ -27,18 +27,18 @@ const Testimonials = () => {
     return (
         <section id="testimonials" className="py-32 relative overflow-hidden">
             {/* Background Layer */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#7BB8FF] to-[#2C5AFF] z-0"></div>
+            <div className="absolute inset-0 bg-[#171713] z-0"></div>
 
             {/* Content */}
             <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-24 text-center">
                 {/* Title */}
                 <motion.h2
-                    className="text-4xl md:text-5xl font-bold mb-12 text-gray-800"
+                    className="text-4xl md:text-5xl font-bold mb-12 text-white"
                     initial={{ opacity: 0, y: -50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                 >
-                    What Our <span className="text-white">Clients </span> Say
+                    What Our <span className="text-primary">Clients </span> Say
                 </motion.h2>
 
                 {/* Testimonials */}

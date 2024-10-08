@@ -46,38 +46,38 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold text-white mb-4">Follow Us</h3>
             <div className="flex space-x-4 mb-6">
-              <a
+              {/* <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-700 rounded-full hover:bg-primary transition-colors"
               >
                 <FaFacebookF className="h-5 w-5 text-white" />
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-700 rounded-full hover:bg-primary transition-colors"
               >
                 <FaTwitter className="h-5 w-5 text-white" />
-              </a>
+              </a> */}
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/valorainfotech/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-700 rounded-full hover:bg-primary transition-colors"
               >
                 <FaLinkedinIn className="h-5 w-5 text-white" />
               </a>
-              <a
+              {/* <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-700 rounded-full hover:bg-primary transition-colors"
               >
                 <FaInstagram className="h-5 w-5 text-white" />
-              </a>
+              </a> */}
             </div>
             <p className="text-sm">
               Email: <a href="mailto:info@valorainfotech.com" className="hover:text-primary">info@valorainfotech.com</a>

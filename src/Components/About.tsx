@@ -6,12 +6,12 @@ import { motion } from 'framer-motion';
 
 const About = () => {
     return (
-        <section id="about" className="py-32 bg-gray-100 text-gray-900 relative">
+        <section id="about" className="py-32 bg-[#171713] text-gray-900 relative">
             {/* Background pattern or gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#7BB8FF] to-[#2C5AFF] opacity-95"></div>
+            <div className="absolute inset-0"></div>
             <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center relative z-10">
                 {/* Title Section */}
-                <motion.h2 className="text-4xl md:text-5xl font-bold mb-6"
+                <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary"
                     initial={{ opacity: 0, y: -50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
@@ -20,7 +20,7 @@ const About = () => {
                 </motion.h2>
 
                 {/* Description Section */}
-                <p className="text-lg md:text-xl max-w-2xl mx-auto mb-12">
+                <p className="text-lg md:text-xl max-w-2xl mx-auto mb-12 text-white">
                     At Valora Infotech, we are committed to delivering top-tier IT solutions
                     tailored to empower your business. Our team of experienced professionals
                     offers innovative and customized services that drive success in an ever-evolving

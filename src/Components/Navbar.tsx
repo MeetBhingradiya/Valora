@@ -218,7 +218,7 @@ const Navbar = () => {
                         )}
                     </li>
                     <li>
-                        <Link href="/contact" onClick={handleLinkClick} className="block px-4 py-2 text-center">Contact</Link>
+                        <Link href="/Blogs" onClick={handleLinkClick} className="block px-4 py-2 text-center">Blogs</Link>
                     </li>
                     <li>
                         <Link href="/#portfolio" onClick={handleLinkClick} className="block px-4 py-2 text-center">Portfolio</Link>
