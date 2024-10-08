@@ -138,54 +138,27 @@ const Navbar = () => {
                                 ref={servicesMenuRef}
                                 className="absolute left-0 mt-1 py-2 w-56 bg-[#e7e4db] text-black border rounded-md shadow-lg z-10"
                             >
-                                <li>
-                                    <Link href="/services/web-development" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
-                                        <span className="relative z-10 inline-block">
-                                            Web Development
-                                            <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/services/mobile-development" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
-                                        <span className="relative z-10 inline-block">
-                                            Application Development
-                                            <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/services/ui-ux-design" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
-                                        <span className="relative z-10 inline-block">
-                                            UI/UX Design
-                                            <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/services/ai-ml" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
-                                        <span className="relative z-10 inline-block">
-                                            AI & ML
-                                            <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/services/cloud-solutions" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
-                                        <span className="relative z-10 inline-block">
-                                            Cloud Solutions
-                                            <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/services/digital-marketing" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
-                                        <span className="relative z-10 inline-block">
-                                            Digital Marketing
-                                            <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                                        </span>
-                                    </Link>
-                                </li>
+                                {[
+                                    { href: "/services/web-development", text: "Web Development" },
+                                    { href: "/services/mobile-development", text: "Application Development" },
+                                    { href: "/services/ui-ux-design", text: "UI/UX Design" },
+                                    { href: "/services/ai-ml", text: "AI & ML" },
+                                    { href: "/services/cloud-solutions", text: "Cloud Solutions" },
+                                    { href: "/services/digital-marketing", text: "Digital Marketing" },
+                                ].map((item, index) => (
+                                    <li key={index}>
+                                        <Link
+                                            href={item.href}
+                                            onClick={handleLinkClick}
+                                            className="block px-4 py-2 text-sm group"
+                                        >
+                                            <span className="relative inline-block">
+                                                {item.text}
+                                                <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+                                            </span>
+                                        </Link>
+                                    </li>
+                                ))}
                             </ul>
                         )}
                     </motion.li>
@@ -222,66 +195,30 @@ const Navbar = () => {
                         </button>
                         {State.isMobileServicesOpen && (
                             <ul className="relative mt-1 w-full bg-[#171713] text-[#ffffff] shadow-lg z-10 text-center">
-                                <li>
-                                <hr className="border-t border-gray-500 my-1" />
-                                    <Link href="/services/web-development" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
-                                        <span className="relative z-10 inline-block">
-                                            Web Development
-                                            <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                                        </span>
-                                    </Link>
-                                    <hr className="border-t border-gray-500 my-1" />
-                                </li>
-                                <li>
-                                    <Link href="/services/mobile-development" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
-                                        <span className="relative z-10 inline-block">
-                                            Application Development
-                                            <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                                        </span>
-                                    </Link>
-                                    <hr className="border-t border-gray-500 my-1" />
-                                </li>
-                                <li>
-                                    <Link href="/services/ui-ux-design" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
-                                        <span className="relative z-10 inline-block">
-                                            UI/UX Design
-                                            <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                                        </span>
-                                    </Link>
-                                    <hr className="border-t border-gray-500 my-1" />
-                                </li>
-                                <li>
-                                    <Link href="/services/ai-ml" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
-                                        <span className="relative z-10 inline-block">
-                                            AI & ML
-                                            <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                                        </span>
-                                    </Link>
-                                    <hr className="border-t border-gray-500 my-1" />
-                                </li>
-                                <li>
-                                    <Link href="/services/cloud-solutions" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
-                                        <span className="relative z-10 inline-block">
-                                            Cloud Solutions
-                                            <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                                        </span>
-                                    </Link>
-                                    <hr className="border-t border-gray-500 my-1" />
-                                </li>
-                                <li>
-                                    <Link href="/services/digital-marketing" onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative">
-                                        <span className="relative z-10 inline-block">
-                                            Digital Marketing
-                                            <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                                        </span>
-                                    </Link>
-                                    <hr className="border-t border-gray-500 my-1" />
-                                </li>
+                                {[
+                                    { href: "/services/web-development", text: "Web Development" },
+                                    { href: "/services/mobile-development", text: "Application Development" },
+                                    { href: "/services/ui-ux-design", text: "UI/UX Design" },
+                                    { href: "/services/ai-ml", text: "AI & ML" },
+                                    { href: "/services/cloud-solutions", text: "Cloud Solutions" },
+                                    { href: "/services/digital-marketing", text: "Digital Marketing" },
+                                ].map((item, index) => (
+                                    <li key={index}>
+                                        <hr className="border-t border-gray-500 my-1" />
+                                        <Link href={item.href} onClick={handleLinkClick} className="block px-4 py-2 text-sm group relative hover:text-primary">
+                                            <span className="inline-block">
+                                                {item.text}
+                                                <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+                                            </span>
+                                        </Link>
+                                        <hr className="border-t border-gray-500 my-1" />
+                                    </li>
+                                ))}
                             </ul>
                         )}
                     </li>
                     <li>
-                        <Link href="/contact" onClick={handleLinkClick} className="block px-4 py-2 text-center">Contact</Link>
+                        <Link href="/Blogs" onClick={handleLinkClick} className="block px-4 py-2 text-center">Blogs</Link>
                     </li>
                     <li>
                         <Link href="/#portfolio" onClick={handleLinkClick} className="block px-4 py-2 text-center">Portfolio</Link>

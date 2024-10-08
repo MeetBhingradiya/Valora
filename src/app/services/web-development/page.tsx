@@ -78,7 +78,7 @@ const WebDevelopmentPage = () => {
                 description: 'Providing end-to-end web development services, from initial planning and design to deployment and maintenance. We guide you through every stage of the web development lifecycle, ensuring that your project is completed on time and within budget. Our comprehensive services include project scoping, prototyping, development, quality assurance, and post-launch support.',
               },
             ].map((item, index) => (
-            <div key={item.title} className={`mb-12 p-4 md:p-6 shadow-lg bg-gradient-to-r ${index % 2 === 0 ? 'from-[#44A5FF] to-[#f1f0f0]' : 'from-[#f1f0f0] to-[#44A5FF]'} bg-opacity-50`}>
+            <div key={item.title} className={`mb-12 p-4 md:p-6 shadow-lg bg-gradient-to-r ${index % 2 === 0 ? 'from-primary to-[#f1f0f0]' : 'from-[#f1f0f0] to-primary'} bg-opacity-50`}>
               <div className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start justify-center`}>
                 <div className={`flex-shrink-0 w-full md:w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'} flex justify-center items-center`}>
                   <Image 

@@ -56,20 +56,6 @@
     z-index: 1
 
 .shining-button
-    // font-size: 1.5rem
-    // padding: 15px 30px
-    // font-family: Arial, sans-serif
-    // color: #fff
-    // background: #ff9900
-    // border: none
-    // border-radius: 8px
-    // cursor: pointer
-    // position: relative
-    // overflow: hidden
-    // transition: background 0.3s
-    // transition: box-shadow 1s
-    // ? Orange Glow
-
     &:hover
         transition: box-shadow 1s
         box-shadow: 0 0 10px #ff9900, 0 0 40px #ff9900
@@ -81,19 +67,16 @@
         left: 200%
         animation: shine 3s linear infinite
 
-        // content: ''
-        // position: absolute
-        // top: 200%
-        // left: 200%
-        // width: 250%
-        // height: 70%
-        // background: rgba(255, 255, 255, 0.5)
-        // transform: rotate(45deg)
-        // transition: opacity 0.3s
-        // animation: shine 3s linear infinite
-
     &:hover::before
         opacity: 0.6
+
+.glow-button
+    &:hover
+        transition: box-shadow 1s
+        box-shadow: 0 0 10px #ffffff, 0 0 40px #ffffff
+
+    &:hover::before
+        opacity: 0.6 
 
 @keyframes shine
     0%
@@ -109,3 +92,31 @@
         background-position: 100% 50%
     100%
         background-position: 0% 50%
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+        transform: translateY(20px)
+    
+    100%
+        opacity: 1
+        transform: translateY(0)
+
+@keyframes fadeOut
+    0%
+        opacity: 1
+        transform: translateY(0)
+    
+    100%
+        opacity: 0
+        transform: translateY(-20px)
+
+.quote
+    animation-duration: 0.5s
+    animation-fill-mode: forwards
+
+    &.fadeIn
+        animation-name: fadeIn
+
+    &.fadeOut
+        animation-name: fadeOut
