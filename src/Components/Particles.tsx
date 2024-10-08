@@ -12,7 +12,7 @@ const ParticlesBackground = () => {
       window.particlesJS("particles", {
         particles: {
           number: {
-            value: 120,
+            value: 150,
             density: {
               enable: true,
               value_area: 800,

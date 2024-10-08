@@ -7,7 +7,7 @@ import Footer from '../../../Components/Footer';
 
 const WebDevelopmentPage = () => {
   return (
-    <div className="min-h-screen bg-[#171713]">
+    <div className="min-h-screen bg-secondary">
       <Navbar />
       <div className="p-4 md:p-8">
       <div className="container mx-auto">
