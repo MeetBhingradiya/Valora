@@ -58,7 +58,7 @@ const Tools = () => {
                     <li>
                         <Link href="/" className="block p-2 rounded w-full text-left">
                             <FontAwesomeIcon icon={faArrowLeft} className="mr-4 text-yellow-400" />
-                            Home 
+                            Home
                         </Link>
                     </li>
                     {/* Tools Menu Items */}

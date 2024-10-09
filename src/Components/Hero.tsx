@@ -13,20 +13,26 @@ const quotes: string[] = [
 
 const Hero: React.FC = () => {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState<number>(0);
-  const [fade, setFade] = useState<boolean>(false);
   const [animationClass, setAnimationClass] = useState<string>("fadeIn");
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setAnimationClass("fadeOut"); // Start fade out
+      setAnimationClass("fadeOut");
       setTimeout(() => {
         setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
-        setAnimationClass("fadeIn"); // Start fade in after the old quote has faded out
-      }, 500); // This duration should match the CSS transition duration
+        setAnimationClass("fadeIn");
+      }, 500);
     }, 4000);
 
     return () => clearInterval(interval);
   }, []);
+
+  const scrollToNextSection = () => {
+    const nextSection = document.getElementById("about");
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section className="relative w-full h-screen flex flex-col justify-center items-center text-white">
@@ -38,9 +44,7 @@ const Hero: React.FC = () => {
           Welcome to
           <div className="text-primary text-5xl md:text-6xl mt-2 font-extrabold select-none">Valora Infotech</div>
         </h1>
-        <p 
-          className={`mt-4 text-lg md:text-xl text-zinc-300 ${animationClass}`}
-        >
+        <p className={`mt-4 text-lg md:text-xl text-zinc-300 ${animationClass}`}>
           {quotes[currentQuoteIndex]}
         </p>
         <div className="mt-8 flex justify-center space-x-4">
@@ -58,9 +62,16 @@ const Hero: React.FC = () => {
           </a>
         </div>
       </div>
+
+      {/* Scroll Button */}
+      <div className="absolute bottom-10 z-10 flex flex-col items-center">
+        <a onClick={scrollToNextSection} className="scroll-button cursor-pointer text-white">
+          <span></span>
+          Scroll
+        </a>
+      </div>
     </section>
   );
 };
 
 export default Hero;
-

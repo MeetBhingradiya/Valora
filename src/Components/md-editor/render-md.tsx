@@ -17,6 +17,7 @@ import typescript from "highlight.js/lib/languages/typescript";
 import xml from "highlight.js/lib/languages/xml";
 import yaml from "highlight.js/lib/languages/yaml";
 import { configuredXss, md } from "./parse-md";
+import "@App/Styles/highlightjs.css";
 
 import { twMerge } from "tailwind-merge";
 import { type ClassValue, clsx } from "clsx";
