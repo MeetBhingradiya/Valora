@@ -120,3 +120,39 @@
 
     &.fadeOut
         animation-name: fadeOut
+
+.scroll-button 
+  position: relative
+  padding-top: 70px
+  text-align: center
+  font-size: 1.5rem
+  color: #ffffff
+
+  span 
+    position: absolute
+    top: 0
+    left: 50%
+    width: 24px
+    height: 24px
+    margin-left: -12px
+    border-left: 1px solid white
+    border-bottom: 1px solid white
+    transform: rotateZ(-45deg)
+    animation: sdb06 1.5s infinite
+    box-sizing: border-box
+  
+
+
+@keyframes sdb06 
+  0% 
+    transform: rotateY(0) rotateZ(-45deg) translate(0, 0)
+    opacity: 0
+  
+  50% 
+    opacity: 1
+  
+  100% 
+    transform: rotateY(720deg) rotateZ(-45deg) translate(-20px, 20px)
+    opacity: 0
+  
+

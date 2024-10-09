@@ -1,25 +1,23 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const ParticlesBackground = () => {
-  const [clickCount, setClickCount] = useState(0);
-  const [startTime, setStartTime] = useState(0);
-  const [disabled, setDisabled] = useState(false);
-  let disabledTimeout: NodeJS.Timeout;
-
   useEffect(() => {
     if (window.particlesJS) {
       window.particlesJS("particles", {
         particles: {
           number: {
-            value: 150,
+            value: 140,
             density: {
               enable: true,
               value_area: 800,
             },
           },
           color: {
-            value: ["#44A5FF", "#0046ff"],
+            value: [
+              "#44A5FF",
+              "#0046ff"
+            ],
           },
           shape: {
             type: "polygon",
@@ -80,7 +78,7 @@ const ParticlesBackground = () => {
               mode: "grab",
             },
             onclick: {
-              enable: !disabled, // Enable or disable based on click limit
+              enable: true,
               mode: "push",
             },
             resize: true,
@@ -100,49 +98,9 @@ const ParticlesBackground = () => {
         retina_detect: true,
       });
     }
-  }, [disabled]);
+  }, []);
 
-  // Function to handle click events and apply the limit
-  const handleCanvasClick = () => {
-    const currentTime = new Date().getTime();
-
-    // Start timer on the first click
-    if (clickCount === 0) {
-      setStartTime(currentTime);
-    }
-
-    setClickCount((prevCount) => prevCount + 1);
-
-    // If 5 seconds have passed, reset the click count
-    if (currentTime - startTime > 5000) {
-      setClickCount(1); // Reset click count and start time
-      setStartTime(currentTime);
-    }
-
-    // Disable click if the user clicks more than 10 times in 5 seconds
-    if (clickCount >= 10) {
-      disableInteraction();
-    }
-  };
-
-  // Disable interaction for 5 seconds
-  const disableInteraction = () => {
-    setDisabled(true);
-
-    // Re-enable the interaction after 5 seconds
-    disabledTimeout = setTimeout(() => {
-      setDisabled(false);
-      setClickCount(0); // Reset the click count when re-enabled
-    }, 5000);
-  };
-
-  return (
-    <div
-      id="particles"
-      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-      onClick={disabled ? undefined : handleCanvasClick} // Disable click handler if limit reached
-    />
-  );
+  return <div id="particles" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} />;
 };
 
 export default ParticlesBackground;
