@@ -1,8 +1,38 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const ParticlesBackground = () => {
+  const [lastClick, setLastClick] = useState<{ x: number; y: number } | null>(null);
+
+  const handleCanvasClick = (event: MouseEvent) => {
+    const canvas = event.target as HTMLElement;
+    const rect = canvas.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const clickY = event.clientY - rect.top;
+
+    if (lastClick && Math.abs(clickX - lastClick.x) < 5 && Math.abs(clickY - lastClick.y) < 5) {
+      // Ignore the click if it's within a 5-pixel radius of the last click
+      console.log("Click at the same spot ignored");
+      return;
+    }
+
+    // Update the last click coordinates
+    setLastClick({ x: clickX, y: clickY });
+
+    // Trigger the particle push on click
+    if (window.pJSDom && window.pJSDom[0].pJS && window.pJSDom[0].pJS.interactivity.modes.push) {
+      window.pJSDom[0].pJS.interactivity.modes.push.particles_nb = 4; // Push 4 particles on click
+      window.pJSDom[0].pJS.fn.modes.pushParticles();
+    }
+  };
+
   useEffect(() => {
+    const particleCanvas = document.getElementById("particles");
+
+    if (particleCanvas) {
+      particleCanvas.addEventListener("click", handleCanvasClick);
+    }
+
     if (window.particlesJS) {
       window.particlesJS("particles", {
         particles: {
@@ -14,10 +44,7 @@ const ParticlesBackground = () => {
             },
           },
           color: {
-            value: [
-              "#44A5FF",
-              "#0046ff"
-            ],
+            value: ["#44A5FF", "#0046ff"],
           },
           shape: {
             type: "polygon",
@@ -98,7 +125,13 @@ const ParticlesBackground = () => {
         retina_detect: true,
       });
     }
-  }, []);
+
+    return () => {
+      if (particleCanvas) {
+        particleCanvas.removeEventListener("click", handleCanvasClick);
+      }
+    };
+  }, [lastClick]);
 
   return <div id="particles" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} />;
 };

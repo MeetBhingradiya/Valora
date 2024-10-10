@@ -7,6 +7,13 @@ import Link from 'next/link';
 
 const servicesData = [
   {
+    title: 'Game Development',
+    description: 'Creating immersive and interactive game experiences across platforms.',
+    icon: 'assets/service-cards/game-development.png',
+    moreInfo: 'We design and develop engaging games with captivating stories, stunning visuals, and smooth mechanics, delivering a rich user experience for both casual and hardcore gamers.',
+    path: '/services/game-development',
+  },
+  {
     title: 'Web Development',
     description: 'We build fast, responsive, and SEO-optimized websites tailored to your business needs.',
     icon: 'assets/service-cards/web.png',
@@ -19,13 +26,6 @@ const servicesData = [
     icon: 'assets/service-cards/app.png',
     moreInfo: 'We develop apps that are user-friendly, scalable, and robust, focusing on intuitive UI/UX designs, integrating cutting-edge technology, and ensuring high performance to meet your business objectives.',
     path: '/services/mobile-development',
-  },
-  {
-    title: 'Cloud Solutions',
-    description: 'Providing scalable and secure cloud services to help your business grow.',
-    icon: 'assets/service-cards/cloud.png',
-    moreInfo: 'Our cloud solutions offer flexible, secure, and scalable services, ensuring your business can adapt to changing needs while maintaining high availability and reliability.',
-    path: '/services/cloud-solutions',
   },
   {
     title: 'UI/UX Design',
@@ -48,7 +48,9 @@ const servicesData = [
     moreInfo: 'We implement data-driven digital marketing strategies, focusing on SEO, content marketing, and social media to increase your online visibility and drive targeted traffic to your site.',
     path: '/services/digital-marketing',
   },
+
 ];
+
 
 const Services = () => {
   const [scrollPosition, setScrollPosition] = useState(0);

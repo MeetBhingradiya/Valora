@@ -7,6 +7,7 @@ const DetailedServices = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const services = [
+    { name: 'Game Development', path: '/services/game-development' },
     { name: 'Web Development', path: '/services/web-development' },
     { name: 'Mobile Application Development', path: '/services/mobile-development' },
     { name: 'UI/UX Design', path: '/services/ui-ux-design' },
