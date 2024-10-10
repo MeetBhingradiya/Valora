@@ -139,11 +139,11 @@ const Navbar = () => {
                                 className="absolute left-0 mt-1 py-2 w-56 bg-[#ffffff] text-black border rounded-md shadow-lg z-10"
                             >
                                 {[
+                                    { href: "/services/game-development", text: "Game Development" },
                                     { href: "/services/web-development", text: "Web Development" },
                                     { href: "/services/mobile-development", text: "Application Development" },
                                     { href: "/services/ui-ux-design", text: "UI/UX Design" },
-                                    { href: "/services/ai-ml", text: "AI & ML" },
-                                    { href: "/services/cloud-solutions", text: "Cloud Solutions" },
+                                    { href: "/services/it-consultancy", text: "It Consultancy" },
                                     { href: "/services/digital-marketing", text: "Digital Marketing" },
                                 ].map((item, index) => (
                                     <li key={index}>
@@ -196,11 +196,11 @@ const Navbar = () => {
                         {State.isMobileServicesOpen && (
                             <ul className="relative mt-1 w-full bg-secondary text-[#ffffff] shadow-lg z-10 text-center">
                                 {[
+                                    { href: "/services/game-development", text: "Game Development" },
                                     { href: "/services/web-development", text: "Web Development" },
                                     { href: "/services/mobile-development", text: "Application Development" },
                                     { href: "/services/ui-ux-design", text: "UI/UX Design" },
-                                    { href: "/services/ai-ml", text: "AI & ML" },
-                                    { href: "/services/cloud-solutions", text: "Cloud Solutions" },
+                                    { href: "/services/it-consultancy", text: "It Consultancy" },
                                     { href: "/services/digital-marketing", text: "Digital Marketing" },
                                 ].map((item, index) => (
                                     <li key={index}>
