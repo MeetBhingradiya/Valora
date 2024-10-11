@@ -35,11 +35,11 @@ const servicesData = [
     path: '/services/ui-ux-design',
   },
   {
-    title: 'IT Consultancy',
-    description: 'Offering expert advice and IT strategies to boost your business’s performance.',
-    icon: 'assets/service-cards/consultancy.png',
-    moreInfo: 'Our consultancy services provide strategic insights and IT solutions tailored to your specific business challenges, helping you leverage technology for optimal performance.',
-    path: '/services/it-consultancy',
+    title: 'Cloud Solutions',
+    description: 'Scalable cloud solutions to streamline your operations and boost performance.',
+    icon: 'assets/service-cards/cloud.png',
+    moreInfo: 'We provide secure and efficient cloud-based services to help businesses manage their data, applications, and infrastructure seamlessly, ensuring high scalability and reduced operational costs.',
+    path: '/services/cloud-solutions',
   },
   {
     title: 'Digital Marketing',
@@ -48,9 +48,7 @@ const servicesData = [
     moreInfo: 'We implement data-driven digital marketing strategies, focusing on SEO, content marketing, and social media to increase your online visibility and drive targeted traffic to your site.',
     path: '/services/digital-marketing',
   },
-
 ];
-
 
 const Services = () => {
   const [scrollPosition, setScrollPosition] = useState(0);

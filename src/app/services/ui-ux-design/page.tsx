@@ -34,7 +34,7 @@ const UIUXDesignPage = () => {
           {/* SVG Images with descriptions */}
           {[ 
               {
-                src: '/assets/uiux/svg1.svg',
+                src: '/assets/uiux/svg6.svg',
                 title: 'User Research & Analysis',
                 description: 'We conduct thorough user research to understand the needs, behaviors, and pain points of your target audience. This involves interviews, surveys, and usability tests to gather insights. By analyzing this data, we create user personas and scenarios that guide the design process, ensuring our solutions are tailored to meet user expectations and improve satisfaction.'
               },
@@ -59,7 +59,7 @@ const UIUXDesignPage = () => {
                 description: 'We ensure that our designs are responsive and functional across all devices, from desktops to smartphones. By employing flexible grids and layouts, along with adaptive images and media queries, we create a consistent experience that adjusts to different screen sizes and orientations. This commitment to responsive design ensures that users enjoy seamless interactions, regardless of how they access your application.'
               },
               {
-                src: '/assets/uiux/svg6.svg',
+                src: '/assets/uiux/svg1.svg',
                 title: 'Brand Identity Integration',
                 description: 'We seamlessly integrate your brand identity into the UI/UX design, ensuring that it aligns with your overall brand strategy. From colors and typography to imagery and tone of voice, we create a cohesive design that reflects your brand’s values and resonates with your target audience. This consistency builds trust and recognition, ultimately enhancing user loyalty and engagement.'
               },              
