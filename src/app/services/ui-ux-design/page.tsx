@@ -86,8 +86,8 @@ const UIUXDesignPage = () => {
 
         {/* Call-to-Action Section */}
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Ready to Enhance Your User Experience?</h2>
-          <p className="text-base md:text-lg text-gray-600 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-4">Ready to Enhance Your User Experience?</h2>
+          <p className="text-base md:text-lg text-gray-200 mb-6">
             Let’s create an unforgettable user experience together with our expert UI/UX design services.
           </p>
           <Link href="/contact" className="bg-primary text-white px-6 py-2 md:px-8 md:py-3 rounded-md shadow-md hover:bg-yellow-500">
