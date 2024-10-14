@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import "@App/Styles/global.sass";
 import Link from "next/link";
+import React, { ReactNode } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faKey,
@@ -13,15 +14,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Base64 from "./base64-encoder-decoder/page";
 import UUID from "./uuid-generator/page"; // Adjusted import paths
-import URL from "./url-encoder-decoder/page"; 
-import DateAndTime from "./date-time-utilities/page"; 
+import URL from "./url-encoder-decoder/page";
+import DateAndTime from "./date-time-utilities/page";
 import { usePathname } from "next/navigation";
 
-const Tools = () => {
+export default function ToolsLayout({
+    children,
+}: {
+    children: ReactNode;
+}) {
     const pathname = usePathname();
-    const tool = pathname?.split("/").pop(); // Extract the current tool from the path
-    console.log("Current pathname:", pathname);
-    console.log("Current tool:", tool);
+    const tool = pathname?.split("/").pop();
 
     const renderTool = () => {
         switch (tool) {
@@ -34,22 +37,40 @@ const Tools = () => {
             case "date-time-utilities":
                 return <DateAndTime />;
             default:
-                return <Base64 />; // Default to Base64 if no tool is matched
+                return <Base64 />;
         }
     };
 
-    // Define tools with their respective colors
     const tools = [
-        { name: "base64-encoder-decoder", label: "Base64 Encoder/Decoder", icon: faCode, color: "text-green-400" },
-        { name: "uuid-generator", label: "UUID Generator", icon: faIdBadge, color: "text-purple-400" },
-        { name: "url-encoder-decoder", label: "URL Encoder/Decoder", icon: faGlobe, color: "text-red-400" },
-        { name: "date-time-utilities", label: "Date and Time Utilities", icon: faClock, color: "text-yellow-400" },
+        {
+            name: "base64-encoder-decoder",
+            label: "Base64 Encoder/Decoder",
+            icon: faCode, color: "text-green-400"
+        },
+        {
+            name: "uuid-generator",
+            label: "UUID Generator",
+            icon: faIdBadge,
+            color: "text-purple-400"
+        },
+        {
+            name: "url-encoder-decoder",
+            label: "URL Encoder/Decoder",
+            icon: faGlobe,
+            color: "text-red-400"
+        },
+        {
+            name: "date-time-utilities",
+            label: "Date and Time Utilities",
+            icon: faClock,
+            color: "text-yellow-400"
+        },
     ];
 
     return (
-        <div className="flex flex-col lg:flex-row min-h-screen font-medium">
+        <div className="flex">
             {/* Sidebar Menu */}
-            <aside className="w-full lg:w-72 p-6" style={{ background: "#334381", color: "white" }}>
+            <div className="w-full lg:w-72 p-6" style={{ background: "#334381", color: "white", height: "100vh" }}>
                 <Link href="/">
                     <h1 className="tools-title text-2xl py-2">VALORA INFOTECH</h1>
                 </Link>
@@ -74,14 +95,12 @@ const Tools = () => {
                         </li>
                     ))}
                 </ul>
-            </aside>
+            </div>
 
             {/* Main content */}
             <div className="flex-1 p-6">
-                {renderTool()} {/* Renders the selected tool */}
+                {renderTool()}
             </div>
         </div>
     );
-};
-
-export default Tools;
+}
