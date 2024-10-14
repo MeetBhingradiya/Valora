@@ -5,14 +5,19 @@ const ServicesPage = () => {
     <div className="min-h-screen p-8 bg-gray-100">    
       <h1 className="text-4xl font-bold mb-8">Our Services</h1>
       <ul className="space-y-4">
+      <li>
+          <Link href="/services/game-development">
+            Game Development
+          </Link>
+        </li>
         <li>
           <Link href="/services/web-development">
             Web Development
           </Link>
         </li>
         <li>
-          <Link href="/services/mobile-app-development">
-            Mobile Application Development
+          <Link href="/services/app-development">
+            Application Development
           </Link>
         </li>
         <li>
@@ -23,11 +28,6 @@ const ServicesPage = () => {
         <li>
           <Link href="/services/cloud-solutions">
             Cloud Solutions
-          </Link>
-        </li>
-        <li>
-          <Link href="/services/ai-ml">
-            Artificial Intelligence and Machine Learning
           </Link>
         </li>
         <li>

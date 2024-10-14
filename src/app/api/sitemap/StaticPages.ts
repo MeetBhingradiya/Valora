@@ -14,7 +14,7 @@ export const StaticPages: Array<{
         frequency: "weekly",
     },
     {
-        route: 'services/mobile-development',
+        route: 'services/app-development',
         priority: 0.9,
         frequency: "weekly",
     },

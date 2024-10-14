@@ -25,7 +25,7 @@ const servicesData = [
     description: 'Delivering custom mobile solutions for iOS and Android platforms.',
     icon: 'assets/service-cards/app.png',
     moreInfo: 'We develop apps that are user-friendly, scalable, and robust, focusing on intuitive UI/UX designs, integrating cutting-edge technology, and ensuring high performance to meet your business objectives.',
-    path: '/services/mobile-development',
+    path: '/services/app-development',
   },
   {
     title: 'UI/UX Design',

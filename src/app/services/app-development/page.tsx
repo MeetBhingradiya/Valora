@@ -1,4 +1,4 @@
-// app/services/mobile-development/page.tsx
+// app/services/app-development/page.tsx
 import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '../../../Components/Navbar';
