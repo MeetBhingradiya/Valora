@@ -8,10 +8,11 @@ import blogs from '../../../data/blogData';
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
-// import ReactMarkdown from 'react-markdown';
-// import remarkGfm from 'remark-gfm';
-// import rehypeHighlight from 'rehype-highlight';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeHighlight from 'rehype-highlight';
 import MarkdownRenderBox from '@App/Components/md-editor/render-md';
+import "@App/Styles/highlightjs.css";
 
 const BlogPost = () => {
     const { slug } = useParams();
@@ -65,19 +66,19 @@ const BlogPost = () => {
                         <img
                             src={blog.image}
                             alt={blog.title}
-                            className="w-full h-80 object-cover rounded-md"
+                            className="w-full h-full object-cover rounded-md"
                         />
                     </div>
                     <div className="text-gray-800 leading-relaxed  justify-center mx-14">
-                        {/* <ReactMarkdown
+                        <ReactMarkdown
                             className="prose prose-lg"
                             remarkPlugins={[remarkGfm]}
                             rehypePlugins={[rehypeHighlight]}
                         >
-                            {blog.content}
-                        </ReactMarkdown> */}
+                            {JSON.stringify(blog.content, null, 2)}
+                        </ReactMarkdown>
 
-                        <MarkdownRenderBox text={blog.content} />
+                        {/* <MarkdownRenderBox text={JSON.stringify(blog.content, null, 2)} /> */}
                     </div>
                 </div>
 

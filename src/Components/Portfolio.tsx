@@ -27,7 +27,7 @@ const portfolioData = [
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="py-16 bg-[#171713] text-white">
+    <section id="portfolio" className="py-16 bg-secondary text-white">
       <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
         {/* Title */}
         <motion.h2

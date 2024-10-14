@@ -11,10 +11,10 @@ import {
     faClock,
     faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
-import Base64 from "./Base64/page";
-import UUID from "./UUID/page"; // Adjusted import paths
-import URL from "./URL/page"; 
-import DateAndTime from "./DateAndTime/page"; 
+import Base64 from "./base64-encoder-decoder/page";
+import UUID from "./uuid-generator/page"; // Adjusted import paths
+import URL from "./url-encoder-decoder/page"; 
+import DateAndTime from "./date-time-utilities/page"; 
 import { usePathname } from "next/navigation";
 
 const Tools = () => {
@@ -58,7 +58,7 @@ const Tools = () => {
                     <li>
                         <Link href="/" className="block p-2 rounded w-full text-left">
                             <FontAwesomeIcon icon={faArrowLeft} className="mr-4 text-yellow-400" />
-                            Home 
+                            Home
                         </Link>
                     </li>
                     {/* Tools Menu Items */}

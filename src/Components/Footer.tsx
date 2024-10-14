@@ -2,7 +2,7 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/f
 
 const Footer = () => {
   return (
-    <footer className="bg-[#171713] text-gray-300 py-10">
+    <footer className="bg-secondary text-gray-300 py-10">
       <div className="container mx-auto px-6 md:px-12 lg:px-24">
         {/* Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -20,13 +20,13 @@ const Footer = () => {
             <h3 className="text-xl font-semibold text-white mb-4">Quick Links</h3>
             <ul>
               <li className="mb-2">
-                <a href="/about" className="hover:text-primary transition-colors">
+                <a href="/#about" className="hover:text-primary transition-colors">
                   About Us
                 </a>
               </li>
               <li className="mb-2">
-                <a href="/services" className="hover:text-primary transition-colors">
-                  Our Services
+                <a href="/#services" className="hover:text-primary transition-colors">
+                  Services
                 </a>
               </li>
               <li className="mb-2">
@@ -35,8 +35,8 @@ const Footer = () => {
                 </a>
               </li>
               <li className="mb-2">
-                <a href="/careers" className="hover:text-primary transition-colors">
-                  Careers
+                <a href="/Blogs" className="hover:text-primary transition-colors">
+                  Blogs
                 </a>
               </li>
             </ul>

@@ -7,6 +7,13 @@ import Link from 'next/link';
 
 const servicesData = [
   {
+    title: 'Game Development',
+    description: 'Creating immersive and interactive game experiences across platforms.',
+    icon: 'assets/service-cards/game-development.png',
+    moreInfo: 'We design and develop engaging games with captivating stories, stunning visuals, and smooth mechanics, delivering a rich user experience for both casual and hardcore gamers.',
+    path: '/services/game-development',
+  },
+  {
     title: 'Web Development',
     description: 'We build fast, responsive, and SEO-optimized websites tailored to your business needs.',
     icon: 'assets/service-cards/web.png',
@@ -18,14 +25,7 @@ const servicesData = [
     description: 'Delivering custom mobile solutions for iOS and Android platforms.',
     icon: 'assets/service-cards/app.png',
     moreInfo: 'We develop apps that are user-friendly, scalable, and robust, focusing on intuitive UI/UX designs, integrating cutting-edge technology, and ensuring high performance to meet your business objectives.',
-    path: '/services/mobile-development',
-  },
-  {
-    title: 'Cloud Solutions',
-    description: 'Providing scalable and secure cloud services to help your business grow.',
-    icon: 'assets/service-cards/cloud.png',
-    moreInfo: 'Our cloud solutions offer flexible, secure, and scalable services, ensuring your business can adapt to changing needs while maintaining high availability and reliability.',
-    path: '/services/cloud-solutions',
+    path: '/services/app-development',
   },
   {
     title: 'UI/UX Design',
@@ -35,11 +35,11 @@ const servicesData = [
     path: '/services/ui-ux-design',
   },
   {
-    title: 'IT Consultancy',
-    description: 'Offering expert advice and IT strategies to boost your business’s performance.',
-    icon: 'assets/service-cards/consultancy.png',
-    moreInfo: 'Our consultancy services provide strategic insights and IT solutions tailored to your specific business challenges, helping you leverage technology for optimal performance.',
-    path: '/services/it-consultancy',
+    title: 'Cloud Solutions',
+    description: 'Scalable cloud solutions to streamline your operations and boost performance.',
+    icon: 'assets/service-cards/cloud.png',
+    moreInfo: 'We provide secure and efficient cloud-based services to help businesses manage their data, applications, and infrastructure seamlessly, ensuring high scalability and reduced operational costs.',
+    path: '/services/cloud-solutions',
   },
   {
     title: 'Digital Marketing',

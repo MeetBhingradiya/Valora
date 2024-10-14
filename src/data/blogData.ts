@@ -5,7 +5,7 @@ const blogs = [
       summary: 'Learn how React hooks can simplify your components...',
       content: `
         **React hooks** are functions that let you use state and other React features in functional components. Hooks simplify the way we handle state, side effects, and other functionalities, making functional components more powerful.
-  
+        
         ### **1. useState**
         The **useState** hook allows you to add state to functional components. It returns a state variable and a function to update it.
         \`\`\`jsx
