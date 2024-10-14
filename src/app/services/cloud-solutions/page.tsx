@@ -34,32 +34,32 @@ const CloudSolutionsPage = () => {
           {/* Feature Cards */}
           {[
             {
-              src: '/assets/web/svg1.svg',
+              src: '/assets/cloud/svg1.svg',
               title: 'Cloud Infrastructure',
               description: 'Our solutions provide highly scalable cloud infrastructure, ensuring seamless integration and flexible resource allocation. Whether you’re expanding or optimizing your existing infrastructure, we have the tools and expertise to help you deploy, manage, and scale in the cloud environment.',
             },
             {
-              src: '/assets/web/svg2.svg',
+              src: '/assets/cloud/svg2.svg',
               title: 'Security and Compliance',
               description: 'We prioritize the security of your data, offering cloud solutions with robust encryption, regular security updates, and compliance with industry standards like GDPR and HIPAA. Our cloud architecture ensures your sensitive information is protected at all times.',
             },
             {
-              src: '/assets/web/svg3.svg',
+              src: '/assets/cloud/svg3.svg',
               title: 'Cloud Migration',
               description: 'Seamlessly transition your business to the cloud with minimal downtime and disruption. Our team handles everything, from data transfer to application migration, ensuring a smooth transition while preserving the integrity of your data and operations.',
             },
             {
-              src: '/assets/web/svg4.svg',
+              src: '/assets/cloud/svg4.svg',
               title: 'Performance Optimization',
               description: 'We offer ongoing cloud performance optimization, ensuring your resources are utilized efficiently and your systems run at peak performance. Our monitoring tools detect bottlenecks, while we fine-tune your cloud environment to deliver high availability and fast response times.',
             },
             {
-              src: '/assets/web/svg5.svg',
+              src: '/assets/cloud/svg5.svg',
               title: 'AI and Machine Learning Integration',
               description: 'Leverage the power of cloud-based AI and machine learning to enhance decision-making, automate processes, and analyze large datasets in real-time. Our cloud solutions integrate cutting-edge AI tools to help your business stay ahead of the competition.',
             },
             {
-              src: '/assets/web/svg6.svg',
+              src: '/assets/cloud/svg6.svg',
               title: 'Continuous Support',
               description: 'Our team provides 24/7 support, ensuring that your cloud environment remains stable, secure, and optimized. From troubleshooting to updates, we offer comprehensive support to ensure your cloud infrastructure continues to meet your business needs.',
             },
