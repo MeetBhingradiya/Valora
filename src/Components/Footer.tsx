@@ -56,7 +56,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-700 rounded-full hover:bg-primary transition-colors"
-              >
+                >
                 <FaFacebookF className="h-5 w-5 text-white" />
               </a> */}
                             {/* <a
@@ -64,7 +64,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-700 rounded-full hover:bg-primary transition-colors"
-              >
+                >
                 <FaTwitter className="h-5 w-5 text-white" />
               </a> */}
                             <a
@@ -80,7 +80,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-700 rounded-full hover:bg-primary transition-colors"
-              >
+                >
                 <FaInstagram className="h-5 w-5 text-white" />
               </a> */}
                         </div>
