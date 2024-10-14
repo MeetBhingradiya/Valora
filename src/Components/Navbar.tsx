@@ -141,7 +141,7 @@ const Navbar = () => {
                                 {[
                                     { href: "/services/game-development", text: "Game Development" },
                                     { href: "/services/web-development", text: "Web Development" },
-                                    { href: "/services/mobile-development", text: "Application Development" },
+                                    { href: "/services/app-development", text: "Application Development" },
                                     { href: "/services/ui-ux-design", text: "UI/UX Design" },
                                     { href: "/services/cloud-solutions", text: "Cloud Solutions" },
                                     { href: "/services/digital-marketing", text: "Digital Marketing" },
@@ -198,7 +198,7 @@ const Navbar = () => {
                                 {[
                                     { href: "/services/game-development", text: "Game Development" },
                                     { href: "/services/web-development", text: "Web Development" },
-                                    { href: "/services/mobile-development", text: "Application Development" },
+                                    { href: "/services/app-development", text: "Application Development" },
                                     { href: "/services/ui-ux-design", text: "UI/UX Design" },
                                     { href: "/services/cloud-solutions", text: "Cloud Solutions" },
                                     { href: "/services/digital-marketing", text: "Digital Marketing" },

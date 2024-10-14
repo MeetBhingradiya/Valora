@@ -104,3 +104,42 @@ const ParticlesBackground = () => {
 };
 
 export default ParticlesBackground;
+
+// "use client";
+// import { useEffect, useState } from "react";
+// import Particles from "react-tsparticles";
+// import { loadFull } from "tsparticles"; // For loading tsParticles full bundle
+
+// const ParticlesBackground = () => {
+//   const [particlesConfig, setParticlesConfig] = useState(null);
+
+//   useEffect(() => {
+//     const fetchParticlesConfig = async () => {
+//       const response = await fetch("/particles.json");
+//       const config = await response.json();
+//       setParticlesConfig(config);
+//     };
+
+//     fetchParticlesConfig();
+//   }, []);
+
+//   const particlesInit = async (main: any) => {
+//     // Load tsparticles full bundle
+//     await loadFull(main);
+//   };
+
+//   return (
+//     <>        
+//       {particlesConfig && (
+//         <Particles
+//           id="tsparticles"
+//           init={particlesInit}
+//           options={particlesConfig}
+//           style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+//         />
+//       )}
+//     </>
+//   );
+// };
+
+// export default ParticlesBackground;
