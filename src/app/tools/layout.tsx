@@ -47,30 +47,30 @@ export default function ToolsLayout({
             label: "Base64 Encoder/Decoder",
             icon: faCode, color: "text-green-400"
         },
-        {
-            name: "uuid-generator",
-            label: "UUID Generator",
-            icon: faIdBadge,
-            color: "text-purple-400"
-        },
-        {
-            name: "url-encoder-decoder",
-            label: "URL Encoder/Decoder",
-            icon: faGlobe,
-            color: "text-red-400"
-        },
-        {
-            name: "date-time-utilities",
-            label: "Date and Time Utilities",
-            icon: faClock,
-            color: "text-yellow-400"
-        },
+        // {
+        //     name: "uuid-generator",
+        //     label: "UUID Generator",
+        //     icon: faIdBadge,
+        //     color: "text-purple-400"
+        // },
+        // {
+        //     name: "url-encoder-decoder",
+        //     label: "URL Encoder/Decoder",
+        //     icon: faGlobe,
+        //     color: "text-red-400"
+        // },
+        // {
+        //     name: "date-time-utilities",
+        //     label: "Date and Time Utilities",
+        //     icon: faClock,
+        //     color: "text-yellow-400"
+        // },
     ];
 
     return (
         <div className="flex">
             {/* Sidebar Menu */}
-            <div className="w-full lg:w-72 p-6" style={{ background: "#334381", color: "white", height: "100vh" }}>
+            <div className="w-full lg:w-72 p-6 bg-primary text-secondary" style={{ height: "100vh" }}>
                 <Link href="/">
                     <h1 className="tools-title text-2xl py-2">VALORA INFOTECH</h1>
                 </Link>

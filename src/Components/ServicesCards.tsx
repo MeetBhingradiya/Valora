@@ -94,35 +94,36 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {servicesData.map((service, index) => (
-            <Link key={index} href={service.path} passHref>
-              <div
-                className="group relative w-full h-80 perspective cursor-pointer"
-              >
-                {/* Card */}
-                <div className="card h-full">
-                  <div className="card-inner h-full">
-                    {/* Front Side */}
-                    <div className="front flex flex-col items-center justify-center h-full p-6">
-                      <motion.img
-                        src={service.icon}
-                        alt={service.title}
-                        className="h-16 w-16 mx-auto mb-4 transition-transform duration-100 group-hover:scale-110"
-                        width={64} // Set width for responsive images
-                        height={64} // Set height for responsive images
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ repeat: Infinity, duration: 4 }}
-                      />
-                      <h3 className="text-2xl font-semibold text-primary mb-4">{service.title}</h3>
-                      <p className="text-lg">{service.description}</p>
-                    </div>
-                    {/* Back Side */}
-                    <div className="back flex items-center justify-center h-full p-6 bg-primary text-white rounded-lg">
-                      <p className="text-xl justify-center text-white">{service.moreInfo}</p>
-                    </div>
+            <div key={index} className="group relative w-full h-80 perspective cursor-pointer">
+              {/* Card */}
+              <div className="card h-full">
+                <div className="card-inner h-full">
+                  {/* Front Side */}
+                  <div className="front flex flex-col items-center justify-center h-full p-6">
+                    <motion.img
+                      src={service.icon}
+                      alt={service.title}
+                      className="h-16 w-16 mx-auto mb-4 transition-transform duration-100 group-hover:scale-110"
+                      width={64} // Set width for responsive images
+                      height={64} // Set height for responsive images
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{ repeat: Infinity, duration: 4 }}
+                    />
+                    <h3 className="text-2xl font-semibold text-primary mb-4">{service.title}</h3>
+                    <p className="text-lg">{service.description}</p>
+                  </div>
+                  {/* Back Side */}
+                  <div className="back flex flex-col items-center justify-center h-full p-6 bg-primary text-white rounded-lg">
+                    <p className="text-xl text-white mb-4">{service.moreInfo}</p>
+                    <Link href={service.path} passHref>
+                      <button className="bg-white text-primary px-6 py-3 rounded-md hover:bg-gray-300 transition-colors">
+                        More
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
