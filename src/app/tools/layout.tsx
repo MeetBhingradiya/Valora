@@ -12,8 +12,9 @@ import {
   FaArrowLeft,
 } from "react-icons/fa"; // Import icons from react-icons
 import Base64 from "./base64-encoder-decoder/page";
-import logo from '../../public/assets/icon.svg';
-import Logo from '../../public/assets/valora.svg';
+import Image from "next/image";
+import logo from '../../../public/assets/icon.svg';
+import Logo from '../../../public/assets/valora.svg';
 import UUID from "./uuid-generator/page";
 import URL from "./url-encoder-decoder/page";
 import DateAndTime from "./date-time-utilities/page";
@@ -42,7 +43,7 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
     {
       name: "base64-encoder-decoder",
       label: "Base64 Encoder/Decoder",
-      icon: <FaCode className="text-green-400 mr-2" />, // Update to react-icons
+      icon: <FaCode className="text-green-400 mr-2" />,
     },
     {
       name: "uuid-generator",
@@ -68,9 +69,14 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
         className="w-full lg:w-80 p-6 text-primary bg-secondary"
         style={{ height: "100vh" }}
       >
-        <Link href="/">
-          <h1 className="tools-title text-2xl py-2">VALORA INFOTECH</h1>
-        </Link>
+        <div className="flex items-center mb-4">
+          <Link href="/">
+            <Image src={logo} alt="Main Logo" width={40} height={40} className="cursor-pointer" />
+          </Link>
+          <Link href="/" className="ml-2">
+            <Image src={Logo} alt="Valora Logo" width={100} height={50} className="cursor-pointer" />
+          </Link>
+        </div>
         <ul className="space-y-4">
           {/* Home Button */}
           <li>
