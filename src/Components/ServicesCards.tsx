@@ -1,79 +1,117 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
-const servicesData = [
+// Define the Service interface
+interface Service {
+  title: string;
+  description: string;
+  icon: string;
+  moreInfo: string;
+  path: string;
+}
+
+interface ServiceCardProps {
+  service: Service;
+  center?: boolean;
+}
+
+const servicesData: Service[] = [
   {
     title: 'Game Development',
-    description: 'Creating immersive and interactive game experiences across platforms.',
+    description: 'We create immersive, interactive games across platforms to captivate players.',
     icon: 'assets/service-cards/game-development.webp',
-    moreInfo: 'We design and develop engaging games with captivating stories, stunning visuals, and smooth mechanics, delivering a rich user experience for both casual and hardcore gamers.',
+    moreInfo: 'We create engaging games with captivating stories, smooth mechanics, and stunning visuals for both casual and hardcore gamers.',
     path: '/services/game-development',
   },
   {
     title: 'Web Development',
-    description: 'We build fast, responsive, and SEO-optimized websites tailored to your business needs.',
+    description: 'Fast, responsive, SEO-optimized websites tailored to meet your business needs.',
     icon: 'assets/service-cards/web.webp',
-    moreInfo: 'Our team specializes in modern web technologies to create stunning websites, including responsive designs, custom functionalities, and efficient performance optimizations to ensure a seamless user experience across all devices.',
+    moreInfo: 'Our team specializes in modern web technologies to deliver responsive designs and custom functionalities across devices.',
     path: '/services/web-development',
   },
   {
     title: 'Mobile App Development',
-    description: 'Delivering custom mobile solutions for iOS and Android platforms.',
+    description: 'Custom mobile apps for iOS and Android, focusing on user experience.',
     icon: 'assets/service-cards/app.webp',
-    moreInfo: 'We develop apps that are user-friendly, scalable, and robust, focusing on intuitive UI/UX designs, integrating cutting-edge technology, and ensuring high performance to meet your business objectives.',
+    moreInfo: 'We develop scalable apps with intuitive designs, high performance and seamless experiences across devices.',
     path: '/services/app-development',
   },
   {
     title: 'UI/UX Design',
-    description: 'Designing intuitive and engaging user interfaces to enhance customer experience.',
+    description: 'Intuitive, visually engaging interfaces to enhance user experience and engagement.',
     icon: 'assets/service-cards/user-experience.webp',
-    moreInfo: 'We prioritize user experience in our designs, creating intuitive and visually appealing interfaces that engage users and drive conversions across all platforms.',
+    moreInfo: 'Our designs prioritize user engagement, creating visually appealing, innovative and intuitive interfaces across platforms.',
     path: '/services/ui-ux-design',
   },
   {
     title: 'AI & ML',
-    description: 'Unlock new possibilities with AI-driven solutions for automation and insights.',
+    description: 'AI-driven solutions for automation, insights, and intelligent decision-making systems.',
     icon: 'assets/service-cards/ai-ml.webp',
-    moreInfo: 'Our AI and ML services empower businesses to harness the power of data, create predictive models, automate processes, and enhance decision-making with intelligent systems tailored to your needs.',
+    moreInfo: 'We help businesses utilize AI for predictive models, automation, and intelligent decision-making with data-driven solutions.',
     path: '/services/ai-ml',
   },
   {
     title: 'Cloud Solutions',
-    description: 'Scalable cloud solutions to streamline your operations and boost performance.',
+    description: 'Scalable cloud solutions for efficient operations, management, and cost savings.',
     icon: 'assets/service-cards/cloud.webp',
-    moreInfo: 'We provide secure and efficient cloud-based services to help businesses manage their data, applications, and infrastructure seamlessly, ensuring high scalability and reduced operational costs.',
+    moreInfo: 'We provide secure, scalable cloud services for seamless data and infrastructure management with reduce costs.',
     path: '/services/cloud-solutions',
   },
   {
     title: 'Digital Marketing',
-    description: 'Helping you reach a wider audience with effective digital marketing strategies.',
+    description: 'Data-driven strategies to boost online visibility, attract traffic, and engagement.',
     icon: 'assets/service-cards/marketing.webp',
-    moreInfo: 'We implement data-driven digital marketing strategies, focusing on SEO, content marketing, and social media to increase your online visibility and drive targeted traffic to your site.',
+    moreInfo: 'Our strategies increase online visibility through SEO, content marketing, and social media, driving targeted traffic to your site.',
     path: '/services/digital-marketing',
   },
 ];
 
+const ServiceCard = ({ service, center }: ServiceCardProps) => (
+  <div className={`group relative w-full h-80 perspective cursor-pointer ${center ? "lg:col-span-1 lg:col-start-2" : ""}`}>
+    <div className="card h-full">
+      <div className="card-inner h-full">
+        {/* Front Side */}
+        <div className="front flex flex-col items-center justify-center h-full p-6">
+          <motion.img
+            src={service.icon}
+            alt={service.title}
+            className="h-16 w-16 mx-auto mb-4 transition-transform duration-100 group-hover:scale-110"
+            width={64}
+            height={64}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 4 }}
+          />
+          <h3 className="text-2xl font-semibold text-primary mb-4">{service.title}</h3>
+          <p className="text-lg">{service.description}</p>
+        </div>
+        {/* Back Side */}
+        <div className="back flex flex-col items-center justify-center h-full p-6 bg-primary text-white rounded-lg">
+          <p className="text-xl text-white mb-4">{service.moreInfo}</p>
+          <Link href={service.path} passHref>
+            <button className="bg-white text-primary px-6 py-3 rounded-md hover:bg-gray-300 transition-colors">
+              More
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const Services = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  // Update scroll position
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    const handleScroll = () => setScrollPosition(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Calculate background position based on scroll
   const backgroundPosition = `center ${scrollPosition * 0.5}px`;
 
   return (
@@ -82,13 +120,12 @@ const Services = () => {
       className="py-24 text-white relative select-none"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/web-background.jpg')`,
-        backgroundAttachment: 'fixed',
-        backgroundPosition: backgroundPosition,
-        backgroundSize: 'cover',
+        backgroundAttachment: "fixed",
+        backgroundPosition,
+        backgroundSize: "cover",
       }}
     >
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center ">
-        {/* Title Section */}
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
         <motion.h2
           className="text-4xl sm:text-2xl md:text-5xl font-bold mb-12"
           initial={{ opacity: 0, y: -50 }}
@@ -98,39 +135,9 @@ const Services = () => {
           Our <span className="text-primary">Services</span>
         </motion.h2>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {servicesData.map((service, index) => (
-            <div key={index} className="group relative w-full h-80 perspective cursor-pointer">
-              {/* Card */}
-              <div className="card h-full">
-                <div className="card-inner h-full">
-                  {/* Front Side */}
-                  <div className="front flex flex-col items-center justify-center h-full p-6">
-                    <motion.img
-                      src={service.icon}
-                      alt={service.title}
-                      className="h-16 w-16 mx-auto mb-4 transition-transform duration-100 group-hover:scale-110"
-                      width={64} // Set width for responsive images
-                      height={64} // Set height for responsive images
-                      animate={{ y: [0, -10, 0] }}
-                      transition={{ repeat: Infinity, duration: 4 }}
-                    />
-                    <h3 className="text-2xl font-semibold text-primary mb-4">{service.title}</h3>
-                    <p className="text-lg">{service.description}</p>
-                  </div>
-                  {/* Back Side */}
-                  <div className="back flex flex-col items-center justify-center h-full p-6 bg-primary text-white rounded-lg">
-                    <p className="text-xl text-white mb-4">{service.moreInfo}</p>
-                    <Link href={service.path} passHref>
-                      <button className="bg-white text-primary px-6 py-3 rounded-md hover:bg-gray-300 transition-colors">
-                        More
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ServiceCard key={index} service={service} center={service.title === "Digital Marketing"} />
           ))}
         </div>
       </div>
