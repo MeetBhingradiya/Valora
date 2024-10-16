@@ -3,104 +3,105 @@
 import "@App/Styles/global.sass";
 import Link from "next/link";
 import React, { ReactNode } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faKey,
-    faCode,
-    faIdBadge,
-    faGlobe,
-    faClock,
-    faArrowLeft
-} from "@fortawesome/free-solid-svg-icons";
+  FaKey,
+  FaCode,
+  FaIdBadge,
+  FaGlobe,
+  FaClock,
+  FaArrowLeft,
+} from "react-icons/fa"; // Import icons from react-icons
 import Base64 from "./base64-encoder-decoder/page";
-import UUID from "./uuid-generator/page"; // Adjusted import paths
+import logo from '../../public/assets/icon.svg';
+import Logo from '../../public/assets/valora.svg';
+import UUID from "./uuid-generator/page";
 import URL from "./url-encoder-decoder/page";
 import DateAndTime from "./date-time-utilities/page";
 import { usePathname } from "next/navigation";
 
-export default function ToolsLayout({
-    children,
-}: {
-    children: ReactNode;
-}) {
-    const pathname = usePathname();
-    const tool = pathname?.split("/").pop();
+export default function ToolsLayout({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const tool = pathname?.split("/").pop();
 
-    const renderTool = () => {
-        switch (tool) {
-            case "base64-encoder-decoder":
-                return <Base64 />;
-            case "uuid-generator":
-                return <UUID />;
-            case "url-encoder-decoder":
-                return <URL />;
-            case "date-time-utilities":
-                return <DateAndTime />;
-            default:
-                return <Base64 />;
-        }
-    };
+  const renderTool = () => {
+    switch (tool) {
+      case "base64-encoder-decoder":
+        return <Base64 />;
+      case "uuid-generator":
+        return <UUID />;
+      case "url-encoder-decoder":
+        return <URL />;
+      case "date-time-utilities":
+        return <DateAndTime />;
+      default:
+        return <Base64 />;
+    }
+  };
 
-    const tools = [
-        {
-            name: "base64-encoder-decoder",
-            label: "Base64 Encoder/Decoder",
-            icon: faCode, color: "text-green-400"
-        },
-        {
-            name: "uuid-generator",
-            label: "UUID Generator",
-            icon: faIdBadge,
-            color: "text-purple-400"
-        },
-        {
-            name: "url-encoder-decoder",
-            label: "URL Encoder/Decoder",
-            icon: faGlobe,
-            color: "text-red-400"
-        },
-        {
-            name: "date-time-utilities",
-            label: "Date and Time Utilities",
-            icon: faClock,
-            color: "text-yellow-400"
-        },
-    ];
+  const tools = [
+    {
+      name: "base64-encoder-decoder",
+      label: "Base64 Encoder/Decoder",
+      icon: <FaCode className="text-green-400 mr-2" />, // Update to react-icons
+    },
+    {
+      name: "uuid-generator",
+      label: "UUID Generator",
+      icon: <FaIdBadge className="text-purple-400 mr-2" />,
+    },
+    {
+      name: "url-encoder-decoder",
+      label: "URL Encoder/Decoder",
+      icon: <FaGlobe className="text-red-400 mr-2" />,
+    },
+    {
+      name: "date-time-utilities",
+      label: "Date and Time Utilities",
+      icon: <FaClock className="text-yellow-400 mr-2" />,
+    },
+  ];
 
-    return (
-        <div className="flex">
-            {/* Sidebar Menu */}
-            <div className="w-full lg:w-72 p-6" style={{ background: "#334381", color: "white", height: "100vh" }}>
-                <Link href="/">
-                    <h1 className="tools-title text-2xl py-2">VALORA INFOTECH</h1>
-                </Link>
-                <ul className="space-y-4">
-                    {/* Home Button */}
-                    <li>
-                        <Link href="/" className="block p-2 rounded w-full text-left">
-                            <FontAwesomeIcon icon={faArrowLeft} className="mr-4 text-yellow-400" />
-                            Home
-                        </Link>
-                    </li>
-                    {/* Tools Menu Items */}
-                    {tools.map(({ name, label, icon, color }) => (
-                        <li key={name}>
-                            <Link
-                                href={`/tools/${name}`}
-                                className={`block p-2 rounded ${tool === name ? "bg-white text-black" : ""} hover:bg-white hover:text-black w-full text-left flex items-center`}
-                            >
-                                <FontAwesomeIcon icon={icon} className={`mr-4 ${color}`} />
-                                {label}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+  return (
+    <div className="flex">
+      {/* Sidebar Menu */}
+      <div
+        className="w-full lg:w-80 p-6 text-primary bg-secondary"
+        style={{ height: "100vh" }}
+      >
+        <Link href="/">
+          <h1 className="tools-title text-2xl py-2">VALORA INFOTECH</h1>
+        </Link>
+        <ul className="space-y-4">
+          {/* Home Button */}
+          <li>
+            <Link
+              href="/"
+              className="p-2 rounded w-full text-left flex items-center"
+            >
+              <FaArrowLeft className="mr-2 text-yellow-400" />
+              <span>Home</span>
+            </Link>
+          </li>
 
-            {/* Main content */}
-            <div className="flex-1 p-6">
-                {renderTool()}
-            </div>
-        </div>
-    );
+          {/* Tools Menu Items */}
+          {tools.map(({ name, label, icon }) => (
+            <li key={name}>
+              <Link
+                href={`/tools/${name}`}
+                className={`block p-2 rounded ${
+                  tool === name ? "bg-primary  text-white" : ""
+                } hover:bg-white hover:text-secondary w-full text-left flex items-center`}
+              >
+                {icon}
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Main content */}
+      <div className="flex-1 p-6">{renderTool()}</div>
+    </div>
+  );
 }

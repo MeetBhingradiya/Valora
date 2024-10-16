@@ -9,42 +9,49 @@ const servicesData = [
   {
     title: 'Game Development',
     description: 'Creating immersive and interactive game experiences across platforms.',
-    icon: 'assets/service-cards/game-development.png',
+    icon: 'assets/service-cards/game-development.webp',
     moreInfo: 'We design and develop engaging games with captivating stories, stunning visuals, and smooth mechanics, delivering a rich user experience for both casual and hardcore gamers.',
     path: '/services/game-development',
   },
   {
     title: 'Web Development',
     description: 'We build fast, responsive, and SEO-optimized websites tailored to your business needs.',
-    icon: 'assets/service-cards/web.png',
+    icon: 'assets/service-cards/web.webp',
     moreInfo: 'Our team specializes in modern web technologies to create stunning websites, including responsive designs, custom functionalities, and efficient performance optimizations to ensure a seamless user experience across all devices.',
     path: '/services/web-development',
   },
   {
     title: 'Mobile App Development',
     description: 'Delivering custom mobile solutions for iOS and Android platforms.',
-    icon: 'assets/service-cards/app.png',
+    icon: 'assets/service-cards/app.webp',
     moreInfo: 'We develop apps that are user-friendly, scalable, and robust, focusing on intuitive UI/UX designs, integrating cutting-edge technology, and ensuring high performance to meet your business objectives.',
     path: '/services/app-development',
   },
   {
     title: 'UI/UX Design',
     description: 'Designing intuitive and engaging user interfaces to enhance customer experience.',
-    icon: 'assets/service-cards/user-experience.png',
+    icon: 'assets/service-cards/user-experience.webp',
     moreInfo: 'We prioritize user experience in our designs, creating intuitive and visually appealing interfaces that engage users and drive conversions across all platforms.',
     path: '/services/ui-ux-design',
   },
   {
+    title: 'AI & ML',
+    description: 'Unlock new possibilities with AI-driven solutions for automation and insights.',
+    icon: 'assets/service-cards/ai-ml.webp',
+    moreInfo: 'Our AI and ML services empower businesses to harness the power of data, create predictive models, automate processes, and enhance decision-making with intelligent systems tailored to your needs.',
+    path: '/services/ai-ml',
+  },
+  {
     title: 'Cloud Solutions',
     description: 'Scalable cloud solutions to streamline your operations and boost performance.',
-    icon: 'assets/service-cards/cloud.png',
+    icon: 'assets/service-cards/cloud.webp',
     moreInfo: 'We provide secure and efficient cloud-based services to help businesses manage their data, applications, and infrastructure seamlessly, ensuring high scalability and reduced operational costs.',
     path: '/services/cloud-solutions',
   },
   {
     title: 'Digital Marketing',
     description: 'Helping you reach a wider audience with effective digital marketing strategies.',
-    icon: 'assets/service-cards/marketing.png',
+    icon: 'assets/service-cards/marketing.webp',
     moreInfo: 'We implement data-driven digital marketing strategies, focusing on SEO, content marketing, and social media to increase your online visibility and drive targeted traffic to your site.',
     path: '/services/digital-marketing',
   },
@@ -94,35 +101,36 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {servicesData.map((service, index) => (
-            <Link key={index} href={service.path} passHref>
-              <div
-                className="group relative w-full h-80 perspective cursor-pointer"
-              >
-                {/* Card */}
-                <div className="card h-full">
-                  <div className="card-inner h-full">
-                    {/* Front Side */}
-                    <div className="front flex flex-col items-center justify-center h-full p-6">
-                      <motion.img
-                        src={service.icon}
-                        alt={service.title}
-                        className="h-16 w-16 mx-auto mb-4 transition-transform duration-100 group-hover:scale-110"
-                        width={64} // Set width for responsive images
-                        height={64} // Set height for responsive images
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ repeat: Infinity, duration: 4 }}
-                      />
-                      <h3 className="text-2xl font-semibold text-primary mb-4">{service.title}</h3>
-                      <p className="text-lg">{service.description}</p>
-                    </div>
-                    {/* Back Side */}
-                    <div className="back flex items-center justify-center h-full p-6 bg-primary text-white rounded-lg">
-                      <p className="text-xl justify-center text-white">{service.moreInfo}</p>
-                    </div>
+            <div key={index} className="group relative w-full h-80 perspective cursor-pointer">
+              {/* Card */}
+              <div className="card h-full">
+                <div className="card-inner h-full">
+                  {/* Front Side */}
+                  <div className="front flex flex-col items-center justify-center h-full p-6">
+                    <motion.img
+                      src={service.icon}
+                      alt={service.title}
+                      className="h-16 w-16 mx-auto mb-4 transition-transform duration-100 group-hover:scale-110"
+                      width={64} // Set width for responsive images
+                      height={64} // Set height for responsive images
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{ repeat: Infinity, duration: 4 }}
+                    />
+                    <h3 className="text-2xl font-semibold text-primary mb-4">{service.title}</h3>
+                    <p className="text-lg">{service.description}</p>
+                  </div>
+                  {/* Back Side */}
+                  <div className="back flex flex-col items-center justify-center h-full p-6 bg-primary text-white rounded-lg">
+                    <p className="text-xl text-white mb-4">{service.moreInfo}</p>
+                    <Link href={service.path} passHref>
+                      <button className="bg-white text-primary px-6 py-3 rounded-md hover:bg-gray-300 transition-colors">
+                        More
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

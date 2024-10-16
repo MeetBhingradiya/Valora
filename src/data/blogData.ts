@@ -1,9 +1,9 @@
 const blogs = [
     {
-      slug: 'understanding-react-hooks',
-      title: 'Understanding React Hooks',
-      summary: 'Learn how React hooks can simplify your components...',
-      content: `
+        slug: 'understanding-react-hooks',
+        title: 'Understanding React Hooks',
+        summary: 'Learn how React hooks can simplify your components...',
+        content: `
         **React hooks** are functions that let you use state and other React features in functional components. Hooks simplify the way we handle state, side effects, and other functionalities, making functional components more powerful.
         
         ### **1. useState**
@@ -40,50 +40,45 @@ const blogs = [
   
         React hooks have become an essential part of the React ecosystem, providing developers with **easier**, **more readable**, and **more maintainable** code.
       `,
-      image: '/assets/blog/React_Hooks.webp',
+        image: '/assets/blog/React_Hooks.webp',
     },
     {
-      slug: 'next-js-routing-explained',
-      title: 'Next.js Routing Explained',
-      summary: 'A deep dive into routing in Next.js for building modern web apps...',
-      content: `
-        **Next.js** has a powerful and simple routing system that allows you to create pages by just creating files in the **pages** directory. The routing system is built on the concept of **file-based routing**, making it straightforward to add new pages to your application.
+        slug: 'next-js-routing-explained',
+        title: 'Next.js Routing Explained',
+        summary: 'A deep dive into routing in Next.js for building modern web apps...',
+        content: `
+        **Next.js** offers a powerful and simple routing system that lets you create pages by just creating files in the **pages** directory. This file-based routing makes it easy to add new pages.
   
-        ### **Static Routing**
+        ### Static Routing
         Each file you create in the **pages** directory becomes a route:
         - **/index.js** → **/** (Homepage)
         - **/about.js** → **/about**
   
-        This approach is easy to understand and maintain as your project grows.
-  
-        ### **Dynamic Routing**
-        If you need **dynamic routes**, use brackets (\`[param]\`) to define the route. For example:
+        ### Dynamic Routing
+        For **dynamic routes**, use brackets (\`[param]\`). For example:
         \`\`\`jsx
         // File: /pages/post/[id].js
         import { useRouter } from 'next/router';
   
         const Post = () => {
-          const router = useRouter();
-          const { id } = router.query;
-  
+          const { id } = useRouter().query;
           return <div>Post ID: {id}</div>;
         };
   
         export default Post;
         \`\`\`
-        The route \`/post/[id]\` will dynamically match routes like **/post/1** or **/post/hello**, giving you flexibility.
+        This route will match URLs like **/post/1** or **/post/hello**, giving you flexibility.
   
-        ### **API Routes**
-        **API routes** are available in Next.js, and you can create serverless functions by adding JavaScript files to the **pages/api** directory. For example:
-        - **/pages/api/hello.js**:
+        ### API Routes
+        You can create **API routes** by adding files to the **pages/api** directory. For example:
         \`\`\`jsx
         export default function handler(req, res) {
           res.status(200).json({ message: "Hello, World!" });
         }
         \`\`\`
   
-        ### **Link Component**
-        The **Link** component in Next.js is used to navigate between pages without a full reload:
+        ### Link Component
+        Use the **Link** component for navigation without reloading the page:
         \`\`\`jsx
         import Link from 'next/link';
   
@@ -95,18 +90,17 @@ const blogs = [
           );
         }
         \`\`\`
-        - **Linking without reload** improves the user experience by making navigation faster and smoother.
+        Linking without reload improves user experience by making navigation faster.
   
-        ### **Benefits of Next.js Routing**
-        - **Automatic Code Splitting**: Pages are loaded only when they are needed, leading to faster load times.
-        - **SEO-friendly**: Static pages improve **search engine optimization**.
-        - **Simplified Routing**: Just by creating a file, you have a route.
+        ### Benefits of Next.js Routing
+        - **Automatic Code Splitting**: Pages load only when needed, improving performance.
+        - **SEO-friendly**: Static pages enhance search engine optimization.
+        - **Simplified Routing**: Just create a file, and it becomes a route.
   
-        Next.js’s routing system combines **simplicity**, **flexibility**, and **power** to provide a seamless developer experience for building modern, optimized web applications.
+        Next.js provides a simple yet powerful routing system for modern web applications.
       `,
-      image: '/images/nextjs-routing.jpg',
+        image: '/images/nextjs-routing.jpg',
     },
-    // More blog entries...
-  ];
-  
-  export default blogs;
+];
+
+export default blogs;

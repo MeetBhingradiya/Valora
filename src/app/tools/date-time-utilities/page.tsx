@@ -1,41 +1,43 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const DateTimeUtilities: React.FC = () => {
-  const [currentMilliseconds] = useState<number>(Date.now());
-  const [currentSeconds] = useState<number>(Math.floor(Date.now() / 1000));
-  const [currentDate] = useState<Date>(new Date());
+  const [currentMilliseconds, setCurrentMilliseconds] = useState<number>(0);
+  const [currentSeconds, setCurrentSeconds] = useState<number>(0);
+  const [currentDate, setCurrentDate] = useState<Date>(new Date());
   const [iconStates, setIconStates] = useState<Record<string, any>>({
     milliseconds: faCopy,
     seconds: faCopy,
     date: faCopy,
     time: faCopy,
-    dateFromSeconds: faCopy,
-    dateFromMilliseconds: faCopy,
-    convertedSeconds: faCopy,
-    convertedMilliseconds: faCopy,
   });
 
   const [inputValue, setInputValue] = useState<string>(
     Math.floor(Date.now() / 1000).toString()
   );
-  const [dateFromSeconds, setDateFromSeconds] = useState<string>(
-    new Date(currentSeconds * 1000).toString()
-  );
-  const [dateFromMilliseconds, setDateFromMilliseconds] = useState<string>(
-    new Date(Date.now()).toString()
-  );
+  const [dateFromSeconds, setDateFromSeconds] = useState<string>("");
+  const [dateFromMilliseconds, setDateFromMilliseconds] = useState<string>("");
 
-  const [dateString, setDateString] = useState<string>(new Date().toISOString());
-  const [convertedSeconds, setConvertedSeconds] = useState<number>(
-    Math.floor(currentDate.getTime() / 1000)
-  );
-  const [convertedMilliseconds, setConvertedMilliseconds] = useState<number>(
-    currentDate.getTime()
-  );
+  const [dateString, setDateString] = useState<string>("");
+  const [convertedSeconds, setConvertedSeconds] = useState<number>(0);
+  const [convertedMilliseconds, setConvertedMilliseconds] = useState<number>(0);
+
+  useEffect(() => {
+    const updateTime = () => {
+      setCurrentMilliseconds(Date.now());
+      setCurrentSeconds(Math.floor(Date.now() / 1000));
+      setCurrentDate(new Date());
+    };
+
+    updateTime(); // Initial update
+
+    const interval = setInterval(updateTime, 1000); // Update every second
+
+    return () => clearInterval(interval); // Clean up interval on unmount
+  }, []);
 
   useEffect(() => {
     if (!isNaN(parseFloat(inputValue)) && inputValue.trim() !== "") {

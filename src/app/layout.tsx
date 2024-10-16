@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "@App/Styles/global.sass"; // Ensure the path is correct and includes your global styles
+import "github-markdown-css/github-markdown-light.css"; // Include the GitHub markdown CSS
 import { ReactNode } from "react";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Poppins } from 'next/font/google'

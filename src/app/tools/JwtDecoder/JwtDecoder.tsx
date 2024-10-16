@@ -1,4 +1,4 @@
-// "use client"; // This marks the component as a client component
+// "use client";
 
 // import React, { useState, useEffect, useRef } from 'react';
 // import { SignJWT, importJWK } from 'jose';
@@ -120,7 +120,7 @@
 //       if (jwtData.algorithm.includes('HS')) {
 //         key = new TextEncoder().encode(keys[jwtData.algorithm].secret); // HMAC keys
 //       } else {
-//         key = await importJWK(keys[jwtData.algorithm].jwk, { alg: jwtData.algorithm }); // RSA/EC keys
+//         key = await importJWK(keys[jwtData.algorithm].jwk, { alg: jwtData.algorithm });
 //       }
 
 //       const token = await new SignJWT(jwtData.payload)
