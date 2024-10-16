@@ -5,7 +5,21 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const servicesData = [
+// Define the Service interface
+interface Service {
+  title: string;
+  description: string;
+  icon: string;
+  moreInfo: string;
+  path: string;
+}
+
+interface ServiceCardProps {
+  service: Service;
+  center?: boolean;
+}
+
+const servicesData: Service[] = [
   {
     title: 'Game Development',
     description: 'We create immersive, interactive games across platforms to captivate players.',
@@ -57,7 +71,7 @@ const servicesData = [
   },
 ];
 
-const ServiceCard = ({ service, center }) => (
+const ServiceCard = ({ service, center }: ServiceCardProps) => (
   <div className={`group relative w-full h-80 perspective cursor-pointer ${center ? "lg:col-span-1 lg:col-start-2" : ""}`}>
     <div className="card h-full">
       <div className="card-inner h-full">
