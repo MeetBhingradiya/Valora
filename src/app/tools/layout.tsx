@@ -63,10 +63,10 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
   ];
 
   return (
-    <div className="flex">
+    <div className="flex flex-col lg:flex-row">
       {/* Sidebar Menu */}
       <div
-        className="w-full lg:w-80 p-6 text-primary bg-secondary"
+        className="w-full lg:w-80 p-6 text-primary bg-gray-800 shadow-lg"
         style={{ height: "100vh" }}
       >
         <div className="flex items-center mb-4">
@@ -82,7 +82,7 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
           <li>
             <Link
               href="/"
-              className="p-2 rounded w-full text-left flex items-center"
+              className="p-2 rounded w-full text-left flex items-center text-gray-300 hover:bg-gray-700"
             >
               <FaArrowLeft className="mr-2 text-yellow-400" />
               <span>Home</span>
@@ -95,8 +95,8 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
               <Link
                 href={`/tools/${name}`}
                 className={`block p-2 rounded ${
-                  tool === name ? "bg-primary  text-white" : ""
-                } hover:bg-white hover:text-secondary w-full text-left flex items-center`}
+                  tool === name ? "bg-primary text-white" : "text-gray-300"
+                } hover:bg-gray-700 w-full text-left flex items-center`}
               >
                 {icon}
                 {label}
@@ -107,7 +107,7 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
       </div>
 
       {/* Main content */}
-      <div className="flex-1 p-6">{renderTool()}</div>
+      <div className="flex-1 p-6 bg-gray-100">{renderTool()}</div>
     </div>
   );
 }
