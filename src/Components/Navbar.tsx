@@ -14,6 +14,7 @@ const Navbar = () => {
     isMenuOpen: false,
     isServicesOpen: false,
     isMobileServicesOpen: false,
+    isToolsOpen: false,
   });
   const servicesMenuRef = useRef<HTMLUListElement>(null);
   const toolsMenuRef = useRef(null);
