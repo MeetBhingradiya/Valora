@@ -2,6 +2,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';  // Import Link for navigation
 
 const portfolioData = [
   {
@@ -23,7 +24,6 @@ const portfolioData = [
     link: '/portfolio/saas-crm',
   },
 ];
-
 
 const Portfolio = () => {
   return (
@@ -66,6 +66,20 @@ const Portfolio = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* More Button */}
+        <div className="mt-12">
+          <Link href="/portfolio" passHref>
+            <motion.a
+              className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-white hover:text-primary transition-colors font-semibold text-lg"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              View More Projects
+            </motion.a>
+          </Link>
         </div>
       </div>
     </section>

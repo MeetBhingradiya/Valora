@@ -1,8 +1,8 @@
 "use client";
 
 import { FaRocket, FaLightbulb, FaUsers } from "react-icons/fa";
-
 import { motion } from 'framer-motion';
+import Link from 'next/link'; // Import the Link component
 
 const About = () => {
     return (
@@ -101,6 +101,15 @@ const About = () => {
                             </p>
                         </div>
                     </div>
+                </div>
+
+                {/* View More Button */}
+                <div className="mt-12">
+                    <Link href="/about">
+                        <button className="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-white hover:text-primary transition duration-300">
+                            View More
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>

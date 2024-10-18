@@ -2,7 +2,7 @@
 
 import "@App/Styles/global.sass";
 import Link from "next/link";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import {
   FaKey,
   FaCode,
@@ -10,6 +10,8 @@ import {
   FaGlobe,
   FaClock,
   FaArrowLeft,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa"; // Import icons from react-icons
 import Base64 from "./base64-encoder-decoder/page";
 import Image from "next/image";
@@ -23,6 +25,9 @@ import { usePathname } from "next/navigation";
 export default function ToolsLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const tool = pathname?.split("/").pop();
+
+  // State for sidebar toggle
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const renderTool = () => {
     switch (tool) {
@@ -64,11 +69,31 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
 
   return (
     <div className="flex flex-col lg:flex-row">
+      {/* Toggle Button for Mobile */}
+      <button
+        className="lg:hidden p-4 text-gray-800 focus:outline-none"
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+      >
+        {isSidebarOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+      </button>
+
       {/* Sidebar Menu */}
       <div
-        className="w-full lg:w-80 p-6 text-primary bg-gray-800 shadow-lg"
+        className={`${
+          isSidebarOpen ? "block" : "hidden"
+        } lg:block w-full lg:w-80 p-6 text-primary bg-gray-800 shadow-lg lg:relative fixed z-50 transition-transform transform ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
         style={{ height: "100vh" }}
       >
+        {/* Close Button inside the Sidebar */}
+        <button
+          className="lg:hidden absolute top-4 right-4 text-gray-300 focus:outline-none"
+          onClick={() => setIsSidebarOpen(false)}
+        >
+          <FaTimes size={24} />
+        </button>
+
         <div className="flex items-center mb-4">
           <Link href="/">
             <Image src={logo} alt="Main Logo" width={40} height={40} className="cursor-pointer" />
@@ -77,12 +102,14 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
             <Image src={Logo} alt="Valora Logo" width={100} height={50} className="cursor-pointer" />
           </Link>
         </div>
+
         <ul className="space-y-4">
           {/* Home Button */}
           <li>
             <Link
               href="/"
               className="p-2 rounded w-full text-left flex items-center text-gray-300 hover:bg-gray-700"
+              onClick={() => setIsSidebarOpen(false)}
             >
               <FaArrowLeft className="mr-2 text-yellow-400" />
               <span>Home</span>
@@ -97,6 +124,7 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
                 className={`block p-2 rounded ${
                   tool === name ? "bg-primary text-white" : "text-gray-300"
                 } hover:bg-gray-700 w-full text-left flex items-center`}
+                onClick={() => setIsSidebarOpen(false)} // Close sidebar on selection
               >
                 {icon}
                 {label}
