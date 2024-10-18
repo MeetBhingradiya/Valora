@@ -1,6 +1,6 @@
 "use client";
 
-import { FaRocket, FaLightbulb, FaTrophy } from "react-icons/fa";
+import { FaRocket, FaLightbulb } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
@@ -19,7 +19,6 @@ const DetailedAbout = () => {
           >
             Welcome to <span className="text-white">Valora Infotech</span>
           </motion.h2>
-
           {/* History Section */}
           <section className="my-16 relative bg-gradient-to-r from-primary to-gray-800 py-16 px-8 md:px-16 rounded-lg shadow-lg">
             <div className="max-w-6xl mx-auto">
@@ -73,7 +72,7 @@ const DetailedAbout = () => {
               </motion.div>
             </div>
           </section>
-
+          {/* Our Expertise */}
           <section className="my-16 relative bg-gradient-to-b from-secondary to-gray-900 py-20 px-8 md:px-16 rounded-lg">
             <h3 className="text-4xl text-primary mb-12 text-center">
               Our Expertise
@@ -176,6 +175,9 @@ const DetailedAbout = () => {
                 </p>
               </motion.div>
 
+              {/* Placeholder to shift the 7th item */}
+              <div className="hidden lg:block"></div>
+
               {/* Digital Marketing Section */}
               <motion.div
                 className="bg-white bg-opacity-10 rounded-lg shadow-lg p-8 hover:bg-opacity-20 transition duration-300 h-[350px] flex flex-col justify-center items-center"
@@ -193,7 +195,6 @@ const DetailedAbout = () => {
               </motion.div>
             </div>
           </section>
-
           {/* Team Profiles */}
           <section className="my-16">
             <h3 className="text-4xl text-primary mb-6">Meet Our Team</h3>
@@ -226,7 +227,6 @@ const DetailedAbout = () => {
               </div>
             </div>
           </section>
-
           {/* Mission, Vision, and Values */}
           <section className="my-16">
             <h3 className="text-4xl text-primary mb-6">
@@ -255,7 +255,6 @@ const DetailedAbout = () => {
               </div>
             </div>
           </section>
-
           Client Testimonials
           <section className="my-16">
             <h3 className="text-4xl text-primary mb-6">Client Testimonials</h3>
@@ -264,7 +263,6 @@ const DetailedAbout = () => {
               company. Their expertise and dedication are unmatched."
             </p>
           </section>
-
           {/* Achievements and Future Goals */}
           <section className="my-16">
             <h3 className="text-4xl text-primary mb-6">
