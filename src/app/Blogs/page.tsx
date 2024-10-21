@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 import React from "react";
+import blog from "../../data/blogData";
 
 const Blogs = [
     {
@@ -88,24 +89,24 @@ const Blogs = [
         date: 'Sep 29, 2024',
         readTime: '4 min read',
     },
-    // {
-    //     title: 'Getting Started with GraphQL',
-    //     summary: 'Introduction to GraphQL and its advantages over traditional REST APIs.',
-    //     slug: 'getting-started-with-graphql',
-    //     image: '/images/graphql-intro.jpg',
-    //     author: 'Jane Smith',
-    //     date: 'Sep 29, 2024',
-    //     readTime: '4 min read',
-    // },
-    // {
-    //     title: 'Enhancing Performance with React.memo',
-    //     summary: 'Learn how React.memo can optimize performance in your React applications.',
-    //     slug: 'enhancing-performance-react-memo',
-    //     image: '/images/react-memo.jpg',
-    //     author: 'Jane Smith',
-    //     date: 'Sep 29, 2024',
-    //     readTime: '4 min read',
-    // },
+    {
+        title: 'Getting Started with GraphQL',
+        summary: 'Introduction to GraphQL and its advantages over traditional REST APIs.',
+        slug: 'getting-started-with-graphql',
+        image: '/images/graphql-intro.jpg',
+        author: 'Jane Smith',
+        date: 'Sep 29, 2024',
+        readTime: '4 min read',
+    },
+    {
+        title: 'Enhancing Performance with React.memo',
+        summary: 'Learn how React.memo can optimize performance in your React applications.',
+        slug: 'enhancing-performance-react-memo',
+        image: '/images/react-memo.jpg',
+        author: 'Jane Smith',
+        date: 'Sep 29, 2024',
+        readTime: '4 min read',
+    },
 ];
 
 
@@ -121,7 +122,7 @@ const Blog = () => {
     }>>([]);
 
     React.useEffect(() => {
-        setBlogs(Blogs); // Set blogs only on mount
+        setBlogs(blog); // Use the imported blog data
     }, []);
 
     return (
@@ -136,8 +137,8 @@ const Blog = () => {
                                 className="bg-white rounded-lg shadow-md transition transform hover:scale-105 hover:shadow-2xl flex flex-col"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4, delay: 0.1 }} // Removed dynamic delay
-                                viewport={{ once: true }}  // Ensure animation only happens once
+                                transition={{ duration: 0.4, delay: 0.1 }}
+                                viewport={{ once: true }}
                             >
                                 <img
                                     src={blog?.image}
@@ -149,7 +150,7 @@ const Blog = () => {
                                     <p className="text-gray-500 mb-4 flex-grow">{blog?.summary}</p>
                                     <div className="flex items-center gap-2 pt-2 text-xs text-gray-500">
                                         <Link href={`/author/${blog?.author ? blog.author.replace(/\s+/g, '-').toLowerCase() : "unknown"}`}>
-                                            <div className="">
+                                            <div>
                                                 <span className="text-green-700 capitalize">{blog?.author}</span>
                                                 <div>
                                                     <span>{blog?.date}</span>

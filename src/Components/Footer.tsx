@@ -1,4 +1,5 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import Portfolio from './Portfolio';
 
 const Footer = () => {
     return (
@@ -20,7 +21,7 @@ const Footer = () => {
                         <h3 className="text-xl font-semibold text-white mb-4">Quick Links</h3>
                         <ul>
                             <li className="mb-2">
-                                <a href="/#about" className="hover:text-primary transition-colors">
+                                <a href="/about" className="hover:text-primary transition-colors">
                                     About Us
                                 </a>
                             </li>
@@ -41,7 +42,7 @@ const Footer = () => {
                             </li>
                             <li className="mb-2">
                                 <a href="/tools" className="hover:text-primary transition-colors">
-                                    Tools
+                                    Portfolio
                                 </a>
                             </li>
                         </ul>
