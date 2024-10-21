@@ -1,8 +1,8 @@
 // app/services/app-development/page.tsx
 import Image from 'next/image';
 import Link from 'next/link';
-import Navbar from '../../../Components/Navbar';
-import Footer from '../../../Components/Footer';
+import Navbar from '@App/components/Navbar';
+import Footer from '@App/components/Footer';
 
 const MobileDevelopmentPage = () => {
   return (
