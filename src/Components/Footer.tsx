@@ -1,5 +1,4 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
-import Portfolio from './Portfolio';
 import { ThemeSelect } from './ThemeSelect';
 
 const Footer = () => {
