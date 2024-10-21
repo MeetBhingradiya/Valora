@@ -8,16 +8,39 @@ const Contact = () => {
     email: '',
     message: '',
   });
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+  const onSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const formPayload = new FormData();
+    formPayload.append("access_key", "c79d1361-f4dd-40f5-9fd3-48550bb65493");
+    formPayload.append("name", formData.name);
+    formPayload.append("email", formData.email);
+    formPayload.append("message", formData.message);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+      },
+      body: formPayload,
+    }).then((res) => res.json());
+
+    if (res.success) {
+      setSuccess(true);
+      // Clear the form fields after showing the success message
+      setFormData({ name: '', email: '', message: '' });
+
+      // Hide success message after 3 seconds
+      setTimeout(() => {
+        setSuccess(false);
+      }, 3000);
+    }
   };
 
   return (
@@ -26,9 +49,11 @@ const Contact = () => {
         <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Contact <span className="text-primary">Us</span></h2>
         <p className="mb-12 text-lg text-white">We&apos;d love to hear from you! Please fill out the form below or reach out to us directly.</p>
 
+        {success && <div className="mb-4 text-green-500">Message sent successfully!</div>}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md">
+          <form onSubmit={onSubmit} className="bg-white p-8 rounded-lg shadow-md">
             <h3 className="text-2xl font-semibold mb-4">Get in Touch</h3>
             <div className="mb-4">
               <input
@@ -71,7 +96,6 @@ const Contact = () => {
           <div className="bg-white p-8 rounded-lg shadow-md">
             <h3 className="text-2xl font-semibold mb-4">Our Contact Information</h3>
             <p className="mb-2"><strong>Email:</strong> admin@valorainfotech.com</p>
-            {/* <p className="mb-2"><strong>Phone:</strong> +1 (123) 456-7890</p>  */}
             <p className="mb-4"><strong>Address:</strong> 207, Akshar Square B/h Cancer Hospital, Dabholi Road, Surat, Gujarat</p>
 
             {/* Map Section */}

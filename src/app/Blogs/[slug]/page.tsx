@@ -41,15 +41,15 @@ const BlogPost = () => {
             <div className="min-h-screen p-8 pt-28 bg-[#f5f5f5]">
                 {/* Hero Section */}
                 {/* <div
-          className="w-full h-80 bg-cover bg-center rounded-md shadow-md"
-          style={{
-            backgroundImage: `url(${blog.image})`,
-          }}
-        >
-          <div className="bg-black bg-opacity-50 w-full h-full flex items-center justify-center">
-            <h1 className="text-5xl font-bold text-white">{blog.title}</h1>
-          </div>
-        </div> */}
+                    className="w-full h-80 bg-cover bg-center rounded-md shadow-md"
+                    style={{
+                        backgroundImage: `url(${blog.image})`,
+                    }}
+                >
+                    <div className="bg-black bg-opacity-50 w-full h-full flex items-center justify-center">
+                        <h1 className="text-5xl font-bold text-white">{blog.title}</h1>
+                    </div>
+                </div> */}
 
                 {/* Blog Content */}
                 <div className="max-w-4xl mx-auto bg-white p-8 mt-8 rounded-lg shadow-lg overflow-wrap break-words">
@@ -71,14 +71,13 @@ const BlogPost = () => {
                     </div>
                     <div className="text-gray-800 leading-relaxed  justify-center mx-14">
                         <ReactMarkdown
-                            className="prose prose-lg"
+                            className="prose prose-lg blog-container"
                             remarkPlugins={[remarkGfm]}
                             rehypePlugins={[rehypeHighlight]}
                         >
-                            {JSON.stringify(blog.content, null, 2)}
+                            {blog.content as string}
                         </ReactMarkdown>
 
-                        {/* <MarkdownRenderBox text={JSON.stringify(blog.content, null, 2)} /> */}
                     </div>
                 </div>
 
