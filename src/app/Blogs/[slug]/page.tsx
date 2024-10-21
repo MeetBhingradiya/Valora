@@ -19,8 +19,13 @@ const BlogPost = () => {
   const { slug } = useParams();
   const [blog, setBlog] = useState<{
     title: string;
-    content: string;
+    content?: string;
     image: string;
+    summary?: string;
+    slug: string;
+    author?: string;
+    date?: string;
+    readTime?: string;
   } | null>(null);
 
   useEffect(() => {
@@ -52,8 +57,8 @@ const BlogPost = () => {
                     </div>
                 </div> */}
 
-         {/* Blog Content */}
-         <div className="max-w-7xl mx-auto bg-white p-4 lg:p-8 rounded-lg shadow-lg overflow-wrap break-words">
+        {/* Blog Content */}
+        <div className="max-w-7xl mx-auto bg-white p-4 lg:p-8 rounded-lg shadow-lg overflow-wrap break-words">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-6">
             <span className="text-gray-500 text-sm lg:text-base">
               Author: {blog.author} | Date: {blog.date}
@@ -61,8 +66,9 @@ const BlogPost = () => {
             <div className="flex space-x-4 mt-4 lg:mt-0">
               <FacebookShareButton
                 url={window.location.href}
-                quote={`Check out this blog: ${blog.title}`}
+                title={`Check out this blog: ${blog.title}`} // Remove or replace this with description if not applicable
                 className="hover:opacity-80"
+                // description={`Check out this blog: ${blog.title}`} // Uncomment this if using description instead of quote
               >
                 <FacebookIcon size={32} round />
               </FacebookShareButton>
@@ -77,7 +83,7 @@ const BlogPost = () => {
 
               <LinkedinShareButton
                 url={window.location.href}
-                summary={`Check out this blog: ${blog.title}`}
+                title={`Check out this blog: ${blog.title}`} // Use title instead of summary
                 className="hover:opacity-80"
               >
                 <LinkedinIcon size={32} round />

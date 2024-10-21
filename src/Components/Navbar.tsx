@@ -14,6 +14,7 @@ const Navbar = () => {
     isMenuOpen: false,
     isServicesOpen: false,
     isMobileServicesOpen: false,
+    isMobileToolsOpen: false,
     isToolsOpen: false,
   });
   const servicesMenuRef = useRef<HTMLUListElement>(null);
@@ -44,6 +45,7 @@ const Navbar = () => {
           ...prevState,
           isServicesOpen: false,
           isMobileServicesOpen: false,
+          isMobileToolsOpen: false,
         }));
       }
     };

@@ -1,4 +1,16 @@
-const blogs = [
+export type BlogType = {
+  title: string;
+  content?: string;
+  image: string;
+  summary?: string;
+  slug: string;
+  author?: string;
+  date?: string;
+  readTime?: string;
+};
+
+
+const blogs: BlogType[] = [
   {
     slug: "understanding-react-hooks",
     title: "Understanding React Hooks",
