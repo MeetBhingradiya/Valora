@@ -36,7 +36,7 @@ export default function RootLayout({
             <head>
                 <meta charSet="utf-8" />
                 <script defer src="/js/particles.js"></script>
-                {/* <GoogleAnalytics gaId="G-1MLJGLLSTX" /> */}
+                <GoogleAnalytics gaId="G-1MLJGLLSTX" />
             </head>
             <body className={"bg-gray-100 text-gray-900 font-poppins " + poppins.className}>
                 <ThemeProvider
