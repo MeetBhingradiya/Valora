@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import Navbar from '../../Components/Navbar';
-import Footer from '../../Components/Footer';
+import Navbar from '@App/components/Navbar';
+import Footer from '@App/components/Footer';
 import React from "react";
 import blogData from "../../data/blogData"; // Ensure you're importing correctly
 
