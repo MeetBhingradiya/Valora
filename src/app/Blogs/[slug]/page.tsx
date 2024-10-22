@@ -44,37 +44,47 @@ const BlogPost = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen p-4 pt-12 mt-14 bg-[#f5f5f5] lg:p-8">
-        {/* Hero Section */}
-        {/* <div
-                    className="w-full h-80 bg-cover bg-center rounded-md shadow-md"
-                    style={{
-                        backgroundImage: `url(${blog.image})`,
-                    }}
-                >
-                    <div className="bg-black bg-opacity-50 w-full h-full flex items-center justify-center">
-                        <h1 className="text-5xl font-bold text-white">{blog.title}</h1>
-                    </div>
-                </div> */}
 
-        {/* Blog Content */}
-        <div className="max-w-7xl mx-auto bg-white p-4 lg:p-8 rounded-lg shadow-lg overflow-wrap break-words">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-6">
-            <span className="text-gray-500 text-sm lg:text-base">
-              Author: {blog.author} | Date: {blog.date}
-            </span>
-            <div className="flex space-x-4 mt-4 lg:mt-0">
+      {/* Hero Section
+      <div
+        className="relative h-64 sm:h-72 md:h-80 lg:h-96 w-full bg-cover bg-center flex items-center justify-center"
+        style={{
+          backgroundImage: `url(${blog.image})`,
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <h1 className="relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center px-4 md:px-8 lg:px-16">
+          {blog.title}
+        </h1>
+      </div> */}
+
+      {/* Blog Content */}
+      <div className="min-h-screen p-4 pt-12 mt-14 bg-gray-100 lg:p-8">
+        <div className="max-w-6xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-lg">
+          {/* Meta Info */}
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 space-y-4 lg:space-y-0">
+            <div className="text-gray-500 text-sm lg:text-base">
+              <p>
+                By{" "}
+                <span className="font-semibold text-gray-800">
+                  {blog.author}
+                </span>
+              </p>
+              <p>
+                {blog.date} · {blog.readTime}
+              </p>
+            </div>
+            <div className="flex space-x-4">
               <FacebookShareButton
-                url={window.location.href}
-                title={`Check out this blog: ${blog.title}`} // Remove or replace this with description if not applicable
+                url={typeof window !== "undefined" ? window.location.href : ""}
+                title={`Check out this blog: ${blog.title}`}
                 className="hover:opacity-80"
-                // description={`Check out this blog: ${blog.title}`} // Uncomment this if using description instead of quote
               >
                 <FacebookIcon size={32} round />
               </FacebookShareButton>
 
               <TwitterShareButton
-                url={window.location.href}
+                url={typeof window !== "undefined" ? window.location.href : ""}
                 title={`Check out this blog: ${blog.title}`}
                 className="hover:opacity-80"
               >
@@ -82,8 +92,8 @@ const BlogPost = () => {
               </TwitterShareButton>
 
               <LinkedinShareButton
-                url={window.location.href}
-                title={`Check out this blog: ${blog.title}`} // Use title instead of summary
+                url={typeof window !== "undefined" ? window.location.href : ""}
+                title={`Check out this blog: ${blog.title}`}
                 className="hover:opacity-80"
               >
                 <LinkedinIcon size={32} round />
@@ -91,33 +101,35 @@ const BlogPost = () => {
             </div>
           </div>
 
-          <div className="mb-6">
+          {/* Blog Image */}
+          <div className="mb-8">
             <img
               src={blog.image}
               alt={blog.title}
-              className="w-full h-auto object-cover rounded-md"
+              className="w-full h-auto object-cover rounded-md shadow-md"
             />
           </div>
 
-          <div className="text-gray-800 leading-relaxed mx-auto max-w-3xl">
-            {/* Render HTML content using dangerouslySetInnerHTML */}
+          {/* Blog Content */}
+          <div className="prose prose-sm sm:prose lg:prose-lg mx-auto text-gray-800 leading-relaxed">
             <div
-              className="prose prose-sm sm:prose lg:prose-lg blog-container"
+              className="blog-content"
               dangerouslySetInnerHTML={{ __html: blog.content as string }}
             />
           </div>
         </div>
 
         {/* Back Button */}
-        <div className="max-w-7xl mx-auto mt-6 flex justify-center">
+        <div className="max-w-6xl mx-auto mt-8 flex justify-center">
           <button
-            className="p-3 lg:p-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 w-full max-w-xs"
+            className="p-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg hover:shadow-lg hover:scale-105 transform transition duration-300 ease-in-out"
             onClick={() => window.history.back()}
           >
             Back to All Blogs
           </button>
         </div>
       </div>
+
       <Footer />
     </>
   );

@@ -394,7 +394,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/#about"
+              href="/about"
               onClick={handleLinkClick}
               className="block px-4 py-2 text-center"
             >
