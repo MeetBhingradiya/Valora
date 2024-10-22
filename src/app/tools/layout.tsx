@@ -1,6 +1,5 @@
 "use client";
 
-import "@App/Styles/global.sass";
 import Link from "next/link";
 import React, { ReactNode, useState } from "react";
 import {
