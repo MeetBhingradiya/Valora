@@ -1,5 +1,5 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
-import { ThemeSelect } from './ThemeSelect';
+import Portfolio from './Portfolio';
 
 const Footer = () => {
     return (
@@ -88,9 +88,6 @@ const Footer = () => {
                         <p className="text-sm">
                             Email: <a href="mailto:info@valorainfotech.com" className="hover:text-primary">info@valorainfotech.com</a>
                         </p>
-                        <div className='mt-2'>
-                            <ThemeSelect />
-                        </div>
                     </div>
                 </div>
 

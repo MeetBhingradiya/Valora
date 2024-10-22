@@ -2,8 +2,8 @@
 
 import { FaRocket, FaLightbulb } from "react-icons/fa";
 import { motion } from "framer-motion";
-import Navbar from "@App/components/Navbar";
-import Footer from "@App/components/Footer";
+import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer";
 
 const DetailedAbout = () => {
   return (
