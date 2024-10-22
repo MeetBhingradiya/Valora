@@ -17,13 +17,13 @@ const Blog = () => {
     return (
         <>
             <Navbar />
-            <div className="min-h-screen p-8 pt-28 bg-dark dark:bg-gray-900">
+            <div className="min-h-screen p-8 pt-28 bg-dark dark:dark">
                 <h1 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-gray-100">Our Blogs</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {blogs.map((blog) => (
                         <Link key={blog.slug} href={`/Blogs/${blog.slug}`}>
                             <motion.div
-                                className="bg-white dark:bg-gray-800 rounded-xl shadow-md transition transform hover:scale-105 hover:shadow-2xl flex flex-col"
+                                className="bg-white dark:bg-gray-900 rounded-xl shadow-md transition transform hover:scale-105 hover:shadow-2xl flex flex-col"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.4, delay: 0.1 }}
