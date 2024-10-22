@@ -7,7 +7,7 @@ import Footer from '@App/components/Footer';
 
 const WebDevelopmentPage = () => {
   return (
-    <div className="min-h-screen bg-secondary">
+    <div className="min-h-screen bg-dark">
       <Navbar />
       <div className="p-4 md:p-8">
       <div className="container mx-auto">

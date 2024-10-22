@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { onlyText } from "react-children-utilities";
 import { formatDate } from "@App/lib/formatDate";
 import siteConfig from "@App/data/siteConfig";
@@ -40,6 +41,10 @@ export const Page: React.FC<PageProps> = ({
                     content={`${siteConfig.siteUrl}${metaThumbnail}`}
                 />
             </Head>
+            {
+                thumbnail && <Image src={metaThumbnail} alt={metaTitle} width={1200} height={630} />
+            }
+            
             <header
                 className={cx(
                     "mb-8 pb-8 border-b",

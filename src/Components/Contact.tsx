@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,8 @@ const Contact = () => {
     message: '',
   });
   const [success, setSuccess] = useState(false);
+
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -33,10 +35,7 @@ const Contact = () => {
 
     if (res.success) {
       setSuccess(true);
-      // Clear the form fields after showing the success message
       setFormData({ name: '', email: '', message: '' });
-
-      // Hide success message after 3 seconds
       setTimeout(() => {
         setSuccess(false);
       }, 3000);
@@ -44,16 +43,20 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-secondary text-gray-900">
+    <section id="contact" className={`py-16 dark:bg-gray-900 dark:text-white bg-white text-black`}>
       <div className="container mx-auto px-6 py-7 md:px-12 lg:px-24 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Contact <span className="text-primary">Us</span></h2>
-        <p className="mb-12 text-lg text-white">We&apos;d love to hear from you! Please fill out the form below or reach out to us directly.</p>
+        <div className="flex items-center mb-6 justify-center">
+          <h2 className={`text-4xl md:text-5xl font-bold dark:text-whitetext-black`}>
+            Contact <span className="text-primary">Us</span>
+          </h2>
+        </div>
+        <p className="mb-12 text-lg">We&apos;d love to hear from you! Please fill out the form below or reach out to us directly.</p>
 
         {success && <div className="mb-4 text-green-500">Message sent successfully!</div>}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <form onSubmit={onSubmit} className="bg-white p-8 rounded-lg shadow-md">
+          <form onSubmit={onSubmit} className={`p-8 rounded-lg shadow-md dark:bg-gray-800 bg-gray-100`}>
             <h3 className="text-2xl font-semibold mb-4">Get in Touch</h3>
             <div className="mb-4">
               <input
@@ -63,7 +66,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 placeholder="Your Name"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white dark:border-gray-600 bg-white text-black border-gray-300`}
               />
             </div>
             <div className="mb-4">
@@ -74,7 +77,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 placeholder="Your Email"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white dark:border-gray-600 bg-white text-black border-gray-300'}`}
               />
             </div>
             <div className="mb-4">
@@ -84,7 +87,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 placeholder="Your Message"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary h-32 dark:bg-gray-700 dark:text-white dark:border-gray-600 bg-white text-black border-gray-300`}
               />
             </div>
             <button type="submit" className="bg-primary text-white px-6 py-3 rounded-md hover:bg-yellow-500 transition-colors">
@@ -93,7 +96,7 @@ const Contact = () => {
           </form>
 
           {/* Company Details */}
-          <div className="bg-white p-8 rounded-lg shadow-md">
+          <div className={`p-8 rounded-lg shadow-md dark:bg-gray-800 bg-gray-100`}>
             <h3 className="text-2xl font-semibold mb-4">Our Contact Information</h3>
             <p className="mb-2"><strong>Email:</strong> admin@valorainfotech.com</p>
             <p className="mb-4"><strong>Address:</strong> 207, Akshar Square B/h Cancer Hospital, Dabholi Road, Surat, Gujarat</p>
@@ -108,7 +111,7 @@ const Contact = () => {
                 height="250"
                 className="rounded-lg"
                 loading="lazy"
-              ></iframe>  
+              ></iframe>
             </div>
           </div>
         </div>

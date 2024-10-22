@@ -134,7 +134,7 @@ const Navbar = () => {
     return (
         <nav
             id={"Nav"}
-            className={`fixed w-full top-0 z-50 transition-all duration-500 ${State.isScrolled ? "bg-secondary text-white" : "bg-secondary text-white"
+            className={`fixed w-full top-0 z-50 transition-all duration-500 ${State.isScrolled ? "bg-dark text-white" : "bg-dark text-white"
                 }`}
         >
             <div className="flex justify-between items-center px-6 py-4">
@@ -373,7 +373,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             <div
                 className={`md:hidden ${State.isMenuOpen ? "fixed" : "hidden"
-                    } top-[4rem] left-0 w-full h-[calc(100%-4rem)] bg-secondary z-20`}
+                    } top-[4rem] left-0 w-full h-[calc(100%-4rem)] bg-dark z-20`}
             >
                 <ul className="flex flex-col py-4 space-y-2">
                     <li>
@@ -406,7 +406,7 @@ const Navbar = () => {
                             />
                         </button>
                         {State.isMobileServicesOpen && (
-                            <ul className="relative mt-1 w-full bg-secondary text-[#ffffff] shadow-lg z-10 text-center">
+                            <ul className="relative mt-1 w-full bg-dark text-[#ffffff] shadow-lg z-10 text-center">
                                 {[
                                     {
                                         href: "/services/game-development",
@@ -462,7 +462,7 @@ const Navbar = () => {
                             />
                         </button>
                         {State.isMobileToolsOpen && (
-                            <ul className="relative mt-1 w-full bg-secondary text-[#ffffff] shadow-lg z-10 text-center">
+                            <ul className="relative mt-1 w-full bg-dark text-[#ffffff] shadow-lg z-10 text-center">
                                 {[
                                     { href: "/tools/jwt-decoder", text: "JWT Decoder" },
                                     { href: "/tools/base64-encoder", text: "Base64 Encoder" },

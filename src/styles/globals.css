@@ -359,3 +359,9 @@ pre[class*="language-"] {
 .token.italic {
     font-style: italic;
 }
+
+/* ! Temp */
+.Temp {
+    color: #dcdcdc;
+    background: #000000;
+}

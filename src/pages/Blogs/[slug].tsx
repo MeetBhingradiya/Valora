@@ -77,7 +77,7 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const mdxFiles = getAllMdx();
+  const mdxFiles = await getAllMdx();
   return {
     paths: mdxFiles.map((file) => ({
       params: { slug: file.frontMatter.slug },
@@ -88,7 +88,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as ContextProps;
-  const mdxFiles = getAllMdx();
+  const mdxFiles = await getAllMdx();
   const postIndex = mdxFiles.findIndex((p) => p.frontMatter.slug === slug);
   const post = mdxFiles[postIndex];
   const { frontMatter, content } = post;

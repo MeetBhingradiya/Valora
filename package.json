@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "dev:watch": "next-remote-watch ./posts",
+        "dev:watch": "next-remote-watch ./blogs",
         "build": "next build",
         "start": "next start",
         "lint": "next lint"
@@ -19,7 +19,8 @@
         "framer-motion": "^11.11.9",
         "gray-matter": "^4.0.3",
         "jwt-decode": "^4.0.0",
-        "next": "14.2.15",
+        "mongoose": "^8.7.2",
+        "next": "15.0.0",
         "next-mdx-remote": "^5.0.0",
         "next-remote-watch": "^2.0.0",
         "next-themes": "^0.3.0",
@@ -38,14 +39,18 @@
     },
     "devDependencies": {
         "@tailwindcss/typography": "^0.5.15",
+        "@types/mongoose": "^5.11.96",
         "@types/node": "22.7.7",
         "@types/react": "18.3.11",
         "@types/uuid": "^10.0.0",
         "autoprefixer": "^10.4.20",
-        "eslint": "9.13.0",
-        "eslint-config-next": "14.2.15",
         "postcss": "^8.4.47",
         "tailwindcss": "^3.4.14",
         "typescript": "5.6.3"
+    },
+    "browser": {
+        "fs": false,
+        "os": false,
+        "path": false
     }
 }

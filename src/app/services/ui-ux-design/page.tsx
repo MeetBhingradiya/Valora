@@ -6,7 +6,7 @@ import Footer from '@App/components/Footer';
 
 const UIUXDesignPage = () => {
   return (
-    <div className="min-h-screen bg-secondary">
+    <div className="min-h-screen bg-dark">
       <Navbar />
 
       <div className="container mx-auto p-4 md:p-8">

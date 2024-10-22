@@ -27,7 +27,7 @@ const Testimonials = () => {
     return (
         <section id="testimonials" className="py-32 relative overflow-hidden">
             {/* Background Layer */}
-            <div className="absolute inset-0 bg-secondary z-0"></div>
+            <div className="absolute inset-0 bg-dark z-0"></div>
 
             {/* Content */}
             <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-24 text-center">

@@ -86,7 +86,7 @@ const PortfolioPage = () => {
       {/* Add Navbar at the top */}
       <Navbar />
 
-      <section id="portfolio-page" className="py-32 bg-secondary text-white">
+      <section id="portfolio-page" className="py-32 bg-dark text-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
           {/* Title */}
           <motion.h2

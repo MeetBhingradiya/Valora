@@ -9,7 +9,7 @@ const DetailedAbout = () => {
     return (
         <>
             <Navbar />
-            <section id="detailed-about" className="py-32 bg-secondary text-gray-900">
+            <section id="detailed-about" className="py-32 bg-dark text-gray-900">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
                     <motion.h2
                         className="text-5xl font-bold mb-6 text-primary"
@@ -27,7 +27,7 @@ const DetailedAbout = () => {
                             </h3>
 
                             <div className="flex justify-center mb-10">
-                                <div className="w-24 h-1 bg-secondary"></div>
+                                <div className="w-24 h-1 bg-dark"></div>
                             </div>
 
                             <motion.div
@@ -73,7 +73,7 @@ const DetailedAbout = () => {
                         </div>
                     </section>
                     {/* Our Expertise */}
-                    <section className="my-16 relative bg-gradient-to-b from-secondary to-gray-900 py-20 px-8 md:px-16 rounded-lg">
+                    <section className="my-16 relative bg-gradient-to-b from-dark to-gray-900 py-20 px-8 md:px-16 rounded-lg">
                         <h3 className="text-4xl text-primary mb-12 text-center">
                             Our Expertise
                         </h3>

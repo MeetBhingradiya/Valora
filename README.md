@@ -4,7 +4,7 @@
 # Task & Issues
 - [x] MDX Rendring
 - [ ] Blog Data
-- [ ] Fix: Tool Navigation Penel
+- [x] Fix: Tool Navigation Penel
 - [ ] Fix: Inputs Colour System
 - [ ] Implement Global Theme System for User Experience
 - [x] AWS Deployment Capabilitie
