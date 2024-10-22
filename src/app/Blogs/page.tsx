@@ -21,21 +21,21 @@ const Blog = () => {
     return (
         <>
             <Navbar />
-            <div className="min-h-screen p-8 pt-28 bg-[#f5f5f5]">
-                <h1 className="text-3xl font-bold mb-8 text-center">Our Blogs</h1>
+            <div className="min-h-screen p-8 pt-28 bg-secondary">
+                <h1 className="text-3xl font-bold mb-8 text-center text-gray-100">Our Blogs</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {blogs.map((blog) => (
                         <Link key={blog.slug} href={`/Blogs/${blog.slug}`}>
                             <motion.div
-                                className="bg-white rounded-lg shadow-md transition transform hover:scale-105 hover:shadow-2xl flex flex-col"
+                                className="bg-white rounded-xl shadow-md transition transform hover:scale-105 hover:shadow-2xl flex flex-col"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.4, delay: 0.1 }}
                                 viewport={{ once: true }}
                             >
                                 <img
-                                    src={blog.image} // image is required
-                                    alt={blog.title} // title is required
+                                    src={blog.image}
+                                    alt={blog.title}
                                     className="w-full h-70 object-cover rounded-t-lg"
                                 />
                                 <div className='p-5'>
