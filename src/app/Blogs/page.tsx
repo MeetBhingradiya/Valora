@@ -5,14 +5,13 @@ import { motion } from 'framer-motion';
 import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 import React from "react";
-import blogData from "../../data/blogData"; // Ensure you're importing correctly
+import blogData, { BlogType } from "@App/data/blogData"; // Ensure you're importing correctly
 
 // Ensure the BlogType is imported here
-import { BlogType } from "../../data/blogData";
 
 const Blog = () => {
     // Set the state to use BlogType directly
-    const [blogs, setBlogs] = React.useState<BlogType[]>([]); 
+    const [blogs, setBlogs] = React.useState<BlogType[]>([]);
 
     React.useEffect(() => {
         setBlogs(blogData); // Use the imported blog data
