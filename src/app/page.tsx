@@ -1,3 +1,5 @@
+"use client"
+
 import Hero from "@App/components/Hero";
 import Navbar from "@App/components/Navbar";
 import About from "@App/components/About";

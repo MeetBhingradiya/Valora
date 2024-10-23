@@ -4,9 +4,13 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import logo from "../../public/assets/icon.svg";
-import Logo from "../../public/assets/valora.svg";
 import { FaChevronDown } from "react-icons/fa";
+
+import VlogoLight from "../../public/assets/logo.svg";
+import VlogoDark from "../../public/assets/logo2.svg";
+
+import ValoraLight from "../../public/assets/Valora.svg";
+import ValoraDark from "../../public/assets/Valora2.svg";
 
 const Navbar = () => {
     const [State, setState] = useState({
@@ -134,30 +138,50 @@ const Navbar = () => {
     return (
         <nav
             id={"Nav"}
-            className={`fixed w-full top-0 z-50 transition-all duration-500 ${State.isScrolled ? "bg-dark text-white" : "bg-dark text-white"
-                }`}
+            className={`fixed w-full top-0 z-50 transition-all duration-500 dark:bg-dark dark:text-darkText bg-light text-lightText`}
         >
             <div className="flex justify-between items-center px-6 py-4">
-                <div className="flex items-center">
-                    <Link href="/">
+                <Link className="flex items-center dark:hidden" href="/">
+                    <div >  
                         <Image
-                            src={logo}
-                            alt="Main Logo"
+                            src={VlogoDark}
+                            alt="V Dark"
                             width={40}
                             height={40}
                             className="cursor-pointer"
                         />
-                    </Link>
-                    <Link href="/" className="ml-2">
+                    </div>
+                    <div className="ml-2">
                         <Image
-                            src={Logo}
-                            alt="Valora Logo"
+                            src={ValoraDark}
+                            alt="Valora Dark"
                             width={100}
                             height={50}
                             className="cursor-pointer"
                         />
-                    </Link>
-                </div>
+                    </div>
+                </Link>
+
+                <Link className="items-center hidden dark:flex" href="/">
+                    <div >  
+                        <Image
+                            src={VlogoLight}
+                            alt="V Light"
+                            width={40}
+                            height={40}
+                            className="cursor-pointer"
+                        />
+                    </div>
+                    <div className="ml-2">
+                        <Image
+                            src={ValoraLight}
+                            alt="Valora Light"
+                            width={100}
+                            height={50}
+                            className="cursor-pointer"
+                        />
+                    </div>
+                </Link>
 
                 {/* Hamburger Icon for Mobile */}
                 <div
@@ -165,16 +189,13 @@ const Navbar = () => {
                     onClick={handleToggleMenu}
                 >
                     <div
-                        className={`h-0.5 w-full bg-primary transition-all duration-300 ${State.isMenuOpen ? "rotate-45 translate-y-2.5" : ""
-                            }`}
+                        className={`h-0.5 w-full bg-primary transition-all duration-300 ${State.isMenuOpen ? "rotate-45 translate-y-2.5" : ""}`}
                     ></div>
                     <div
-                        className={`h-0.5 w-full bg-primary transition-all duration-300 ${State.isMenuOpen ? "opacity-0" : "opacity-100"
-                            }`}
+                        className={`h-0.5 w-full bg-primary transition-all duration-300 ${State.isMenuOpen ? "opacity-0" : "opacity-100"}`}
                     ></div>
                     <div
-                        className={`h-0.5 w-full bg-primary transition-all duration-300 ${State.isMenuOpen ? "-rotate-45 -translate-y-2.5" : ""
-                            }`}
+                        className={`h-0.5 w-full bg-primary transition-all duration-300 ${State.isMenuOpen ? "-rotate-45 -translate-y-2.5" : ""}`}
                     ></div>
                 </div>
 
@@ -203,7 +224,7 @@ const Navbar = () => {
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <button
+                        <div
                             className="focus:outline-none flex items-center hover:text-primary transition-colors duration-300"
                             onClick={() => {
                                 toggleServicesMenu();
@@ -212,10 +233,9 @@ const Navbar = () => {
                         >
                             Services
                             <FaChevronDown
-                                className={`ml-1 transition-transform duration-300 ${State.isServicesOpen ? "rotate-180" : "rotate-0"
-                                    }`}
+                                className={`ml-1 transition-transform duration-300 ${State.isServicesOpen ? "rotate-180" : "rotate-0"}`}
                             />
-                        </button>
+                        </div>
                         {State.isServicesOpen && (
                             <ul
                                 ref={servicesMenuRef}
@@ -321,8 +341,14 @@ const Navbar = () => {
                                         text: "Base64 Encoder/Decoder",
                                     },
                                     { href: "/tools/uuid-generator", text: "UUID Generator" },
-                                    { href: "/tools/url-encoder-decoder", text: "URL Encoder/Decoder" },
-                                    { href: "/tools/date-time-utilities", text: "Date and Time Utilities" },
+                                    {
+                                        href: "/tools/url-encoder-decoder",
+                                        text: "URL Encoder/Decoder",
+                                    },
+                                    {
+                                        href: "/tools/date-time-utilities",
+                                        text: "Date and Time Utilities",
+                                    },
                                 ].map((item, index) => (
                                     <li key={index}>
                                         <Link
@@ -369,6 +395,7 @@ const Navbar = () => {
                     </motion.li>
                 </ul>
             </div>
+
 
             {/* Mobile Menu */}
             <div

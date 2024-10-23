@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const BlogSchema = new mongoose.Schema({
     frontMatter: {
-        banner: {
+        thumbnail: {
             type: String,
         },
         title: { 
@@ -55,5 +55,8 @@ const BlogSchema = new mongoose.Schema({
         required: true 
     },
 });
+
+interface BlogType {
+}
 
 export default mongoose.models.Blog || mongoose.model("Blog", BlogSchema);

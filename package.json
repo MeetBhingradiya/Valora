@@ -20,7 +20,7 @@
         "gray-matter": "^4.0.3",
         "jwt-decode": "^4.0.0",
         "mongoose": "^8.7.2",
-        "next": "15.0.0",
+        "next": "15.0.1",
         "next-mdx-remote": "^5.0.0",
         "next-remote-watch": "^2.0.0",
         "next-themes": "^0.3.0",

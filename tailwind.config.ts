@@ -16,14 +16,21 @@ module.exports = {
                 // lightText: '#1F2937',
                 
                 // // ? Dark Theme
-                // dark: '#1F2937',
+                dark: '#1F2937',
                 // darkText: '#F9FAFB',
                 // // dark: '#171713',
 
-                dark: '#2D2D2D', // Replace with your dark color code
-                darkText: '#E5E5E5', // Replace with your dark text color code
-                light: '#FFFFFF', // Replace with your light color code
-                lightText: '#333333', // Replace with your light text color code
+
+                // dark: '#2D2D2D', 
+                darkText: '#E5E5E5',
+                darklightbg: '#272727',
+                darklightText: '#C4C4C4',
+
+
+                light: '#FFFFFF',
+                lightText: '#2D2D2D',
+                lightdarkbg: '#F9FAFB',
+                lightdarkText: '#2D2D2D',
             },
             fontFamily: {
                 sans: ["Inter var", ...defaultTheme.fontFamily.sans],

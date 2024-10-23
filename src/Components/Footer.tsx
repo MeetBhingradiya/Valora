@@ -72,7 +72,7 @@ const Footer = () => {
                 </div>
 
                 {/* Divider */}
-                <div className="border-t border-gray-700 dark:border-gray-800 mt-10 pt-6 text-center">
+                <div className="border-t border-gray-700 dark:border-gray-300 mt-10 pt-6 text-center">
                     <p className="text-sm">&copy; {new Date().getFullYear()} Valora Infotech. All rights reserved.</p>
                 </div>
             </div>
@@ -81,4 +81,3 @@ const Footer = () => {
 };
 
 export default Footer;
-    

@@ -5,8 +5,10 @@
 - [x] MDX Rendring
 - [ ] Blog Data
 - [x] Fix: Tool Navigation Penel
-- [ ] Fix: Inputs Colour System
+- [ ] Fix: Inputs Colour System (Partially Done) 
+- [x] Fix: A into A Hydration ERROR
 - [ ] Implement Global Theme System for User Experience
 - [x] AWS Deployment Capabilitie
 - [ ] Vercel Deployment Capabilitie
+- [ ] Netlify Deplyment Capabilitie
 - [ ] Docker Deployment Capabilitie

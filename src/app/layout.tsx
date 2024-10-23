@@ -40,7 +40,7 @@ export default function RootLayout({
             </head>
             <body className={"bg-gray-100 text-gray-900 font-poppins " + poppins.className}>
                 <ThemeProvider
-                    defaultTheme="system"
+                    defaultTheme="dark"
                     attribute="class"
                 >
                     {children}

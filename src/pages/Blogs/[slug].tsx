@@ -11,102 +11,97 @@ import { components } from "@App/components/MDX";
 import { Prose } from "@App/components/Prose";
 import { cx } from "@App/lib/utils";
 import remarkGfm from "remark-gfm";
+
 interface ContextProps extends ParsedUrlQuery {
-  slug: string;
+    slug: string;
 }
 
 interface PostProps {
-  frontMatter: MDXFrontMatter;
-  mdx: any;
-  previous: MDXFrontMatter | null;
-  next: MDXFrontMatter | null;
+    frontMatter: MDXFrontMatter;
+    mdx: any;
+    previous: MDXFrontMatter | null;
+    next: MDXFrontMatter | null;
 }
 
 const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
-  return (
-    <>
-      <Page {...frontMatter}>
-        <Prose>
-          <MDXRemote {...mdx} components={components} />
-        </Prose>
-        {previous || next ? (
-          <nav
-            className={cx(
-              "mt-8 pt-8 grid grid-cols-2 gap-8 border-t",
-              "border-gray-200",
-              "dark:border-gray-700"
-            )}
-          >
-            {previous ? (
-              <div>
-                <p
-                  className={cx(
-                    "mb-2 uppercase tracking-wider text-sm",
-                    "text-gray-500",
-                    "dark:text-gray-400"
-                  )}
-                >
-                  Previous
-                </p>
-                <Link href={`/posts/${previous?.slug}`} className="font-bold">
-                  {previous?.title}
-                </Link>
-              </div>
-            ) : null}
-            {next ? (
-              <div className="col-start-2 text-right">
-                <p
-                  className={cx(
-                    "mb-2 uppercase tracking-wider text-sm",
-                    "text-gray-500",
-                    "dark:text-gray-400"
-                  )}
-                >
-                  Next
-                </p>
-                <Link href={`/posts/${next?.slug}`} className="font-bold">
-                  {next?.title}
-                </Link>
-              </div>
-            ) : null}
-          </nav>
-        ) : null}
-      </Page>
-    </>
-  );
+    return (
+        <>
+            <Page author={""} privacy={""} views={0} likes={0} readtime={0} {...frontMatter}>
+                {/* Main content rendering */}
+                <Prose>
+                    <MDXRemote {...mdx} components={components} />
+                </Prose>
+
+                {/* Navigation for Previous and Next Posts */}
+                {(previous || next) && (
+                    <nav
+                        className={cx(
+                            "flex my-5",
+                            previous && next ? "justify-between" : "justify-center",
+                            previous && next ? "gap-4" : "gap-0"
+                        )}
+                    >
+                        {previous && (  
+                            <div className="flex-1 text-left">
+                                <Link
+                                    href={`/Blogs/${previous?.slug}`}
+                                    className="rounded-lg p-3 hover:bg-dark no-underline font-semibold text-primary hover:underline"
+                                >
+                                    &larr; {previous?.title}
+                                </Link>
+                            </div>
+                        )}
+
+                        {next && (
+                            <div className="flex-1 text-right"> 
+                                <Link
+                                    href={`/Blogs/${next?.slug}`}
+                                    className="rounded-lg p-3 hover:bg-dark no-underline font-semibold text-primary hover:underline"
+                                >
+                                    {next?.title} &rarr;
+                                </Link>
+                            </div>
+                        )}
+                    </nav>
+                )}
+            </Page>
+        </>
+    );
 };
 
+// Fetching the paths for all blog posts
 export const getStaticPaths: GetStaticPaths = async () => {
-  const mdxFiles = await getAllMdx();
-  return {
-    paths: mdxFiles.map((file) => ({
-      params: { slug: file.frontMatter.slug },
-    })),
-    fallback: false,
-  };
+    const mdxFiles = await getAllMdx();
+    return {
+        paths: mdxFiles.map((file) => ({
+            params: { slug: file.frontMatter.slug },
+        })),
+        fallback: false,
+    };
 };
 
+// Fetching the content and static props for the post
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { slug } = context.params as ContextProps;
-  const mdxFiles = await getAllMdx();
-  const postIndex = mdxFiles.findIndex((p) => p.frontMatter.slug === slug);
-  const post = mdxFiles[postIndex];
-  const { frontMatter, content } = post;
-  const mdxContent = await serialize(content, {
-    mdxOptions: {
-      remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypePrism],
-    },
-    scope: frontMatter,
-  });
-  return {
-    props: {
-      frontMatter,
-      mdx: mdxContent,
-      previous: mdxFiles[postIndex + 1]?.frontMatter || null,
-      next: mdxFiles[postIndex - 1]?.frontMatter || null,
-    },
-  };
+    const { slug } = context.params as ContextProps;
+    const mdxFiles = await getAllMdx();
+    const postIndex = mdxFiles.findIndex((p) => p.frontMatter.slug === slug);
+    const post = mdxFiles[postIndex];
+    const { frontMatter, content } = post;
+    const mdxContent = await serialize(content, {
+        mdxOptions: {
+            remarkPlugins: [remarkGfm],
+            rehypePlugins: [rehypePrism],
+        },
+        scope: frontMatter,
+    });
+    return {
+        props: {
+            frontMatter,
+            mdx: mdxContent,
+            previous: mdxFiles[postIndex + 1]?.frontMatter || null,
+            next: mdxFiles[postIndex - 1]?.frontMatter || null,
+        },
+    };
 };
 
 export default Post;

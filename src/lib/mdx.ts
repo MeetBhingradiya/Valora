@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import type { MDXFrontMatter } from "@App/lib/types";
-import dbConnect from "@App/lib/mongodb";
 
 const root = process.cwd();
 
