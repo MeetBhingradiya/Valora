@@ -1,3 +1,7 @@
+import path from 'path';
+
+const __dirname = path.resolve();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: false,
@@ -29,7 +33,22 @@ const nextConfig = {
                 ],
             },
         ];
-    }
+    },
+    webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+        let Config = {
+            ...config,
+            resolve: {
+                ...config.resolve,
+                alias: {
+                    '@': path.resolve(__dirname, './src'),
+                    '@App': path.resolve(__dirname, './src/app'),
+                    ...config.resolve.alias,
+                },
+            }
+        };
+        
+        return Config;
+    },
 };
 
 export default nextConfig;
