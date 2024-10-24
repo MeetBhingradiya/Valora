@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "react-feather";
-import { cx } from "@App/lib/utils";
+import { cx } from "../lib/utils";
 
 const THEME_MAP: { [key: string]: { label: string; icon: React.ReactNode } } = {
     light: {

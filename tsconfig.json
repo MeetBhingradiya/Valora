@@ -1,26 +1,6 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
-        "paths": {
-            "@Public/*": [
-                "./public/*"
-            ],
-            "@App/*": [
-                "./src/*"
-            ],
-            "@/components/*": [
-                "src/components/*"
-            ],
-            "@/data/*": [
-                "./src/data/*"
-            ],
-            "@/lib/*": [
-                "./src/lib/*"
-            ],
-            "@/styles/*": [
-                "./src/styles/*"
-            ]
-        },
         "target": "es5",
         "lib": [
             "dom",

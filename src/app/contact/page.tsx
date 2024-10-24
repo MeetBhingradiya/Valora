@@ -1,15 +1,15 @@
-import Navbar from "@App/components/Navbar";
-import Contact from "@App/components/Contact";
-import Footer from "@App/components/Footer";
+import Navbar from "../../components/Navbar";
+import Contact from "../../components/Contact";
+import Footer from "../../components/Footer";
 
 const ContactPage = () => {
-  return (
-    <div>
-        <Navbar />
-        <Contact />
-        <Footer />
-    </div>
-  );
+    return (
+        <div>
+            <Navbar />
+            <Contact />
+            <Footer />
+        </div>
+    );
 };
 
 export default ContactPage;

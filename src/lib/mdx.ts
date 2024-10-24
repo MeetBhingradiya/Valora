@@ -1,6 +1,6 @@
-import { BlogModel } from "@App/model/blog";
-import type { BlogType } from "@App/model/blog";
-import dbConnect from "@App/lib/dbConnect"; 
+import { BlogModel } from "../model/blog";
+import type { BlogType } from "../model/blog";
+import dbConnect from "../lib/dbConnect"; 
 
 export const getMdx = async (slug: string) => {
     await dbConnect();
@@ -35,7 +35,7 @@ export const getAllMdx = async () => {
 // import fs from "fs";
 // import path from "path";
 // import matter from "gray-matter";
-// import type { MDXFrontMatter } from "@App/lib/types";
+// import type { MDXFrontMatter } from "../lib/types";
 
 // const root = process.cwd();
 

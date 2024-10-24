@@ -6,12 +6,12 @@ import Link from "next/link";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import rehypePrism from "rehype-prism-plus";
-import { getAllMdx, getMdx } from "@App/lib/mdx";
-import { MDXFrontMatter } from "@App/lib/types";
-import { cx } from "@App/lib/utils";
-import { Page } from "@/components/Page";
-import { components } from "@/components/MDX";
-import { Prose } from "@/components/Prose";
+import { getAllMdx, getMdx } from "../../lib/mdx";
+import { MDXFrontMatter } from "../../lib/types";
+import { cx } from "../../lib/utils";
+import { Page } from "../../components/Page";
+import { components } from "../../components/MDX";
+import { Prose } from "../../components/Prose";
 import remarkGfm from "remark-gfm";
 
 interface ContextProps extends ParsedUrlQuery {
@@ -94,7 +94,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const mdxFiles = await getAllMdx();
     
     return {
-        paths: mdxFiles.map((file) => ({
+        paths: mdxFiles.map((file:any) => ({
             params: { slug: file.frontMatter.slug },
         })),
         fallback: "blocking",
@@ -105,7 +105,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const { slug } = context.params as ContextProps;
 
     const mdxFiles = await getAllMdx();
-    const postIndex = mdxFiles.findIndex((p) => p.frontMatter.slug === slug);
+    const postIndex = mdxFiles.findIndex((p:any) => p.frontMatter.slug === slug);
 
     if (postIndex === -1) {
         return { notFound: true };

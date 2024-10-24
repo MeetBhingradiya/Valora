@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import Document, { DocumentContext } from "next/document";
-import { cx } from "@App/lib/utils";
+import { cx } from "../lib/utils";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

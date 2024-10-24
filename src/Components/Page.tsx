@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import { onlyText } from "react-children-utilities";
-import { formatDate } from "@App/lib/formatDate";
-import siteConfig from "@App/data/siteConfig";
-import { Prose } from "@App/components/Prose";
-import { cx } from "@App/lib/utils";
+import { formatDate } from "../lib/formatDate";
+import { Prose } from "../components/Prose";
+import { cx } from "../lib/utils";
 import { Clock, Heart, Eye, Calendar, User } from "react-feather";
 
 interface BlogOptions {
@@ -44,20 +43,18 @@ export const Page: React.FC<BlogOptions> = ({
     const metaTitle = onlyText(title);
     const metaDescription = description
         ? onlyText(description)
-        : siteConfig.siteDescription;
-    const metaThumbnail = thumbnail ? thumbnail : siteConfig.siteThumbnail;
-    const customTitle = `${metaTitle} - ${siteConfig.siteName}`;
+    : "A blog post on " + metaTitle;
+    const customTitle = `${metaTitle} - Valora Infotech`;
 
     return (
         <>
             <Head>
                 <title>{customTitle}</title>
-                <meta name="og:url" content={siteConfig.siteUrl} />
                 <meta property="og:title" content={metaTitle} />
                 <meta name="description" content={metaDescription} />
                 <meta name="og:description" content={metaDescription} />
                 <meta name="og:author" content={author} />
-                <meta property="og:image" content={`${siteConfig.siteUrl}${metaThumbnail}`} />
+                {/* <meta property="og:image" content={`${siteConfig.siteUrl}${metaThumbnail}`} /> */}
             </Head>
 
 
@@ -67,7 +64,7 @@ export const Page: React.FC<BlogOptions> = ({
                 {thumbnail && (
                     <Image
                         className="rounded-lg w-full h-auto object-cover border-gray-300 border-2 dark:border-gray-800 shadow-lg"
-                        src={metaThumbnail}
+                        src={thumbnail}
                         alt={metaTitle}
                         width={1200}
                         height={630}

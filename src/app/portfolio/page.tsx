@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Navbar from "@App/components/Navbar";
-import Footer from "@App/components/Footer";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 import { useState } from "react";
 
 // Filtering Categories

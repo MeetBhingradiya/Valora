@@ -1,5 +1,5 @@
-import { cx } from "@App/lib/utils";
-import { Prose } from "@App/components/Prose";
+import { cx } from "../lib/utils";
+import { Prose } from "../components/Prose";
 
 interface NoteProps {
   emoji?: string;
