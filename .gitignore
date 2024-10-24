@@ -39,4 +39,5 @@ yarn-error.log*
 # Package Manager Files
 package-lock.json
 yarn.lock
-bun.lockb
+*.lockb
+bun.*
