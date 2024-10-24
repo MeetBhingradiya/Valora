@@ -123,7 +123,7 @@ const PortfolioPage = () => {
     <>
       <Navbar />
 
-      <section id="portfolio-page" className="py-32 bg-dark text-white">
+      <section id="portfolio-page" className="py-32 dark:bg-dark dark:text-darkText bg-light text-lightText">
         <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
           {/* Title */}
           <motion.h2

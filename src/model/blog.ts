@@ -41,10 +41,6 @@ const BlogSchema = new mongoose.Schema({
             type: Number,
             default: 0,
         },
-        likes: {
-            type: Number,
-            default: 0,
-        },
         readtime: {
             type: String,
             required: true,
@@ -52,11 +48,29 @@ const BlogSchema = new mongoose.Schema({
     },
     content: { 
         type: String, 
-        required: true 
+        required: true
     },
 });
 
-interface BlogType {
+interface BlogType extends mongoose.Document {
+    frontMatter: {
+        thumbnail?: string
+        title: string
+        description?: string
+        date: string
+        slug: string
+        author?: string
+        authorImage?: string
+        tags?: string[]
+        privacy: "public" | "unlisted" | "private"
+        views: number
+        readtime: string
+    },
+    content: string,
 }
 
-export default mongoose.models.Blog || mongoose.model("Blog", BlogSchema);
+export const BlogModel: mongoose.Model<BlogType> = mongoose.models?.Blog || mongoose.model<BlogType>("Blog", BlogSchema); 
+
+export type {
+    BlogType
+}

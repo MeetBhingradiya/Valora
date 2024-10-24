@@ -10,11 +10,11 @@ import { Clock, Heart, Eye, Calendar, User } from "react-feather";
 interface BlogOptions {
     // ^ Required Propertys
     title: string
-    author: string
+    author?: string
     privacy: string
-    views: number
-    likes: number
-    readtime: number // ? in minutes
+    views?: number
+    likes?: number
+    readtime?: number // ? in minutes
 
     // ^ Optional
     description?: string
@@ -56,6 +56,7 @@ export const Page: React.FC<BlogOptions> = ({
                 <meta property="og:title" content={metaTitle} />
                 <meta name="description" content={metaDescription} />
                 <meta name="og:description" content={metaDescription} />
+                <meta name="og:author" content={author} />
                 <meta property="og:image" content={`${siteConfig.siteUrl}${metaThumbnail}`} />
             </Head>
 
@@ -65,7 +66,7 @@ export const Page: React.FC<BlogOptions> = ({
                 {/* Thubnail */}
                 {thumbnail && (
                     <Image
-                        className="rounded-t-lg w-full h-auto object-cover"
+                        className="rounded-lg w-full h-auto object-cover border-gray-300 border-2 dark:border-gray-800 shadow-lg"
                         src={metaThumbnail}
                         alt={metaTitle}
                         width={1200}
@@ -82,13 +83,13 @@ export const Page: React.FC<BlogOptions> = ({
                         </span>
                     )}
                     •
-                        <span className="flex gap-2 text-gray-400">
+                        {/* <span className="flex gap-2 text-gray-400">
                             <Eye className="h-5 w-5" /> 
                             {views}
-                            {/* <Heart className="h-5 w-5" />
-                            {likes} */}
+                            <Heart className="h-5 w-5" />
+                            {likes}
                         </span>
-                        •
+                        • */}
                         <span className="flex gap-2 text-gray-400">
                             <Clock className="h-5 w-5" />
                             {readtime} min
@@ -108,6 +109,22 @@ export const Page: React.FC<BlogOptions> = ({
             <main className="prose dark:prose-dark max-w-none text-lightText dark:text-darkText">
                 {children}
             </main>
+
+            {/* Tags */}
+            {tags && (
+                <div className="mt-5 flex gap-2">
+                    {tags.map((tag) => (
+                        <span
+                            key={tag}
+                            className={cx(
+                                "px-3 py-1 text-sm font-medium text-lightText dark:text-darkText bg-lightgray dark:bg-darkgray rounded-lg"
+                            )}
+                        >
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+            )}
         </>
     );
 };

@@ -11,6 +11,9 @@ import VlogoDark from "@Public/assets/logo2.svg";
 
 import ValoraLight from "@Public/assets/Valora.svg";
 import ValoraDark from "@Public/assets/Valora2.svg";
+import { usePathname } from 'next/navigation'
+
+import { cx} from "@App/lib/utils";
 
 const Navbar = () => {
     const [State, setState] = useState({
@@ -21,6 +24,7 @@ const Navbar = () => {
         isMobileToolsOpen: false,
         isToolsOpen: false,
     });
+    const pathname = usePathname() 
     const servicesMenuRef = useRef<HTMLUListElement>(null);
     const toolsMenuRef = useRef(null);
     const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
@@ -138,7 +142,15 @@ const Navbar = () => {
     return (
         <nav
             id={"Nav"}
-            className={`fixed w-full top-0 z-50 transition-all duration-500 dark:bg-dark dark:text-darkText bg-light text-lightText`}
+            className={cx(
+                `${pathname === "/" ? `${State.isScrolled ? "text-lightText bg-light" : "text-darkText bg-transparent"}` : `bg-light`}`,
+                `${State.isScrolled ? "text-lightText bg-light dark:bg-dark dark:text-darkText" : "text-darkText bg-transparent"}`,
+
+                "fixed w-full top-0 z-50 transition-all duration-300"
+                // `fixed w-full top-0 z-50 transition-all duration-500 dark:text-white`,
+                // `${State.isScrolled ? "text-lightText bg-light dark:bg-dark": "text-white bg-transparent"}`,
+                // `${pathname === "/" ? "bg-transparent" : ""}`
+            )}
         >
             <div className="flex justify-between items-center px-6 py-4">
                 <Link className="flex items-center dark:hidden" href="/">
@@ -162,8 +174,10 @@ const Navbar = () => {
                     </div>
                 </Link>
 
-                <Link className="items-center hidden dark:flex" href="/">
-                    <div >  
+                <Link className={cx(
+                    "items-center hidden dark:flex"
+                )} href="/">
+                    <div>
                         <Image
                             src={VlogoLight}
                             alt="V Light"

@@ -6,7 +6,7 @@ import Footer from '@App/components/Footer';
 
 const GameDevelopmentPage = () => {
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen dark:bg-dark bg-light dark:text-darkText text-lightText">
       <Navbar />
 
       <div className="container mx-auto p-4 md:p-8">

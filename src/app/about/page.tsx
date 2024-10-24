@@ -9,7 +9,7 @@ const DetailedAbout = () => {
     return (
         <>
             <Navbar />
-            <section id="detailed-about" className="py-32 bg-dark text-gray-900">
+            <section id="detailed-about" className="py-32 dark:bg-dark dark:text-darkText bg-light text-lightText">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
                     <motion.h2
                         className="text-5xl font-bold mb-6 text-primary"
@@ -17,7 +17,7 @@ const DetailedAbout = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Welcome to <span className="text-white">Valora Infotech</span>
+                        Welcome to <span className="dark:text-darkText text-lightText">Valora Infotech</span>
                     </motion.h2>
                     {/* History Section */}
                     <section className="my-16 relative bg-gradient-to-r from-primary to-gray-800 py-16 px-8 md:px-16 rounded-lg shadow-lg">
@@ -202,7 +202,7 @@ const DetailedAbout = () => {
                             Our Mission and Vision
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                            <div className="p-6 bg-white shadow-lg rounded-lg">
+                            <div className="p-6 dark:bg-dark dark:text-darkText bg-light text-lightText shadow-lg rounded-lg">
                                 <h4 className="text-2xl font-semibold mb-4 flex justify-center">
                                     <FaRocket className="mr-2 text-3xl" />
                                     Our Mission
@@ -212,7 +212,7 @@ const DetailedAbout = () => {
                                     empower businesses.
                                 </p>
                             </div>
-                            <div className="p-6 bg-white shadow-lg rounded-lg">
+                            <div className="p-6 dark:bg-dark dark:text-darkText bg-light text-lightText shadow-lg rounded-lg">
                                 <h4 className="text-2xl font-semibold mb-4 flex justify-center">
                                     <FaLightbulb className="mr-2 text-3xl" />
                                     Our Vision
@@ -224,30 +224,7 @@ const DetailedAbout = () => {
                             </div>
                         </div>
                     </section>
-                    Client Testimonials
-                    <section className="my-16">
-                        <h3 className="text-4xl text-primary mb-6">Client Testimonials</h3>
-                        <p className="text-lg text-white leading-relaxed">
-                            "Working with Valora Infotech has been a game-changer for our
-                            company. Their expertise and dedication are unmatched."
-                        </p>
-                    </section>
-                    {/* Achievements and Future Goals */}
-                    <section className="my-16">
-                        <h3 className="text-4xl text-primary mb-6">
-                            Our Achievements & Future
-                        </h3>
-                        <p className="text-lg text-white leading-relaxed">
-                            At Valora Infotech, we are committed to staying ahead of industry
-                            trends and continuously evolving our services to meet the changing
-                            needs of our clients. Our future is centered around driving
-                            innovation, expanding our capabilities in emerging technologies,
-                            and maintaining the trust of our clients through unparalleled
-                            service delivery. We are excited for the journey ahead and look
-                            forward to making an even greater impact on the businesses we
-                            serve.
-                        </p>
-                    </section>
+                    
                 </div>
             </section>
             <Footer />

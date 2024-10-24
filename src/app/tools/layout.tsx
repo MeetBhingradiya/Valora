@@ -13,11 +13,11 @@ import {
     FaTimes,
 } from "react-icons/fa"; // Import icons from react-icons
 import Base64 from "./base64-encoder-decoder/page";
-import Image from "next/image";
 import UUID from "./uuid-generator/page";
 import URL from "./url-encoder-decoder/page";
 import DateAndTime from "./date-time-utilities/page";
 import { usePathname } from "next/navigation";
+import JWTDecoder from "./jwt-decoder/page";
 
 export default function ToolsLayout({ children }: { children: ReactNode }) {
     const pathname = usePathname();
@@ -28,6 +28,8 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
 
     const renderTool = () => {
         switch (tool) {
+            case "jwt-decoder":
+                return <JWTDecoder />;
             case "base64-encoder-decoder":
                 return <Base64 />;
             case "uuid-generator":
@@ -37,35 +39,40 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
             case "date-time-utilities":
                 return <DateAndTime />;
             default:
-                return <Base64 />;
+                return <JWTDecoder />;
         }
     };
 
     const tools = [
         {
+            name: "jwt-decoder",
+            label: "Jwt Decoder",
+            icon: <FaKey className="text-orange-500 mr-2" />,
+        },
+        {
             name: "base64-encoder-decoder",
             label: "Base64 Encoder/Decoder",
-            icon: <FaCode className="text-green-400 mr-2" />,
+            icon: <FaCode className="text-green-600 mr-2" />,
         },
         {
             name: "uuid-generator",
             label: "UUID Generator",
-            icon: <FaIdBadge className="text-purple-400 mr-2" />,
+            icon: <FaIdBadge className="text-purple-500 mr-2" />,
         },
         {
             name: "url-encoder-decoder",
             label: "URL Encoder/Decoder",
-            icon: <FaGlobe className="text-red-400 mr-2" />,
+            icon: <FaGlobe className="text-red-500 mr-2" />,
         },
         {
             name: "date-time-utilities",
             label: "Date and Time Utilities",
-            icon: <FaClock className="text-yellow-400 mr-2" />,
+            icon: <FaClock className="text-blue-500 mr-2" />,
         },
     ];
 
     return (
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col lg:flex-row dark:bg-dark dark:text-darkText bg-light text-lightText">
             {/* Toggle Button for Mobile */}
             <button
                 className="lg:hidden p-4 text-gray-800 focus:outline-none"
@@ -78,7 +85,7 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
             <div
                 className={`lg:block w-full lg:w-80 p-6 text-primary bg-gray-800 shadow-lg lg:relative fixed z-50 transition-transform transform ${isSidebarOpen ? "translate-x-0" : "lg:translate-x-0 -translate-x-full"
                     }`}
-                style={{ height: "100vh" }}
+                style={{ height: "120vh" }}
             >
                 {/* Close Button inside the Sidebar (Mobile Only) */}
                 <button

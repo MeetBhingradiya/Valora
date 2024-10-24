@@ -1,3 +1,5 @@
+"use server";
+
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
 import Link from "next/link";
@@ -17,13 +19,31 @@ interface ContextProps extends ParsedUrlQuery {
 }
 
 interface PostProps {
-    frontMatter: MDXFrontMatter;
-    mdx: any;
+    frontMatter: MDXFrontMatter | null; 
+    mdx: any | null;
     previous: MDXFrontMatter | null;
     next: MDXFrontMatter | null;
 }
 
 const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
+    if (!frontMatter || !mdx) {
+        return (
+            <Page 
+                title="Post Not Found"
+                description="Sorry, we couldn't find the blog post you were looking for."
+                privacy="public"
+            >
+                <div className="text-center">
+                    <h1>Blog post not found</h1>
+                    <p>Sorry, we couldn't find the blog post you were looking for.</p>
+                    <Link href="/Blogs" className="text-primary underline">
+                        Go back to all blogs
+                    </Link>
+                </div>
+            </Page>
+        );
+    }
+
     return (
         <>
             <Page author={""} privacy={""} views={0} likes={0} readtime={0} {...frontMatter}>
@@ -45,7 +65,7 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
                             <div className="flex-1 text-left">
                                 <Link
                                     href={`/Blogs/${previous?.slug}`}
-                                    className="rounded-lg p-3 hover:bg-dark no-underline font-semibold text-primary hover:underline"
+                                    className="rounded-lg p-3 hover:bg-gray-200 dark:hover:bg-dark no-underline font-semibold text-primary"
                                 >
                                     &larr; {previous?.title}
                                 </Link>
@@ -56,7 +76,7 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
                             <div className="flex-1 text-right"> 
                                 <Link
                                     href={`/Blogs/${next?.slug}`}
-                                    className="rounded-lg p-3 hover:bg-dark no-underline font-semibold text-primary hover:underline"
+                                    className="rounded-lg p-3 hover:bg-gray-200 dark:hover:bg-dark no-underline font-semibold text-primary"
                                 >
                                     {next?.title} &rarr;
                                 </Link>
@@ -72,21 +92,28 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
 // Fetching the paths for all blog posts
 export const getStaticPaths: GetStaticPaths = async () => {
     const mdxFiles = await getAllMdx();
+    
     return {
         paths: mdxFiles.map((file) => ({
             params: { slug: file.frontMatter.slug },
         })),
-        fallback: false,
+        fallback: "blocking",
     };
 };
 
-// Fetching the content and static props for the post
 export const getStaticProps: GetStaticProps = async (context) => {
     const { slug } = context.params as ContextProps;
+
     const mdxFiles = await getAllMdx();
     const postIndex = mdxFiles.findIndex((p) => p.frontMatter.slug === slug);
+
+    if (postIndex === -1) {
+        return { notFound: true };
+    }
+
     const post = mdxFiles[postIndex];
     const { frontMatter, content } = post;
+
     const mdxContent = await serialize(content, {
         mdxOptions: {
             remarkPlugins: [remarkGfm],
@@ -94,6 +121,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         },
         scope: frontMatter,
     });
+
     return {
         props: {
             frontMatter,
@@ -101,6 +129,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
             previous: mdxFiles[postIndex + 1]?.frontMatter || null,
             next: mdxFiles[postIndex - 1]?.frontMatter || null,
         },
+        revalidate: 60,
     };
 };
 
