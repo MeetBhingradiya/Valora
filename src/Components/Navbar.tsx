@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaChevronDown } from "react-icons/fa";
 
-import VlogoLight from "../../public/assets/logo.svg";
-import VlogoDark from "../../public/assets/logo2.svg";
+import VlogoLight from "@Public/assets/logo.svg";
+import VlogoDark from "@Public/assets/logo2.svg";
 
-import ValoraLight from "../../public/assets/Valora.svg";
-import ValoraDark from "../../public/assets/Valora2.svg";
+import ValoraLight from "@Public/assets/Valora.svg";
+import ValoraDark from "@Public/assets/Valora2.svg";
 
 const Navbar = () => {
     const [State, setState] = useState({

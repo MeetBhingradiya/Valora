@@ -14,8 +14,6 @@ import {
 } from "react-icons/fa"; // Import icons from react-icons
 import Base64 from "./base64-encoder-decoder/page";
 import Image from "next/image";
-import logo from "../../../public/assets/icon.svg";
-import Logo from "../../../public/assets/valora.svg";
 import UUID from "./uuid-generator/page";
 import URL from "./url-encoder-decoder/page";
 import DateAndTime from "./date-time-utilities/page";
@@ -91,7 +89,7 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
                 </button>
 
                 <div className="flex items-center mb-4">
-                    <Link href="/">
+                    {/* <Link href="/">
                         <Image
                             src={logo}
                             alt="Main Logo"
@@ -108,7 +106,7 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
                             height={50}
                             className="cursor-pointer"
                         />
-                    </Link>
+                    </Link> */}
                 </div>
 
                 <ul className="space-y-4">
