@@ -30,7 +30,7 @@ const Blog = async () => {
             <div className="min-h-screen p-8 pt-28 dark:bg-dark dark:text-darkText bg-light text-lightText">
                 <h1 className="text-3xl font-bold mb-8 text-center">Our Blogs</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {blogs.map((blog: BlogType) => (
+                    {blogs.map((blog: any) => (
                         <Link key={blog.frontMatter.slug} href={`/Blogs/${blog.frontMatter.slug}`}>
                             <div
                                 className="bg-gray-100 dark:bg-gray-900 rounded-xl shadow-xl transition transform hover:scale-105 hover:shadow-2xl flex flex-col"
