@@ -40,6 +40,7 @@ const nextConfig: NextConfig = {
             resolve: {
                 ...config.resolve,
                 alias: {
+                    '@Public': path.resolve(__dirname, './public'),
                     '@Root': path.resolve(__dirname, './'),
                     '@': path.resolve(__dirname, './src'),
                     '@App': path.resolve(__dirname, './src/app'),
