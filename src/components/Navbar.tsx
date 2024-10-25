@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaChevronDown } from "react-icons/fa";
 
-import VlogoLight from "@Public/assets/logo.svg";
-import VlogoDark from "@Public/assets/logo2.svg";
+import VlogoLight from "@/assets/logo.svg";
+import VlogoDark from "@/assets/logo2.svg";
 
-import ValoraLight from "@Public/assets/Valora.svg";
-import ValoraDark from "@Public/assets/Valora2.svg";
+import ValoraLight from "@/assets/Valora.svg";
+import ValoraDark from "@/assets/Valora2.svg";
 import { usePathname } from 'next/navigation'
 
 import { cx } from "../lib/utils";
