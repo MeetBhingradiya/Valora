@@ -24,7 +24,26 @@
         "react-dom": "^18.3.1",
         "react-feather": "^2.0.10",
         "sass": "^1.80.4",
-        "uuid": "^10.0.0"
+        "uuid": "^10.0.0",
+        "@fortawesome/free-solid-svg-icons": "^6.6.0",
+        "@fortawesome/react-fontawesome": "^0.2.2",
+        "@next/third-parties": "^15.0.1",
+        "@sindresorhus/slugify": "^2.2.1",
+        "clsx": "^2.1.1",
+        "date-fns": "^4.1.0",
+        "gray-matter": "^4.0.3",
+        "jose": "^5.9.6",
+        "jwt-decode": "^4.0.0",
+        "next-mdx-remote": "^5.0.0",
+        "next-remote-watch": "^2.0.0",
+        "next-themes": "^0.3.0",
+        "nodemailer": "^6.9.15",
+        "prism-react-renderer": "^2.4.0",
+        "react-children-utilities": "^2.10.0",
+        "react-icons": "^5.3.0",
+        "react-share": "^5.1.0",
+        "rehype-prism-plus": "^2.0.0",
+        "remark-gfm": "^4.0.0"
     },
     "devDependencies": {
         "@types/node": "^22.7.9",
@@ -34,6 +53,10 @@
         "eslint-config-next": "15.0.1",
         "postcss": "^8.4.47",
         "tailwindcss": "^3.4.14",
-        "typescript": "^5.6.3"
+        "typescript": "^5.6.3",
+        "@tailwindcss/typography": "^0.5.15",
+        "@types/mongoose": "^5.11.97",
+        "@types/uuid": "^10.0.0",
+        "autoprefixer": "^10.4.20"
     }
 }
