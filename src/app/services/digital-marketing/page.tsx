@@ -25,7 +25,7 @@ function DigitalMarketingPage() {
                 <div className="mb-12">
                     <h2 className="text-2xl md:text-3xl font-bold  mb-4">Why Choose Us?</h2>
                     <p className="text-base md:text-lg  leading-relaxed">
-                        At Valora Infotech, we leverage data-driven digital marketing techniques to enhance your brand's online presence. From SEO to content creation and social media marketing, we ensure that your business reaches its target audience effectively.
+                        At Valora Infotech, we leverage data-driven digital marketing techniques to enhance your brand&apos;s online presence. From SEO to content creation and social media marketing, we ensure that your business reaches its target audience effectively.
                     </p>
                 </div>
 

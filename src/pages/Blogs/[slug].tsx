@@ -35,7 +35,7 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
             >
                 <div className="text-center">
                     <h1>Blog post not found</h1>
-                    <p>Sorry, we couldn't find the blog post you were looking for.</p>
+                    <p>Sorry, we couldn&apos;t find the blog post you were looking for.</p>
                     <Link href="/Blogs" className="text-primary underline">
                         Go back to all blogs
                     </Link>
