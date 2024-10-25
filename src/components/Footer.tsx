@@ -1,6 +1,7 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import Portfolio from './Portfolio';
 import { ThemeSelect } from './ThemeSelect';
+import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -22,29 +23,29 @@ const Footer = () => {
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Quick Links</h3>
                         <ul>
                             <li className="mb-2">
-                                <a href="/about" className="hover:text-primary dark:hover:text-primary transition-colors">
+                                <Link href="/about" className="hover:text-primary dark:hover:text-primary transition-colors">
                                     About Us
-                                </a>
+                                </Link>
                             </li>
                             <li className="mb-2">
-                                <a href="/#services" className="hover:text-primary dark:hover:text-primary transition-colors">
+                                <Link href="/#services" className="hover:text-primary dark:hover:text-primary transition-colors">
                                     Services
-                                </a>
+                                </Link>
                             </li>
                             <li className="mb-2">
-                                <a href="/contact" className="hover:text-primary dark:hover:text-primary transition-colors">
+                                <Link href="/contact" className="hover:text-primary dark:hover:text-primary transition-colors">
                                     Contact
-                                </a>
+                                </Link>
                             </li>
                             <li className="mb-2">
-                                <a href="/Blogs" className="hover:text-primary dark:hover:text-primary transition-colors">
+                                <Link href="/Blogs" className="hover:text-primary dark:hover:text-primary transition-colors">
                                     Blogs
-                                </a>
+                                </Link>
                             </li>
                             <li className="mb-2">
-                                <a href="/tools" className="hover:text-primary dark:hover:text-primary transition-colors">
+                                <Link href="/tools" className="hover:text-primary dark:hover:text-primary transition-colors">
                                     Portfolio
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -53,17 +54,17 @@ const Footer = () => {
                     <div>
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Follow Us</h3>
                         <div className="flex space-x-4 mb-6">
-                            <a
+                            <Link
                                 href="https://www.linkedin.com/company/valorainfotech/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 bg-gray-700 dark:bg-gray-800 rounded-full hover:bg-primary dark:hover:bg-primary transition-colors"
                             >
                                 <FaLinkedinIn className="h-5 w-5 text-white" />
-                            </a>
+                            </Link>
                         </div>
                         <p className="text-sm">
-                            Email: <a href="mailto:info@valorainfotech.com" className="hover:text-primary dark:hover:text-primary">info@valorainfotech.com</a>
+                            Email: <Link href="mailto:info@valorainfotech.com" className="hover:text-primary dark:hover:text-primary">info@valorainfotech.com</Link>
                         </p>
                         <div className="mt-5">
                             <ThemeSelect />

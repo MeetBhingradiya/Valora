@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Navbar from '@Components/Navbar';
 import Footer from '@Components/Footer';
 
-const AiMlPage = () => {
+function AiMlPage () {
     return (
         <div className="min-h-screen dark:bg-dark bg-light dark:text-darkText text-lightText">
             <Navbar />

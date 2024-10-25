@@ -6,7 +6,7 @@ interface TagProps {
   children: string;
 }
 
-export const Tag: React.FC<TagProps> = ({ href, children }) => {
+export function Tag ({ href, children }:any) {
   return (
     <Link
       href={href}

@@ -1,7 +1,7 @@
 "use client";
 import { useState, ChangeEvent } from "react";
 
-const URLEncoderDecoder = () => {
+function URLEncoderDecoder() {
   const [input, setInput] = useState<string>("");
   const [output, setOutput] = useState<string>("");
 

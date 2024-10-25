@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faCheck, faSync } from "@fortawesome/free-solid-svg-icons";
 
-const UUIDGenerator: React.FC = () => {
+function UUIDGenerator() {
   const [icon, setIcon] = useState(faCopy);
   const [uuid, setUuid] = useState("");
 

@@ -41,7 +41,7 @@ const algorithms = [
     'PS256', 'PS384', 'PS512',
 ];
 
-const JWTDecoder: React.FC = () => {
+export default function JWTDecode () {
     const [jwtData, setJwtData] = useState<TokenData>({
         token: defaultTokens['HS256'],
         algorithm: 'HS256',
@@ -242,5 +242,3 @@ const JWTDecoder: React.FC = () => {
         </div>
     );
 };
-
-export default JWTDecoder;

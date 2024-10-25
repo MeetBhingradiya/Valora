@@ -5,7 +5,7 @@ import Footer from '@Components/Footer';
 import React from "react";
 import { getAllMdx } from "@Lib/mdx";
 
-const Blog = async () => {
+async function Blog ()  {
     const blogs = await getAllMdx();
 
     if (blogs.length === 0) {
