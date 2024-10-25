@@ -1,6 +1,6 @@
-import { BlogModel } from "../model/blog";
-import type { BlogType } from "../model/blog";
-import dbConnect from "../lib/dbConnect"; 
+import { BlogModel } from "@Models/blog";
+import type { BlogType } from "@Models/blog";
+import dbConnect from "@Lib/dbConnect"; 
 
 export const getMdx = async (slug: string) => {
     await dbConnect();

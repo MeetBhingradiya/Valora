@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import "../styles/globals.css";
+import "@Styles/globals.css";
 import { ReactNode } from "react";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Poppins } from 'next/font/google'

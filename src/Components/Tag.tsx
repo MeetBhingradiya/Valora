@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cx, slugify } from "../lib/utils";
+import { cx, slugify } from "@Lib/utils";
 
 interface TagProps {
   href: string;
