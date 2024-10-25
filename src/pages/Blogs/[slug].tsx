@@ -9,9 +9,9 @@ import rehypePrism from "rehype-prism-plus";
 import { getAllMdx, getMdx } from "../../lib/mdx";
 import { MDXFrontMatter } from "../../lib/types";
 import { cx } from "../../lib/utils";
-import { Page } from "../../components/Page";
-import { components } from "../../components/MDX";
-import { Prose } from "../../components/Prose";
+import { Page } from "components/Page";
+import { components } from "components/MDX";
+import { Prose } from "components/Prose";
 import remarkGfm from "remark-gfm";
 
 interface ContextProps extends ParsedUrlQuery {
