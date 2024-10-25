@@ -64,7 +64,7 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
                         {previous && (  
                             <div className="flex-1 text-left">
                                 <Link
-                                    href={`/Blogs/${previous?.slug}`}
+                                    href={`/blogs/${previous?.slug}`}
                                     className="rounded-lg p-3 hover:bg-gray-200 dark:hover:bg-dark no-underline font-semibold text-primary"
                                 >
                                     &larr; {previous?.title}
@@ -75,7 +75,7 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
                         {next && (
                             <div className="flex-1 text-right"> 
                                 <Link
-                                    href={`/Blogs/${next?.slug}`}
+                                    href={`/blogs/${next?.slug}`}
                                     className="rounded-lg p-3 hover:bg-gray-200 dark:hover:bg-dark no-underline font-semibold text-primary"
                                 >
                                     {next?.title} &rarr;

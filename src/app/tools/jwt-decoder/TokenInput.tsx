@@ -44,7 +44,7 @@ const TokenInput: React.FC<TokenInputProps> = ({ token, setToken }) => {
             onFocus={saveCursorPosition}
             onClick={saveCursorPosition}
             onKeyUp={saveCursorPosition}
-            className="w-full h-[557px] p-4 border rounded mb-4 bg-white"
+            className="w-full h-[557px] p-4 border rounded mb-4 dark:bg-dark bg-light"
             aria-label="JWT Token Input"
             style={{
                 maxWidth: '100%',

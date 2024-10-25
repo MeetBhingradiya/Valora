@@ -6,14 +6,14 @@ import Footer from '../../../components/Footer';
 
 const CloudSolutionsPage = () => {
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen dark:bg-dark bg-light dark:text-darkText text-lightText">
       <Navbar />
 
       <div className="container mx-auto p-4 md:p-8">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-5xl font-bold text-primary mt-14 mb-4">Cloud Solutions</h1>
-          <p className="text-base md:text-lg text-white mb-8">
+          <p className="text-base md:text-lg mb-8">
             Revolutionize your business with scalable and secure cloud solutions tailored to your needs.
           </p>
           <Link href="/contact" className="bg-primary text-white px-4 md:px-6 py-2 md:py-3 rounded-md shadow-md hover:bg-blue-600">
@@ -23,8 +23,8 @@ const CloudSolutionsPage = () => {
 
         {/* Cloud Solutions Description Section */}
         <div className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-200 mb-4">Why Choose Us?</h2>
-        <p className="text-base md:text-lg text-white leading-relaxed">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">Why Choose Us?</h2>
+        <p className="text-base md:text-lg  leading-relaxed">
             Valora Infotech offers state-of-the-art cloud solutions that enable businesses to scale effortlessly, enhance security, and improve operational efficiency. With our cloud expertise, you can transition smoothly to the cloud while minimizing risks and maximizing returns.
           </p>
         </div>
@@ -64,7 +64,7 @@ const CloudSolutionsPage = () => {
               description: 'Our team provides 24/7 support, ensuring that your cloud environment remains stable, secure, and optimized. From troubleshooting to updates, we offer comprehensive support to ensure your cloud infrastructure continues to meet your business needs.',
             },
           ].map((item, index) => (
-            <div key={item.title} className={`mb-12 p-4 md:p-6 rounded-3xl shadow-lg bg-gradient-to-r ${index % 2 === 0 ? 'from-primary to-[#ffffff]' : 'from-[#ffffff] to-primary'} bg-opacity-50`}>
+            <div key={item.title} className={`mb-12 p-4 md:p-6 rounded-3xl shadow-lg bg-gradient-to-r ${index % 2 === 0 ? 'from-primary to-dark dark:from-primary dark:to-light' : 'dark:from-light dark:to-primary from-dark to-primary'} bg-opacity-50`}>
               <div className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start justify-center`}>
                 <div className={`flex-shrink-0 w-full md:w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'} flex justify-center items-center`}>
                   <Image
@@ -76,8 +76,8 @@ const CloudSolutionsPage = () => {
                   />
                 </div>
                 <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'pl-8' : 'pr-8'} flex flex-col justify-center items-start text-left`}>
-                  <h3 className="text-lg md:text-xl font-bold text-primary mb-2 py-5">{item.title}</h3>
-                  <p className="text-base text-[#000000] mb-4">{item.description}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-darkText dark:text-lightText mb-2 py-5">{item.title}</h3>
+                  <p className="text-base text-darkText dark:text-lightText mb-4">{item.description}</p>
                 </div>
               </div>
             </div>
@@ -86,11 +86,11 @@ const CloudSolutionsPage = () => {
 
         {/* Call-to-Action Section */}
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-4">Ready to Harness the Power of the Cloud?</h2>
-          <p className="text-base md:text-lg text-white mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Harness the Power of the Cloud?</h2>
+          <p className="text-base md:text-lg  mb-6">
             Empower your business with our comprehensive cloud solutions, tailored to your needs.
           </p>
-          <Link href="/contact" className="bg-blue-500 text-white px-6 py-2 md:px-8 md:py-3 rounded-md shadow-md hover:bg-blue-600">
+          <Link href="/contact" className="bg-primary text-white px-6 py-2 md:px-8 md:py-3 rounded-md shadow-md hover:bg-blue-600">
             Contact Us
           </Link>
         </div>

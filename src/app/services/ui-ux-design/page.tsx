@@ -6,25 +6,25 @@ import Footer from '../../../components/Footer';
 
 const UIUXDesignPage = () => {
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen dark:bg-dark bg-light dark:text-darkText text-lightText">
       <Navbar />
 
       <div className="container mx-auto p-4 md:p-8">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-5xl font-bold text-primary mt-14 mb-4">UI/UX Design</h1>
-          <p className="text-base md:text-lg text-white mb-8">
+          <p className="text-base md:text-lg mb-8">
             Our UI/UX design services focus on creating user-centric designs that enhance the user experience while being visually appealing and functional.
           </p>
-          <Link href="/contact" className="bg-primary text-white px-4 md:px-6 py-2 md:py-3 rounded-md shadow-md hover:bg-yellow-500">
+          <Link href="/contact" className="bg-primary text-white px-4 md:px-6 py-2 md:py-3 rounded-md shadow-md hover:bg-blue-600">
             Get in Touch
           </Link>
         </div>
 
         {/* Services Description Section */}
         <div className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-200 mb-4">Why Choose Us?</h2>
-          <p className="text-base md:text-lg text-white leading-relaxed">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Why Choose Us?</h2>
+          <p className="text-base md:text-lg leading-relaxed">
             At Valora Infotech, we understand the importance of an engaging and intuitive user experience. Our dedicated team combines creativity with functionality to create designs that resonate with users while effectively conveying your brand's message.
           </p>
         </div>
@@ -64,7 +64,7 @@ const UIUXDesignPage = () => {
                 description: 'We seamlessly integrate your brand identity into the UI/UX design, ensuring that it aligns with your overall brand strategy. From colors and typography to imagery and tone of voice, we create a cohesive design that reflects your brand’s values and resonates with your target audience. This consistency builds trust and recognition, ultimately enhancing user loyalty and engagement.'
               },              
             ].map((item, index) => (
-            <div key={item.title} className={`mb-12 p-4 md:p-6 rounded-3xl shadow-lg bg-gradient-to-r ${index % 2 === 0 ? 'from-primary to-[#ffffff]' : 'from-[#ffffff] to-primary'} bg-opacity-50`}>
+            <div key={item.title} className={`mb-12 p-4 md:p-6 rounded-3xl shadow-lg bg-gradient-to-r ${index % 2 === 0 ? 'from-primary to-dark dark:from-primary dark:to-light' : 'dark:from-light dark:to-primary from-dark to-primary'} bg-opacity-50`}>
               <div className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start justify-center`}>
                 <div className={`flex-shrink-0 w-full md:w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'} flex justify-center items-center`}>
                   <Image 
@@ -76,8 +76,8 @@ const UIUXDesignPage = () => {
                   />
                 </div>
                 <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'pl-8' : 'pr-8'} flex flex-col justify-center items-start text-left`}>
-                  <h3 className="text-lg md:text-xl font-bold text-primary mb-2 py-5">{item.title}</h3>
-                  <p className="text-base text-green-900 mb-4">{item.description}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-darkText dark:text-lightText mb-2 py-5">{item.title}</h3>
+                  <p className="text-base text-darkText dark:text-lightText mb-4">{item.description}</p>
                 </div>
               </div>
             </div>
@@ -86,11 +86,11 @@ const UIUXDesignPage = () => {
 
         {/* Call-to-Action Section */}
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-4">Ready to Enhance Your User Experience?</h2>
-          <p className="text-base md:text-lg text-gray-200 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Enhance Your User Experience?</h2>
+          <p className="text-base md:text-lg mb-6">
             Let’s create an unforgettable user experience together with our expert UI/UX design services.
           </p>
-          <Link href="/contact" className="bg-primary text-white px-6 py-2 md:px-8 md:py-3 rounded-md shadow-md hover:bg-yellow-500">
+          <Link href="/contact" className="bg-primary text-white px-6 py-2 md:px-8 md:py-3 rounded-md shadow-md hover:bg-blue-600">
             Contact Us
           </Link>
         </div>

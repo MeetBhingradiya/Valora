@@ -13,7 +13,7 @@ import ValoraLight from "../../public/assets/Valora.svg";
 import ValoraDark from "../../public/assets/Valora2.svg";
 import { usePathname } from 'next/navigation'
 
-import { cx} from "../lib/utils";
+import { cx } from "../lib/utils";
 
 const Navbar = () => {
     const [State, setState] = useState({
@@ -24,7 +24,7 @@ const Navbar = () => {
         isMobileToolsOpen: false,
         isToolsOpen: false,
     });
-    const pathname = usePathname() 
+    const pathname = usePathname()
     const servicesMenuRef = useRef<HTMLUListElement>(null);
     const toolsMenuRef = useRef(null);
     const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
@@ -143,59 +143,138 @@ const Navbar = () => {
         <nav
             id={"Nav"}
             className={cx(
-                `${pathname === "/" ? `${State.isScrolled ? "text-lightText bg-light" : "text-darkText bg-transparent"}` : `bg-light`}`,
-                `${State.isScrolled ? "text-lightText bg-light dark:bg-dark dark:text-darkText" : "text-darkText bg-transparent"}`,
+                `${pathname === "/" ? `${State.isScrolled ? "text-lightText bg-light dark:bg-dark dark:text-darkText" : "text-darkText bg-transparent"}` : `bg-light`}`,
+                `${State.isScrolled ? "text-lightText bg-light dark:bg-dark dark:text-darkText" : "dark:text-darkText bg-transparent"}`,
+                "fixed w-full top-0 z-50 transition-all duration-300")}
+        // {cx(
+        //     `${pathname === "/" ? `${State.isScrolled ? "text-lightText bg-light" : "text-darkText bg-transparent"}` : `bg-light`}`,
+        //     `${State.isScrolled ? "text-lightText bg-light dark:bg-dark dark:text-darkText" : "text-darkText bg-transparent"}`,
 
-                "fixed w-full top-0 z-50 transition-all duration-300"
-                // `fixed w-full top-0 z-50 transition-all duration-500 dark:text-white`,
-                // `${State.isScrolled ? "text-lightText bg-light dark:bg-dark": "text-white bg-transparent"}`,
-                // `${pathname === "/" ? "bg-transparent" : ""}`
-            )}
+        //     "fixed w-full top-0 z-50 transition-all duration-300"
+        //     // `fixed w-full top-0 z-50 transition-all duration-500 dark:text-white`,
+        //     // `${State.isScrolled ? "text-lightText bg-light dark:bg-dark": "text-white bg-transparent"}`,
+        //     // `${pathname === "/" ? "bg-transparent" : ""}`
+        // )}
         >
             <div className="flex justify-between items-center px-6 py-4">
-                <Link className="flex items-center dark:hidden" href="/">
-                    <div >  
-                        <Image
-                            src={VlogoDark}
-                            alt="V Dark"
-                            width={40}
-                            height={40}
-                            className="cursor-pointer"
-                        />
-                    </div>
-                    <div className="ml-2">
-                        <Image
-                            src={ValoraDark}
-                            alt="Valora Dark"
-                            width={100}
-                            height={50}
-                            className="cursor-pointer"
-                        />
-                    </div>
-                </Link>
-
-                <Link className={cx(
-                    "items-center hidden dark:flex"
-                )} href="/">
-                    <div>
-                        <Image
-                            src={VlogoLight}
-                            alt="V Light"
-                            width={40}
-                            height={40}
-                            className="cursor-pointer"
-                        />
-                    </div>
-                    <div className="ml-2">
-                        <Image
-                            src={ValoraLight}
-                            alt="Valora Light"
-                            width={100}
-                            height={50}
-                            className="cursor-pointer"
-                        />
-                    </div>
-                </Link>
+                {pathname === "/" ? (
+                    // On home page
+                    <>
+                        {/* Dark logos for light theme */}
+                        <Link className="flex items-center dark:hidden" href="/">
+                            {State.isScrolled ? (
+                                <>
+                                    <div>
+                                        <Image
+                                            src={VlogoDark}
+                                            alt="V Dark"
+                                            width={40}
+                                            height={40}
+                                            className="cursor-pointer"
+                                        />
+                                    </div>
+                                    <div className="ml-2">
+                                        <Image
+                                            src={ValoraDark}
+                                            alt="Valora Dark"
+                                            width={100}
+                                            height={50}
+                                            className="cursor-pointer"
+                                        />
+                                    </div>
+                                </>
+                            ) : (
+                                <>
+                                    <div>
+                                        <Image
+                                            src={VlogoLight}
+                                            alt="V Light"
+                                            width={40}
+                                            height={40}
+                                            className="cursor-pointer"
+                                        />
+                                    </div>
+                                    <div className="ml-2">
+                                        <Image
+                                            src={ValoraLight}
+                                            alt="Valora Light"
+                                            width={100}
+                                            height={50}
+                                            className="cursor-pointer"
+                                        />
+                                    </div>
+                                </>
+                            )}
+                        </Link>
+                        {/* Light logos for dark theme */}
+                        <Link className="flex items-center hidden dark:flex" href="/">
+                            <div>
+                                <Image
+                                    src={VlogoLight}
+                                    alt="V Light"
+                                    width={40}
+                                    height={40}
+                                    className="cursor-pointer"
+                                />
+                            </div>
+                            <div className="ml-2">
+                                <Image
+                                    src={ValoraLight}
+                                    alt="Valora Light"
+                                    width={100}
+                                    height={50}
+                                    className="cursor-pointer"
+                                />
+                            </div>
+                        </Link>
+                    </>
+                ) : (
+                    // On other pages
+                    <>
+                        {/* Dark logos for light theme */}
+                        <Link className="flex items-center dark:hidden" href="/">
+                            <div>
+                                <Image
+                                    src={VlogoDark}
+                                    alt="V Dark"
+                                    width={40}
+                                    height={40}
+                                    className="cursor-pointer"
+                                />
+                            </div>
+                            <div className="ml-2">
+                                <Image
+                                    src={ValoraDark}
+                                    alt="Valora Dark"
+                                    width={100}
+                                    height={50}
+                                    className="cursor-pointer"
+                                />
+                            </div>
+                        </Link>
+                        {/* Light logos for dark theme */}
+                        <Link className="flex items-center hidden dark:flex" href="/">
+                            <div>
+                                <Image
+                                    src={VlogoLight}
+                                    alt="V Light"
+                                    width={40}
+                                    height={40}
+                                    className="cursor-pointer"
+                                />
+                            </div>
+                            <div className="ml-2">
+                                <Image
+                                    src={ValoraLight}
+                                    alt="Valora Light"
+                                    width={100}
+                                    height={50}
+                                    className="cursor-pointer"
+                                />
+                            </div>
+                        </Link>
+                    </>
+                )}
 
                 {/* Hamburger Icon for Mobile */}
                 <div
@@ -315,7 +394,7 @@ const Navbar = () => {
                         transition={{ delay: 0.4 }}
                     >
                         <Link
-                            href="/Blogs"
+                            href="/blogs"
                             onClick={handleLinkClick}
                             className="hover:text-primary transition-colors duration-300"
                         >
@@ -350,6 +429,10 @@ const Navbar = () => {
                                 className="absolute left-0 mt-1 py-2 w-56 bg-[#ffffff] text-black border rounded-md shadow-lg z-10"
                             >
                                 {[
+                                    {
+                                        href: "/tools/jwt-decoder",
+                                        text: "Jwt Decoder",
+                                    },
                                     {
                                         href: "/tools/base64-encoder-decoder",
                                         text: "Base64 Encoder/Decoder",
@@ -414,7 +497,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             <div
                 className={`md:hidden ${State.isMenuOpen ? "fixed" : "hidden"
-                    } top-[4rem] left-0 w-full h-[calc(100%-4rem)] bg-dark z-20`}
+                    } top-[4rem] left-0 w-full h-[calc(100%-4rem)] dark:bg-dark dark:text-darkText bg-light text-lightText z-20`}
             >
                 <ul className="flex flex-col py-4 space-y-2">
                     <li>
@@ -505,10 +588,23 @@ const Navbar = () => {
                         {State.isMobileToolsOpen && (
                             <ul className="relative mt-1 w-full bg-dark text-[#ffffff] shadow-lg z-10 text-center">
                                 {[
-                                    { href: "/tools/jwt-decoder", text: "JWT Decoder" },
-                                    { href: "/tools/base64-encoder", text: "Base64 Encoder" },
+                                    {
+                                        href: "/tools/jwt-decoder",
+                                        text: "Jwt Decoder",
+                                    },
+                                    {
+                                        href: "/tools/base64-encoder-decoder",
+                                        text: "Base64 Encoder/Decoder",
+                                    },
                                     { href: "/tools/uuid-generator", text: "UUID Generator" },
-                                    { href: "/tools/url-parser", text: "URL Parser" },
+                                    {
+                                        href: "/tools/url-encoder-decoder",
+                                        text: "URL Encoder/Decoder",
+                                    },
+                                    {
+                                        href: "/tools/date-time-utilities",
+                                        text: "Date and Time Utilities",
+                                    },
                                 ].map((item, index) => (
                                     <li key={index}>
                                         <hr className="border-t border-gray-500 my-1" />
@@ -531,7 +627,7 @@ const Navbar = () => {
 
                     <li>
                         <Link
-                            href="/Blogs"
+                            href="/blogs"
                             onClick={handleLinkClick}
                             className="block px-4 py-2 text-center"
                         >

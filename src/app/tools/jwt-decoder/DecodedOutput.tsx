@@ -52,7 +52,7 @@ const DecodedOutput = forwardRef<HTMLDivElement, DecodedOutputProps>(
                 <textarea
                     value={headerText}
                     onChange={handleHeaderChange}
-                    className="w-full h-[200px] p-2 border rounded bg-white"
+                    className="w-full h-[200px] p-2 border rounded dark:bg-dark bg-light"
                     aria-label="Decoded JWT Header"
                 />
                 {headerError && <p className="text-red-500">{headerError}</p>}
@@ -61,7 +61,7 @@ const DecodedOutput = forwardRef<HTMLDivElement, DecodedOutputProps>(
                 <textarea
                     value={payloadText}
                     onChange={handlePayloadChange}
-                    className="w-full h-[200px] p-2 border rounded bg-white"
+                    className="w-full h-[200px] p-2 border rounded dark:bg-dark bg-light"
                     aria-label="Decoded JWT Payload"
                 />
                 {payloadError && <p className="text-red-500">{payloadError}</p>}

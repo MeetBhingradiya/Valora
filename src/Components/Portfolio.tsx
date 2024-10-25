@@ -78,7 +78,7 @@ const Portfolio = () => {
                                 <h3 className={`text-2xl font-bold mb-4 dark:text-primary text-primary`}>
                                     {project.title}
                                 </h3>
-                                <p className={`text-lg mb-4 px-3 dark:bg-dark dark:text-darkText bg-light text-lightText}`}>
+                                <p className={`text-lg mb-4 px-3 dark:bg-dark dark:text-darkText  text-lightText}`}>
                                     {project.description}
                                 </p>
                                 <a
