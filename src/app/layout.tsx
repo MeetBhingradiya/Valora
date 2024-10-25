@@ -1,50 +1,60 @@
-import type { Metadata, Viewport } from "next";
-import "@Styles/globals.css";
-import { ReactNode } from "react";
-import { GoogleAnalytics } from '@next/third-parties/google'
-import { Poppins } from 'next/font/google'
-import { ThemeProvider } from "next-themes";
+import type { Metadata } from "next";
+import "@Styles/globals.sass";
+import { Inter } from "next/font/google";
+import { NextUIProvider } from "@nextui-org/system";
 
+const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-    title: "Valora Infotech",
-    description: "VALORA INFOTECH is having skilled developers & creative minds to fulfill the requirement of clients globally. We work on Android, iPhone Application & Web. We have the highly professional technical staff and Good Skilled Management Members to run this company smoothly.",
+    title: "Meet Bhingradiya",
+    description: "A Portfolio Website of Meet Bhingradiya",
+    icons: "favicon.ico",
+    keywords: [
+        "Meet Bhingradiya",
+        "Meet",
+        "Bhingradiya",
+        "Portfolio",
+        "Meet Bhingradiya Portfolio",
+        "meetbhingradiya",
+        "Full Stack Developer",
+        "Full Stack",
+        "Surat, Gujarat",
+        "Gujarat, India",
+        "Surat",
+        "Gujarat",
+        "India",
+        "meetbhingradiya.com",
+        "meetbhingradiya.dev",
+        "meetbhingradiya.in",
+        "meetbhingradiya.co.in",
+    ],
+    authors: {
+        name: "Meet Bhingradiya",
+        url: "https://github.com/MeetBhingradiya",
+    }
 };
 
-const poppins = Poppins({
-    weight: '400',
-    subsets: ['latin'],
-});
-
-export const viewport: Viewport = {
-    themeColor: '#000000',
-    initialScale: 1,
-    width: 'device-width',
-    height: 'device-height',
-    minimumScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-    viewportFit: 'cover'
-}
-
+// @ File
 export default function RootLayout({
     children,
-}: {
-    children: ReactNode;
-}) {
+}: Readonly<{
+    children: React.ReactNode;
+}>) {
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang="en">
             <head>
                 <meta charSet="utf-8" />
-                <script defer src="/js/particles.js"></script>
-                <GoogleAnalytics gaId="G-1MLJGLLSTX" />
+
+                {/* Device View Port */}
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+                {/* Mobile Browser Accent Colour */}
+                <meta name="theme-color" content="#000" />
+
+                {/* Google Search Console Verification */}
+                <meta name="google-site-verification" content="-eIAp0-BRCYjfoSuMDWpQTpgjQHadfvBbnf4le5IWBk" />
             </head>
-            <body className={"bg-gray-100 text-gray-900 font-poppins " + poppins.className}>
-                <ThemeProvider
-                    defaultTheme="dark"
-                    attribute="class"
-                >
-                    {children}
-                </ThemeProvider>
+            <body className={inter.className}>
+                {children}
             </body>
         </html>
     );

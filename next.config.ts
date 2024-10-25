@@ -5,6 +5,14 @@ const __dirname = path.resolve();
 
 const nextConfig: NextConfig = {
     reactStrictMode: false,
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "img.icons8.com"
+            }
+        ],
+    },
     async headers() {
         return [
             {
@@ -34,6 +42,10 @@ const nextConfig: NextConfig = {
             }
         ];
     },
+    sassOptions: {
+        silenceDeprecations: ["legacy-js-api"],
+        implementation: 'sass'
+    },
     webpack: (config: any, { buildId, dev, isServer, defaultLoaders, webpack }: any) => {
         let Config = {
             ...config,
@@ -43,11 +55,10 @@ const nextConfig: NextConfig = {
                     '@Root': path.resolve(__dirname, './'),
                     '@': path.resolve(__dirname, './src'),
                     '@App': path.resolve(__dirname, './src/app'),
-                    '@Pages': path.resolve(__dirname, './src/pages'),
-                    '@Models': path.resolve(__dirname, './src/model'),
-                    "@Components": path.resolve(__dirname, "./src/components"),
-                    "@Styles": path.resolve(__dirname, "./src/styles"),
-                    "@Lib": path.resolve(__dirname, "./src/lib"),
+                    '@Pages': path.resolve(__dirname, './src/Pages'),
+                    "@Components": path.resolve(__dirname, "./src/Components"),
+                    "@Styles": path.resolve(__dirname, "./src/Styles"),
+                    "@Utils": path.resolve(__dirname, "./src/Utils"),
                     ...config.resolve.alias,
                 },
                 extensions: [

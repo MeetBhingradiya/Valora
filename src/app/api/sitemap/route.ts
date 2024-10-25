@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server';
 import { StaticPages } from './StaticPages';
 
 const defaultPriority = 0.5;
-const defaultFrequency = 'weekly'; // ? 'daily' | 'weekly' | 'monthly'
+const defaultFrequency = 'weekly';
+
 const fetchDynamicPages = async () => {
     return [
         // { route: 'blog/some-article', priority: 0.5, frequency: 'weekly' },
@@ -18,9 +19,11 @@ const SitemapTemplate =
 `
 
 export async function GET() {
-    const baseUrl = 'https://www.valorainfotech.com';
+    const baseUrl = 'https://meetbhingradiya.vercel.app';
     const dynamicPages = await fetchDynamicPages();
+
     const allPages = [...StaticPages, ...dynamicPages];
+
     const generatedSitemap = SitemapTemplate.replace('@Pages', allPages.map((page) => {
         return `
     <url>

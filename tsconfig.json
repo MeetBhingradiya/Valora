@@ -16,7 +16,6 @@
         "isolatedModules": true,
         "jsx": "preserve",
         "incremental": true,
-        "baseUrl": ".",
         "plugins": [
             {
                 "name": "next"
@@ -35,17 +34,14 @@
             "@Pages/*": [
                 "./src/pages/*"
             ],
-            "@Models/*": [
-                "./src/model/*"
-            ],
             "@Components/*": [
-                "src/components/*"
+                "./src/Components/*"
             ],
             "@Styles/*": [
-                "./src/styles/*"
+                "./src/Styles/*"
             ],
-            "@Lib/*": [
-                "./src/lib/*"
+            "@Utils/*": [
+                "./src/Utils/*"
             ]
         },
         "target": "ES2017"

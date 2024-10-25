@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+
+# Lock Files
+*.lock
+
 # testing
 /coverage
 
@@ -18,6 +22,10 @@
 # misc
 .DS_Store
 *.pem
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # debug
 npm-debug.log*
@@ -25,21 +33,20 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-# .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*.local
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
+next-env.d.ts
 
-# Package Manager Files
+# workspace or ide
+.vscode
+
+# package manager
 package-lock.json
 yarn.lock
-*.lockb
-bun.*
-# Local Netlify folder
-.netlify
+pnpm-lock.yaml
+bun.lockb
