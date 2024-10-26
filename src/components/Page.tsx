@@ -1,10 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import { onlyText } from "react-children-utilities";
-import { formatDate } from "@Lib/formatDate";
-import { Prose } from "./Prose";
-import { cx } from "@Lib/utils";
+import { formatDate } from "../lib/formatDate";
+import { Prose } from "../components/Prose";
+import { cx } from "../lib/utils";
 import { Clock, Heart, Eye, Calendar, User } from "react-feather";
+import Link from "next/link";
+import { ArrowLeftCircle } from "react-feather";
 
 interface BlogOptions {
     // ^ Required Propertys
@@ -38,12 +40,12 @@ export const Page: React.FC<BlogOptions> = ({
     likes,
     readtime,
     tags,
-    authorImage
+    authorImage,
 }) => {
     const metaTitle = onlyText(title);
     const metaDescription = description
         ? onlyText(description)
-    : "A blog post on " + metaTitle;
+        : "A blog post on " + metaTitle;
     const customTitle = `${metaTitle} - Valora Infotech`;
 
     return (
@@ -54,13 +56,21 @@ export const Page: React.FC<BlogOptions> = ({
                 <meta name="description" content={metaDescription} />
                 <meta name="og:description" content={metaDescription} />
                 <meta name="og:author" content={author} />
-                {/* <meta property="og:image" content={`${siteConfig.siteUrl}${metaThumbnail}`} /> */}
             </Head>
 
+            {/* Updated Back Button with Icon */}
+            <nav className={cx("my-5 flex justify-start items-center")}>
+                <Link
+                    href={`/blogs`}
+                    className="flex items-center gap-2 rounded-lg p-3 no-underline text-xl font-semibold text-primary"
+                >
+                    <ArrowLeftCircle size={28} className="text-primary" />
+                    <span>Back</span>
+                </Link>
+            </nav>
 
             {/* Header Section */}
             <header className="my-5 dark:border-dark rounded-lg">
-                {/* Thubnail */}
                 {thumbnail && (
                     <Image
                         className="rounded-lg w-full h-auto object-cover border-gray-300 border-2 dark:border-gray-800 shadow-lg"
@@ -72,29 +82,27 @@ export const Page: React.FC<BlogOptions> = ({
                 )}
 
                 <div className="mt-5 flex items-center gap-3 text-lightText dark:text-darkText text-sm">
-                    <span className="flex gap-2"><User className="h-5 w-5" />{author}</span>
+                    <span className="flex gap-2">
+                        <User className="h-5 w-5" />
+                        {author}
+                    </span>
                     •
                     {date && (
                         <span className="text-gray-400 flex gap-2">
-                            <Calendar className="h-5 w-5" /> {formatDate(date)}
+                            <Calendar className="h-5 w-5" />
+                            {formatDate(date)}
                         </span>
                     )}
                     •
-                        {/* <span className="flex gap-2 text-gray-400">
-                            <Eye className="h-5 w-5" /> 
-                            {views}
-                            <Heart className="h-5 w-5" />
-                            {likes}
-                        </span>
-                        • */}
-                        <span className="flex gap-2 text-gray-400">
-                            <Clock className="h-5 w-5" />
-                            {readtime} min
-                        </span>
+                    <span className="flex gap-2 text-gray-400">
+                        <Clock className="h-5 w-5" />
+                        {readtime} min
+                    </span>
                 </div>
 
-                                {/* Title & Description */}
-                                <h1 className="mt-5 text-4xl font-bold text-lightText dark:text-darkText">{title}</h1>
+                <h1 className="mt-5 text-4xl font-bold text-lightText dark:text-darkText">
+                    {title}
+                </h1>
                 {description && (
                     <p className="mt-4 mb-5 text-lightdarkText dark:text-darklightText leading-relaxed">
                         {typeof description === "string" ? description : description}
@@ -102,12 +110,10 @@ export const Page: React.FC<BlogOptions> = ({
                 )}
             </header>
 
-            {/* Main Content */}
             <main className="prose dark:prose-dark max-w-none text-lightText dark:text-darkText">
                 {children}
             </main>
 
-            {/* Tags */}
             {tags && (
                 <div className="mt-5 flex gap-2">
                     {tags.map((tag) => (
@@ -125,4 +131,3 @@ export const Page: React.FC<BlogOptions> = ({
         </>
     );
 };
-

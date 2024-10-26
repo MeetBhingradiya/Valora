@@ -19,7 +19,7 @@ interface ContextProps extends ParsedUrlQuery {
 }
 
 interface PostProps {
-    frontMatter: MDXFrontMatter | null; 
+    frontMatter: MDXFrontMatter | null;
     mdx: any | null;
     previous: MDXFrontMatter | null;
     next: MDXFrontMatter | null;
@@ -28,14 +28,14 @@ interface PostProps {
 const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
     if (!frontMatter || !mdx) {
         return (
-            <Page 
+            <Page
                 title="Post Not Found"
                 description="Sorry, we couldn't find the blog post you were looking for."
                 privacy="public"
             >
                 <div className="text-center">
                     <h1>Blog post not found</h1>
-                    <p>Sorry, we couldn&apos;t find the blog post you were looking for.</p>
+                    <p>Sorry, we couldn't find the blog post you were looking for.</p>
                     <Link href="/Blogs" className="text-primary underline">
                         Go back to all blogs
                     </Link>
@@ -61,7 +61,7 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
                             previous && next ? "gap-4" : "gap-0"
                         )}
                     >
-                        {previous && (  
+                        {previous && (
                             <div className="flex-1 text-left">
                                 <Link
                                     href={`/blogs/${previous?.slug}`}
@@ -73,7 +73,7 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
                         )}
 
                         {next && (
-                            <div className="flex-1 text-right"> 
+                            <div className="flex-1 text-right">
                                 <Link
                                     href={`/blogs/${next?.slug}`}
                                     className="rounded-lg p-3 hover:bg-gray-200 dark:hover:bg-dark no-underline font-semibold text-primary"
@@ -92,9 +92,9 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
 // Fetching the paths for all blog posts
 export const getStaticPaths: GetStaticPaths = async () => {
     const mdxFiles = await getAllMdx();
-    
+
     return {
-        paths: mdxFiles.map((file:any) => ({
+        paths: mdxFiles.map((file: any) => ({
             params: { slug: file.frontMatter.slug },
         })),
         fallback: "blocking",
@@ -105,7 +105,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const { slug } = context.params as ContextProps;
 
     const mdxFiles = await getAllMdx();
-    const postIndex = mdxFiles.findIndex((p:any) => p.frontMatter.slug === slug);
+    const postIndex = mdxFiles.findIndex((p: any) => p.frontMatter.slug === slug);
 
     if (postIndex === -1) {
         return { notFound: true };
@@ -126,8 +126,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
         props: {
             frontMatter,
             mdx: mdxContent,
-            previous: mdxFiles[postIndex + 1]?.frontMatter || null,
-            next: mdxFiles[postIndex - 1]?.frontMatter || null,
+            previous: mdxFiles[postIndex - 1]?.frontMatter || null,
+            next: mdxFiles[postIndex + 1]?.frontMatter || null,
         },
         revalidate: 60,
     };
