@@ -6,6 +6,9 @@
 .pnp.js
 .yarn/install-state.gz
 
+# Lock Files
+*.lock
+
 # testing
 /coverage
 
@@ -19,6 +22,10 @@
 # misc
 .DS_Store
 *.pem
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # debug
 npm-debug.log*
@@ -34,5 +41,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-Test
+
+# workspace or ide
+.vscode
+
+# package manager
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 bun.lockb

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 
-const Base64: React.FC = () => {
+function Base64 () {
     const [input, setInput] = useState<string>("");
     const [output, setOutput] = useState<string>("");
     const [urlSafe, setUrlSafe] = useState<boolean>(false);
@@ -61,8 +61,8 @@ const Base64: React.FC = () => {
     }, [urlSafe, withoutPadding, input]);
 
     return (
-        <div className="p-6 max-w-3xl mx-auto bg-white rounded-lg shadow-lg border border-gray-200">
-            <h1 className="text-3xl font-bold mb-6 text-center text-gray-800 underline">Base64 Encoder/Decoder</h1>
+        <div className="p-6 max-w-3xl mx-auto dark:bg-dark dark:text-darkText bg-light text-lightText rounded-lg shadow-lg border border-gray-200">
+            <h1 className="text-3xl font-bold mb-6 text-center underline">Base64 Encoder/Decoder</h1>
 
             {/* Toggle switches */}
             <div className="flex space-x-4 mb-6">
@@ -113,21 +113,21 @@ const Base64: React.FC = () => {
 
             <div className="space-y-6">
                 <div>
-                    <h3 className="text-xl font-semibold mb-2 text-gray-700">Decoded Text</h3>
+                    <h3 className="text-xl font-semibold mb-2 ">Decoded Text</h3>
                     <textarea
                         value={input}
                         onChange={handleInputChange}
-                        className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
+                        className="w-full p-4 border border-gray-300 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
                         rows={5}
                         placeholder="Enter text to encode"
                     ></textarea>
                 </div>
                 <div>
-                    <h3 className="text-xl font-semibold mb-2 text-gray-700">Encoded Text</h3>
+                    <h3 className="text-xl font-semibold mb-2">Encoded Text</h3>
                     <textarea
                         value={output}
                         onChange={handleOutputChange}
-                        className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
+                        className="w-full p-4 border border-gray-300 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
                         rows={5}
                         placeholder="Enter Base64 text to decode"
                     ></textarea>

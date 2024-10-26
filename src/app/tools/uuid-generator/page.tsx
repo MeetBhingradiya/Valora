@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faCheck, faSync } from "@fortawesome/free-solid-svg-icons";
 
-const UUIDGenerator: React.FC = () => {
+function UUIDGenerator() {
   const [icon, setIcon] = useState(faCopy);
   const [uuid, setUuid] = useState("");
 
@@ -31,10 +31,10 @@ const UUIDGenerator: React.FC = () => {
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto bg-white rounded-lg shadow-lg border border-gray-200">
-      <h2 className="text-3xl font-bold mb-6 text-center text-gray-800 underline">UUID Generator</h2>
+    <div className="p-6 max-w-lg mx-auto dark:bg-dark bg-light dark:text-darkText text-lightText rounded-lg shadow-lg border border-gray-200">
+      <h2 className="text-3xl font-bold mb-6 text-center  underline">UUID Generator</h2>
       <div className="flex items-center border shadow-sm border-slate-300 focus-within:border focus-within:border-indigo-500 focus-within:ring-indigo-500 focus:outline-none justify-between relative ring-1 ring-transparent rounded p-2">
-        <span className="text-base font-medium text-gray-800">{uuid}</span>
+        <span className="text-base font-medium">{uuid}</span>
         <button
           onClick={copyToClipboard}
           className="hover:text-indigo-600 bg-slate-200 hover:bg-slate-300 px-4 py-2 rounded text-center text-indigo-700 w-10"

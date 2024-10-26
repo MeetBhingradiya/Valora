@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const ServicesPage = () => {
+function ServicesPage() {
   return (
     <div className="min-h-screen p-8 bg-gray-100">    
       <h1 className="text-4xl font-bold mb-8">Our Services</h1>

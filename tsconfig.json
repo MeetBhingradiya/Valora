@@ -15,27 +15,49 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "preserve",
-        "noUnusedLocals": false,
         "incremental": true,
+        "baseUrl": ".",
         "plugins": [
             {
                 "name": "next"
             }
         ],
         "paths": {
-            "@App/*": [
+            "@Public/*": [
+                "./public"
+            ],
+            "@Root/*": [
+                "./"
+            ],
+            "@/*": [
                 "./src/*"
+            ],
+            "@App/*": [
+                "./src/app/*"
+            ],
+            "@Pages/*": [
+                "./src/pages/*"
+            ],
+            "@Models/*": [
+                "./src/model/*"
+            ],
+            "@Components/*": [
+                "src/components/*"
+            ],
+            "@Styles/*": [
+                "./src/styles/*"
+            ],
+            "@Lib/*": [
+                "./src/lib/*"
             ]
-        }
+        },
+        "target": "ES2017"
     },
     "include": [
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
-        ".next/types/**/*.ts",
-        "types/**/*" // Add this line if you created a types folder
-        ,
-        "src/middleware.ts"
+        ".next/types/**/*.ts"
     ],
     "exclude": [
         "node_modules"
