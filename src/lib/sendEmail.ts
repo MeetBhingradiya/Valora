@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 const email = process.env.NODE_MAILER_EMAIL;
 const pass = process.env.NODE_MAILER_PASSWORD;

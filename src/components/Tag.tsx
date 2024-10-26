@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { cx, slugify } from "../lib/utils";
+import { cx, slugify } from "@Lib/utils";
 
 interface TagProps {
   href: string;
   children: string;
 }
 
-export const Tag: React.FC<TagProps> = ({ href, children }) => {
+export function Tag ({ href, children }:any) {
   return (
     <Link
       href={href}

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 
-const Base64: React.FC = () => {
+function Base64 () {
     const [input, setInput] = useState<string>("");
     const [output, setOutput] = useState<string>("");
     const [urlSafe, setUrlSafe] = useState<boolean>(false);

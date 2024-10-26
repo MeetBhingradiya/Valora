@@ -81,12 +81,12 @@ const Portfolio = () => {
                                 <p className={`text-lg mb-4 px-3 dark:bg-dark dark:text-darkText  text-lightText}`}>
                                     {project.description}
                                 </p>
-                                <a
+                                <Link
                                     href={project.link}
                                     className={`px-4 py-2 dark:bg-primary dark:text-white bg-primary text-white rounded hover:bg-white hover:text-primary transition-colors`}
                                 >
                                     View Project
-                                </a>
+                                </Link>
                             </div>
                         </motion.div>
                     ))}

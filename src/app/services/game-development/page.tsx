@@ -1,10 +1,10 @@
 // app/services/game-development/page.tsx
 import Image from 'next/image';
 import Link from 'next/link';
-import Navbar from '../../../components/Navbar';
-import Footer from '../../../components/Footer';
+import Navbar from '@Components/Navbar';
+import Footer from '@Components/Footer';
 
-const GameDevelopmentPage = () => {
+function GameDevelopmentPage() {
     return (
         <div className="min-h-screen dark:bg-dark bg-light dark:text-darkText text-lightText">
             <Navbar />

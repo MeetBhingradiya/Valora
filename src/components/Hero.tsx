@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import ParticlesBackground from "./Particles";
+import Link from "next/link";
 
 const quotes: string[] = [
   "Innovative IT solutions for modern growth.",
@@ -48,27 +49,27 @@ const Hero: React.FC = () => {
           {quotes[currentQuoteIndex]}
         </p>
         <div className="mt-8 flex justify-center space-x-4">
-          <a
+          <Link
             href="#services"
             className="bg-primary shining-button relative text-white text-lg py-2 px-4 rounded-lg cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-[0_0_10px_#44A5FF,0_0_40px_#44A5FF]"
           >
             Our Services
-          </a>
-          <a
+          </Link>
+          <Link
             href="/contact"
             className="bg-white glow-button relative text-lg px-4 cursor-pointer overflow-hidden text-gray-900 py-2 rounded-md shadow-md transition-all duration-300 hover:bg-gray-200 hover:shadow-[0_0_10px_#ffffff,0_0_40px_#ffffff]"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
 
       {/* Scroll Button */}
       <div className="absolute bottom-10 z-10 flex flex-col items-center">
-        <a onClick={scrollToNextSection} className="scroll-button cursor-pointer text-white">
+        <span onClick={scrollToNextSection} className="scroll-button cursor-pointer text-white">
           <span></span>
           Scroll
-        </a>
+        </span>
       </div>
     </section>
   );

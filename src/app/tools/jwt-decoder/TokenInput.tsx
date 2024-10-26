@@ -7,7 +7,7 @@ interface TokenInputProps {
     setToken: (token: string) => void;
 }
 
-const TokenInput: React.FC<TokenInputProps> = ({ token, setToken }) => {
+function TokenInput({ token, setToken }: TokenInputProps) {
     const [localToken, setLocalToken] = useState(token);
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
     const cursorPositionRef = useRef({ start: 0, end: 0 });

@@ -13,7 +13,7 @@ interface DecodedOutputProps {
 }
 
 const DecodedOutput = forwardRef<HTMLDivElement, DecodedOutputProps>(
-    ({ header, payload, setHeader, setPayload }, ref) => {
+    function Decodedoutput ({ header, payload, setHeader, setPayload }, ref) {
         const [headerText, setHeaderText] = useState('');
         const [payloadText, setPayloadText] = useState('');
         const [headerError, setHeaderError] = useState('');

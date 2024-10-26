@@ -6,12 +6,12 @@ import Link from "next/link";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import rehypePrism from "rehype-prism-plus";
-import { getAllMdx, getMdx } from "../../lib/mdx";
-import { MDXFrontMatter } from "../../lib/types";
-import { cx } from "../../lib/utils";
-import { Page } from "components/Page";
-import { components } from "components/MDX";
-import { Prose } from "components/Prose";
+import { getAllMdx, getMdx } from "@Lib/mdx";
+import { MDXFrontMatter } from "@Lib/types";
+import { cx } from "@Lib/utils";
+import { Page } from "@Components/Page";
+import { components } from "@Components/MDX";
+import { Prose } from "@Components/Prose";
 import remarkGfm from "remark-gfm";
 
 interface ContextProps extends ParsedUrlQuery {
@@ -35,7 +35,7 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
             >
                 <div className="text-center">
                     <h1>Blog post not found</h1>
-                    <p>Sorry, we couldn't find the blog post you were looking for.</p>
+                    <p>Sorry, we couldn&apos;t find the blog post you were looking for.</p>
                     <Link href="/Blogs" className="text-primary underline">
                         Go back to all blogs
                     </Link>

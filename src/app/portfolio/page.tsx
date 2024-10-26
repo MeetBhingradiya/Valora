@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import Navbar from '@Components/Navbar';
+import Footer from '@Components/Footer';
 import { useState } from "react";
+import Link from "next/link";
 
 // Filtering Categories
 const categories = ["All", "Game", "Mobile", "Web", "AI/ML"];
@@ -111,7 +112,7 @@ const portfolioData: Array<PortfolioData_Type> = [
     },
 ];
 
-const PortfolioPage = () => {
+function PortfolioPage () {
     const [activeCategory, setActiveCategory] = useState("All");
 
     const filteredData =
@@ -182,12 +183,12 @@ const PortfolioPage = () => {
                                         {project.title}
                                     </h3>
                                     <p className="text-lg mb-4 px-4">{project.description}</p>
-                                    <a
+                                    <Link
                                         href={project.link}
                                         className="px-6 py-2 bg-primary text-white rounded-full hover:bg-white hover:text-primary transition-colors"
                                     >
                                         View Project
-                                    </a>
+                                    </Link>
                                 </div>
                             </motion.div>
                         ))}

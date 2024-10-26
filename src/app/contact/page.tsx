@@ -1,8 +1,8 @@
-import Navbar from "../../components/Navbar";
-import Contact from "../../components/Contact";
-import Footer from "../../components/Footer";
+import Navbar from '@Components/Navbar';
+import Footer from '@Components/Footer';
+import Contact from '@Components/Contact';
 
-const ContactPage = () => {
+function ContactPage () {
     return (
         <div>
             <Navbar />

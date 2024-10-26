@@ -1,12 +1,11 @@
 "use server";
 import Link from 'next/link';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
+import Navbar from '@Components/Navbar';
+import Footer from '@Components/Footer';
 import React from "react";
-import { getAllMdx } from "../../lib/mdx";
-import { BlogType } from "../../model/blog";
+import { getAllMdx } from "@Lib/mdx";
 
-const Blog = async () => {
+async function Blog ()  {
     const blogs = await getAllMdx();
 
     if (blogs.length === 0) {

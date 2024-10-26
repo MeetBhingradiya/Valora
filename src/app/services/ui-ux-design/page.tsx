@@ -1,10 +1,10 @@
 // app/services/ui-ux-design/page.tsx
 import Image from 'next/image';
 import Link from 'next/link';
-import Navbar from '../../../components/Navbar';
-import Footer from '../../../components/Footer';
+import Navbar from '@Components/Navbar';
+import Footer from '@Components/Footer';
 
-const UIUXDesignPage = () => {
+function UIUXDesignPage () {
   return (
     <div className="min-h-screen dark:bg-dark bg-light dark:text-darkText text-lightText">
       <Navbar />
@@ -25,7 +25,7 @@ const UIUXDesignPage = () => {
         <div className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Why Choose Us?</h2>
           <p className="text-base md:text-lg leading-relaxed">
-            At Valora Infotech, we understand the importance of an engaging and intuitive user experience. Our dedicated team combines creativity with functionality to create designs that resonate with users while effectively conveying your brand's message.
+            At Valora Infotech, we understand the importance of an engaging and intuitive user experience. Our dedicated team combines creativity with functionality to create designs that resonate with users while effectively conveying your brand&apos;s message.
           </p>
         </div>
 

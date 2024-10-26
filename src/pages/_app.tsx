@@ -1,8 +1,8 @@
-import "../styles/globals.css";
+import "@Styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
-import Navbar from "components/Navbar";
-import Footer from "components/Footer";
+import Navbar from "@Components/Navbar";
+import Footer from "@Components/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

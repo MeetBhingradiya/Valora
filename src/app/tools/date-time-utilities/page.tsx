@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faCheck } from "@fortawesome/free-solid-svg-icons";
 
-const DateTimeUtilities: React.FC = () => {
+function DateTimeUtilities() {
     const [currentMilliseconds, setCurrentMilliseconds] = useState<number>(0);
     const [currentSeconds, setCurrentSeconds] = useState<number>(0);
     const [currentDate, setCurrentDate] = useState<Date>(new Date());

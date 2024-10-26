@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import { onlyText } from "react-children-utilities";
-import { formatDate } from "../lib/formatDate";
-import { Prose } from "../components/Prose";
-import { cx } from "../lib/utils";
+import { formatDate } from "@Lib/formatDate";
+import { Prose } from "./Prose";
+import { cx } from "@Lib/utils";
 import { Clock, Heart, Eye, Calendar, User } from "react-feather";
 
 interface BlogOptions {
