@@ -360,8 +360,30 @@ pre[class*="language-"] {
     font-style: italic;
 }
 
-/* ! Temp */
-.Temp {
-    color: #dcdcdc;
-    background: #000000;
+/* Our clients */
+
+.scroll-container1 {
+    overflow: hidden;
+    height: 200px;
+    margin-bottom: 70px;
+    background-color: white
+}
+
+.ani {
+    margin-left: 96px;
+}
+
+.tt {
+    font-size: var(--fontsizeheading);
+    font-weight: var(--fontweightheading);
+    font-family: var(--fontfamilyheading);
+    color: var(--colorheading);
+    text-align: center;
+    text-transform: var(--texttransformheading);
+    margin-bottom: 25px;
+    position: relative;
+    text-decoration: underline;
+    text-decoration-color: var(--colour5);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
 }

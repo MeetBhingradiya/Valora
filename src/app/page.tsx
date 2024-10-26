@@ -8,6 +8,7 @@ import Testimonials from "@Components/Testimonials";
 import Portfolio from "@Components/Portfolio";
 import Footer from "@Components/Footer";
 import React from "react";
+import OurClient from "@/components/OurClients";
 
 export default function Home() {
     return (
@@ -17,6 +18,7 @@ export default function Home() {
             <About />
             <Services /> 
             <Testimonials />
+            <OurClient/>
             <Portfolio />
             <Footer />
         </>
