@@ -4,10 +4,10 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
+        "sync": "bun scripts/SyncBlogs.ts",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
-        "precommit": "bun run build"
+        "lint": "next lint"
     },
     "dependencies": {
         "@emotion/react": "^11.13.3",
