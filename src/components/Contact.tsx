@@ -85,9 +85,10 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                                 placeholder="Your Message"
-                                className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary h-32 dark:bg-gray-700 dark:text-white dark:border-gray-600 bg-white text-black border-gray-300`}
+                                className={`w-full max-h-[150px] min-h-[150px] px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white dark:border-gray-600 bg-white text-black border-gray-300`}
                             />
                         </div>
+
                         <button type="submit" className="bg-primary text-white px-6 py-3 rounded-md hover:bg-yellow-500 transition-colors">
                             Send Message
                         </button>

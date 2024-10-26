@@ -155,12 +155,9 @@ function PortfolioPage () {
                     {/* Portfolio Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                         {filteredData.map((project, index) => (
-                            <motion.div
+                            <div
                                 key={index}
                                 className="relative group overflow-hidden rounded-lg shadow-lg transition-transform duration-500 transform hover:scale-105"
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6 }}
                             >
                                 {project.image ? (
                                     <img
@@ -190,7 +187,7 @@ function PortfolioPage () {
                                         View Project
                                     </Link>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
