@@ -34,9 +34,9 @@ const OurClient: React.FC = () => {
     }, []);
 
     return (
-        <div className="py-16 bg-light dark:bg-dark text-lightText dark:text-darkText">
+        <div className="py-12 bg-light dark:bg-dark text-lightText dark:text-darkText">
             <motion.h2
-                className="text-4xl md:text-5xl font-bold mb-12 text-center  decoration-primary decoration-2"
+                className="text-4xl md:text-5xl font-bold mb-8 text-center  decoration-primary decoration-2"
                 initial={{ opacity: 0, y: -50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -44,7 +44,7 @@ const OurClient: React.FC = () => {
                 Our <span className="text-primary">Clients</span>
             </motion.h2>
             <Marquee 
-                className="overflow-hidden h-52 mb-16 bg-light dark:bg-dark"
+                className="overflow-hidden h-52 bg-light dark:bg-dark"
                 autoFill={true}
             >
                 {[client1, client2, client3, client4, client5, client6].map(

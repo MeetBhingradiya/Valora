@@ -41,7 +41,7 @@ const algorithms = [
     'PS256', 'PS384', 'PS512',
 ];
 
-export default function JWTDecode () {
+export default function JWTDecode() {
     const [jwtData, setJwtData] = useState<TokenData>({
         token: defaultTokens['HS256'],
         algorithm: 'HS256',
@@ -199,11 +199,13 @@ export default function JWTDecode () {
     };
 
     return (
-        <div className="p-4 space-y-4 mx-auto max-w-5xl dark:text-darkText text-lightText" id="jwtdecoder" >
-            <div className="text-center mb-4 ">
+        <div className="p-4 space-y-4 mx-auto max-w-5xl dark:text-darkText text-lightText" id="jwtdecoder">
+            <div className="text-center mb-4">
                 <h1 className="text-4xl font-bold m-8 dark:text-darkText text-center underline">Debugger</h1>
             </div>
-            <div className="flex justify-center mb-4 ">
+
+            {/* Main Debugger Interface */}
+            <div className="flex justify-center mb-4">
                 <label htmlFor="algorithm" className="text-lg font-semibold m-2">Algorithm:</label>
                 <select
                     id="algorithm"
@@ -217,7 +219,8 @@ export default function JWTDecode () {
                     ))}
                 </select>
             </div>
-            <div className="flex flex-col md:flex-row md:space-x-4 ">
+
+            <div className="flex flex-col md:flex-row md:space-x-4">
                 <div className="flex-1 p-4 border rounded-lg dark:bg-dark bg-light">
                     <h2 className="text-xl mb-2 font-bold">Encoded</h2>
                     {error && (
@@ -239,6 +242,86 @@ export default function JWTDecode () {
                     />
                 </div>
             </div>
+
+            {/* Description Section */}
+            <div className="mt-8 p-6 border-t border-gray-300 dark:border-gray-700  ">
+                <h2 className="text-2xl font-semibold mb-4">Understanding JSON Web Tokens (JWT)</h2>
+
+                {/* Overview */}
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                    JSON Web Tokens (JWT) are an open standard for securely transmitting information between parties as a JSON object.
+                    They are commonly used for authentication and data exchange due to their security and efficiency. Each JWT consists
+                    of three main components: a header, a payload, and a signature.
+                </p>
+
+                {/* Breakdown of JWT Components */}
+                <ul className="text-base text-gray-600 dark:text-gray-400 mt-4 list-disc list-inside">
+                    <li>
+                        <span className="font-semibold">Header</span>: Contains metadata about the type of token and signing algorithm
+                        (e.g., HS256, RS256).
+                    </li>
+                    <li>
+                        <span className="font-semibold">Payload</span>: Contains claims, which are statements about the user or additional
+                        data. Common claims include <code>sub</code> (subject), <code>iat</code> (issued at), and <code>exp</code> (expiration).
+                    </li>
+                    <li>
+                        <span className="font-semibold">Signature</span>: Used to verify that the token’s content has not been altered. The
+                        signature is created by combining the encoded header and payload and signing them with a secret or private key.
+                    </li>
+                </ul>
+
+                {/* Usage Scenarios */}
+                <h3 className="text-xl font-semibold mt-6 mb-2">Common Uses of JWTs</h3>
+                <p className="text-base text-gray-600 dark:text-gray-400 mb-4">
+                    JWTs are versatile and widely used for secure communication. Here are some common use cases:
+                </p>
+                <ul className="text-base text-gray-600 dark:text-gray-400 list-disc list-inside">
+                    <li><span className="font-semibold">User Authentication</span>: JWTs are often used in Single Sign-On (SSO) and stateless
+                        authentication systems, allowing users to log in and maintain a session without storing data on the server.
+                    </li>
+                    <li><span className="font-semibold">Information Exchange</span>: JWTs can securely share data between parties. The
+                        signed token assures that the data is valid and has not been tampered with.
+                    </li>
+                    <li><span className="font-semibold">Authorization</span>: In OAuth 2.0, JWTs are used as access tokens to authorize
+                        actions within a system securely.
+                    </li>
+                </ul>
+
+                {/* Security Considerations */}
+                <h3 className="text-xl font-semibold mt-6 mb-2">Security Best Practices</h3>
+                <p className="text-base text-gray-600 dark:text-gray-400 mb-4">
+                    JWTs are secure if used correctly. Here are best practices to follow:
+                </p>
+                <ul className="text-base text-gray-600 dark:text-gray-400 list-disc list-inside">
+                    <li><span className="font-semibold">Use Strong Signing Algorithms</span>: Avoid using weak algorithms (e.g., HS256)
+                        for critical applications. Use RSA or ECDSA algorithms if possible.
+                    </li>
+                    <li><span className="font-semibold">Set Expiration Times</span>: Always include an <code>exp</code> (expiration) claim
+                        to limit the lifetime of the token.
+                    </li>
+                    <li><span className="font-semibold">Avoid Storing Sensitive Data</span>: Do not store sensitive information (e.g.,
+                        passwords) in JWT payloads, as the payload is not encrypted by default.
+                    </li>
+                    <li><span className="font-semibold">Validate Tokens</span>: Verify JWTs on the server to ensure they haven’t been tampered
+                        with before accepting them.
+                    </li>
+                </ul>
+
+                {/* Example of JWT Structure */}
+                <h3 className="text-xl font-semibold mt-6 mb-2">Example JWT Structure</h3>
+                <p className="text-base text-gray-600 dark:text-gray-400 mb-4">
+                    Here’s an example of a JWT structure. A JWT typically looks like this:
+                </p>
+                <p className="text-sm bg-gray-200 dark:bg-gray-800 p-4 rounded">
+                    <code className="block overflow-x-auto">
+                        eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+                    </code>
+                </p>
+                <p className="text-base text-gray-600 dark:text-gray-400 mt-4">
+                    The above JWT has three parts: the header, payload, and signature, separated by dots.
+                </p>
+            </div>
         </div>
     );
+
 };

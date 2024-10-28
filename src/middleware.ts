@@ -10,12 +10,13 @@ export function middleware(request: NextRequest) {
         "/tools/url-encoder-decoder",
         "/tools/date-time-utilities",
         "/tools/jwt-decoder",
+        "/tools/password-generator"
     ]
 
     if (toolsEndpoints.includes(pathname)) {
         return NextResponse.next()
     } else {
-        return NextResponse.redirect(new URL("/tools/base64-encoder-decoder", request.nextUrl))
+        return NextResponse.redirect(new URL("/tools/jwt-decoder", request.nextUrl))
     }
 }
 

@@ -10,6 +10,7 @@ import {
     FaClock,
     FaBars,
     FaTimes,
+    FaLock
 } from "react-icons/fa";
 import Base64 from "./base64-encoder-decoder/page";
 import UUID from "./uuid-generator/page";
@@ -17,6 +18,7 @@ import URL from "./url-encoder-decoder/page";
 import DateAndTime from "./date-time-utilities/page";
 import { usePathname } from "next/navigation";
 import JWTDecoder from "./jwt-decoder/page";
+import MySQLPasswordGenerator from "./password-generator/page"
 import VlogoLight from "../../../public/assets/logo.svg";
 import ValoraLight from "../../../public/assets/valora.svg";
 
@@ -38,6 +40,8 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
                 return <URL />;
             case "date-time-utilities":
                 return <DateAndTime />;
+            case "password-generator":
+                return <MySQLPasswordGenerator/>
             default:
                 return <JWTDecoder />;
         }
@@ -49,6 +53,7 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
         { name: "uuid-generator", label: "UUID Generator", icon: <FaIdBadge className=" text-red-700 mr-2" /> },
         { name: "url-encoder-decoder", label: "URL Encoder/Decoder", icon: <FaGlobe className="text-purple-800 mr-2" /> },
         { name: "date-time-utilities", label: "Date and Time Utilities", icon: <FaClock className="text-pink-500 mr-2" /> },
+        { name: "password-generator", label: "Password Generator", icon: <FaLock className="text-yellow-500 mr-2" /> },
     ];
 
     return (
@@ -60,10 +65,12 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
                 {isSidebarOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
 
+            {/* Sidebar */}
             <div
-                className={`lg:block w-full lg:w-80 p-6 bg-gray-800 shadow-lg fixed lg:relative z-50 transition-transform transform ${isSidebarOpen ? "translate-x-0" : "lg:translate-x-0 -translate-x-full"
-                    }`}
-                style={{ height: "120vh" }}
+                className={`${
+                    isSidebarOpen ? "fixed inset-0 z-50" : "hidden lg:block lg:sticky top-0"
+                } w-full lg:w-80 p-6 bg-gray-800 shadow-lg transition-transform`}
+                style={{ height: "100vh" }}
             >
                 <button
                     className="lg:hidden absolute top-4 right-4 text-gray-300 focus:outline-none"
@@ -83,8 +90,9 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
                         <li key={name}>
                             <Link
                                 href={`/tools/${name}`}
-                                className={`block p-2 rounded ${tool === name ? "bg-primary text-white" : "text-gray-200"
-                                    } hover:bg-gray-700 w-full text-left flex items-center`}
+                                className={`block p-2 rounded ${
+                                    tool === name ? "bg-primary text-white" : "text-gray-200"
+                                } hover:bg-gray-700 w-full text-left flex items-center`}
                                 onClick={() => setIsSidebarOpen(false)}
                             >
                                 {icon}
@@ -95,7 +103,8 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
                 </ul>
             </div>
 
-            <main className="flex-1 p-6 dark:bg-gray-900 bg-white min-h-screen overflow-auto">
+            {/* Main Content */}
+            <main className="flex-1 p-6 dark:bg-gray-900 bg-white h-screen overflow-y-auto">
                 {renderTool()}
             </main>
         </div>
