@@ -5,12 +5,14 @@ export function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
 
     const toolsEndpoints = [
+        "/tools/jwt-decoder",
         "/tools/base64-encoder-decoder",
         "/tools/uuid-generator",
         "/tools/url-encoder-decoder",
         "/tools/date-time-utilities",
-        "/tools/jwt-decoder",
-        "/tools/password-generator"
+        "/tools/password-generator",
+        "/tools/text-case-converter",
+        "/tools/json-formatter"
     ]
 
     if (toolsEndpoints.includes(pathname)) {

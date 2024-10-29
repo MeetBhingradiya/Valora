@@ -10,8 +10,12 @@ import {
     FaClock,
     FaBars,
     FaTimes,
-    FaLock
+    FaLock,
+    FaTextHeight,
+    FaCodeBranch
 } from "react-icons/fa";
+import VlogoLight from "../../../public/assets/logo.svg";
+import ValoraLight from "../../../public/assets/valora.svg"
 import Base64 from "./base64-encoder-decoder/page";
 import UUID from "./uuid-generator/page";
 import URL from "./url-encoder-decoder/page";
@@ -19,8 +23,8 @@ import DateAndTime from "./date-time-utilities/page";
 import { usePathname } from "next/navigation";
 import JWTDecoder from "./jwt-decoder/page";
 import MySQLPasswordGenerator from "./password-generator/page"
-import VlogoLight from "../../../public/assets/logo.svg";
-import ValoraLight from "../../../public/assets/valora.svg";
+import TextCaseConverter from "./text-case-converter/page";
+import JSONFormatter from "./json-formatter/page";
 
 export default function ToolsLayout({ children }: { children: ReactNode }) {
     const pathname = usePathname();
@@ -41,7 +45,11 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
             case "date-time-utilities":
                 return <DateAndTime />;
             case "password-generator":
-                return <MySQLPasswordGenerator/>
+                return <MySQLPasswordGenerator/>;
+            case "text-case-converter":
+                return <TextCaseConverter/>;
+            case "json-formatter":
+                return <JSONFormatter/>;
             default:
                 return <JWTDecoder />;
         }
@@ -54,6 +62,9 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
         { name: "url-encoder-decoder", label: "URL Encoder/Decoder", icon: <FaGlobe className="text-purple-800 mr-2" /> },
         { name: "date-time-utilities", label: "Date and Time Utilities", icon: <FaClock className="text-pink-500 mr-2" /> },
         { name: "password-generator", label: "Password Generator", icon: <FaLock className="text-yellow-500 mr-2" /> },
+        { name: "text-case-converter", label: "Text Case Converter", icon: <FaTextHeight className="text-blue-500 mr-2" />},
+        { name: "json-formatter", label: "JSON Formatter", icon: <FaCodeBranch className="text-teal-600 mr-2" /> }
+
     ];
 
     return (
@@ -91,7 +102,7 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
                             <Link
                                 href={`/tools/${name}`}
                                 className={`block p-2 rounded ${
-                                    tool === name ? "bg-primary text-white" : "text-gray-200"
+                                    tool === name ? "bg-gray-500 text-white" : "text-gray-200"
                                 } hover:bg-gray-700 w-full text-left flex items-center`}
                                 onClick={() => setIsSidebarOpen(false)}
                             >
