@@ -457,6 +457,14 @@ const Navbar = () => {
                                     {
                                         href: "/tools/json-formatter",
                                         text: "Json Formatter",
+                                    },
+                                    {
+                                        href: "/tools/regex-tester",
+                                        text: "Regex Tester",
+                                    },
+                                    {
+                                        href: "/tools/colour-converter",
+                                        text: "Colour Converter",
                                     }
                                 ].map((item, index) => (
                                     <li key={index}>
@@ -628,6 +636,14 @@ const Navbar = () => {
                                     {
                                         href: "/tools/json-formatter",
                                         text: "Json Formatter",
+                                    },
+                                    {
+                                        href: "/tools/regex-tester",
+                                        text: "Regex Tester",
+                                    },
+                                    {
+                                        href: "/tools/colour-converter",
+                                        text: "Colour Converter",
                                     }
                                 ].map((item, index) => (
                                     <li key={index}>

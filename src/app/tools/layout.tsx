@@ -12,7 +12,9 @@ import {
     FaTimes,
     FaLock,
     FaTextHeight,
-    FaCodeBranch
+    FaCodeBranch,
+    FaRegCheckCircle,
+    FaPalette
 } from "react-icons/fa";
 import VlogoLight from "../../../public/assets/logo.svg";
 import ValoraLight from "../../../public/assets/valora.svg"
@@ -25,6 +27,8 @@ import JWTDecoder from "./jwt-decoder/page";
 import MySQLPasswordGenerator from "./password-generator/page"
 import TextCaseConverter from "./text-case-converter/page";
 import JSONFormatter from "./json-formatter/page";
+import RegexTester from "./regex-tester/page";
+import ColorConverter from "./colour-converter/page";
 
 export default function ToolsLayout({ children }: { children: ReactNode }) {
     const pathname = usePathname();
@@ -50,6 +54,10 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
                 return <TextCaseConverter/>;
             case "json-formatter":
                 return <JSONFormatter/>;
+            case "regex-tester":
+                return <RegexTester/>;
+            case "colour-converter":
+                return <ColorConverter/>;
             default:
                 return <JWTDecoder />;
         }
@@ -63,7 +71,9 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
         { name: "date-time-utilities", label: "Date and Time Utilities", icon: <FaClock className="text-pink-500 mr-2" /> },
         { name: "password-generator", label: "Password Generator", icon: <FaLock className="text-yellow-500 mr-2" /> },
         { name: "text-case-converter", label: "Text Case Converter", icon: <FaTextHeight className="text-blue-500 mr-2" />},
-        { name: "json-formatter", label: "JSON Formatter", icon: <FaCodeBranch className="text-teal-600 mr-2" /> }
+        { name: "json-formatter", label: "JSON Formatter", icon: <FaCodeBranch className="text-teal-600 mr-2" /> },
+        { name: "regex-tester", label: "Regex Tester", icon: <FaRegCheckCircle className="text-blue-600 mr-2" /> },
+        { name: "colour-converter", label: "Color Converter", icon: <FaPalette className="text-indigo-500 mr-2" /> }
 
     ];
 

@@ -12,7 +12,9 @@ export function middleware(request: NextRequest) {
         "/tools/date-time-utilities",
         "/tools/password-generator",
         "/tools/text-case-converter",
-        "/tools/json-formatter"
+        "/tools/json-formatter",
+        "/tools/regex-tester",
+        "/tools/colour-converter"
     ]
 
     if (toolsEndpoints.includes(pathname)) {

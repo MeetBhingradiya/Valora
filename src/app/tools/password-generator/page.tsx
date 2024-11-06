@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 function MySQLPasswordGenerator() {
     const [password, setPassword] = useState<string>("");
@@ -8,6 +10,7 @@ function MySQLPasswordGenerator() {
     const [includeLowercase, setIncludeLowercase] = useState<boolean>(true);
     const [includeNumbers, setIncludeNumbers] = useState<boolean>(true);
     const [includeSymbols, setIncludeSymbols] = useState<boolean>(true);
+    const [isCopied, setIsCopied] = useState<boolean>(false);
 
     const generatePassword = () => {
         const upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -32,6 +35,16 @@ function MySQLPasswordGenerator() {
             generatedPassword += characterSet[randomIndex];
         }
         setPassword(generatedPassword);
+        setIsCopied(false); // Reset copy status on new password generation
+    };
+
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(password).then(
+            () => {
+                setIsCopied(true);
+                setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
+            }
+        );
     };
 
     return (
@@ -92,14 +105,19 @@ function MySQLPasswordGenerator() {
                 {password && (
                     <div className="mt-6">
                         <h3 className="text-xl font-semibold mb-2">Generated Password:</h3>
-                        <div className="p-3 border border-gray-300 dark:bg-gray-700 rounded break-all">
+                        <div className="relative p-3 border border-gray-300 dark:bg-gray-700 rounded break-all">
                             {password}
+                            <button
+                                onClick={copyToClipboard}
+                                className="absolute top-2 right-2 hover:text-indigo-600 bg-slate-200 hover:bg-slate-300 px-3 py-1 rounded text-center text-indigo-700"
+                            >
+                                <FontAwesomeIcon icon={isCopied ? faCheck : faCopy} />
+                            </button>
                         </div>
                     </div>
                 )}
             </div>
 
-            {/* Description Section Outside the Main Box */}
             {/* Description Section Outside the Main Box */}
             <div className="mt-10 p-6 border-t border-gray-300 dark:border-gray-700">
                 <h3 className="text-2xl font-semibold mb-2">What is a MySQL Password Generator?</h3>
