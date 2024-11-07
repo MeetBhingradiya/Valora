@@ -99,17 +99,17 @@ const ColorConverter: React.FC = () => {
             </div>
 
             {/* Description Section Outside of Main Box */}
-            <div className="mt-6 max-w-4xl mx-auto text-gray-700 dark:text-gray-300"> <h2 className="text-xl font-semibold mb-2">About the Color Converter Tool:</h2> <p className="mb-2"> The **Color Converter** tool is a versatile utility that allows users to easily convert colors between three widely-used formats: **HEX**, **RGB**, and **HSL**. Whether you’re a designer, developer, or simply working with digital colors, this tool streamlines the process of switching between formats with real-time, precise conversions. </p>
+            <div className="mt-6 max-w-4xl mx-auto text-gray-700 dark:text-gray-300"> <h2 className="text-xl font-semibold mb-2">About the Color Converter Tool:</h2> <p className="mb-2"> The <strong>Color Converter</strong> tool is a versatile utility that allows users to easily convert colors between three widely-used formats: <strong>HEX</strong>, <strong>RGB</strong>, and <strong>HSL</strong>. Whether you’re a designer, developer, or simply working with digital colors, this tool streamlines the process of switching between formats with real-time, precise conversions. </p>
                 less
                 Copy code
                 <h3 className="text-lg font-semibold mt-4 mb-2">Why Use Different Color Formats?</h3>
                 <p className="mb-2">
-                    Each color format serves unique purposes. **HEX** codes are compact, making them a web design favorite. **RGB** is used in digital displays by representing colors with red, green, and blue values. **HSL**, with its Hue, Saturation, and Lightness model, allows for easy color adjustment, making it valuable for refining color tones in design.
+                    Each color format serves unique purposes. <strong>HEX</strong> codes are compact, making them a web design favorite. <strong>RGB</strong> is used in digital displays by representing colors with red, green, and blue values. <strong>HSL</strong>, with its Hue, Saturation, and Lightness model, allows for easy color adjustment, making it valuable for refining color tones in design.
                 </p>
 
                 <h3 className="text-lg font-semibold mt-4 mb-2">How to Use This Tool:</h3>
                 <p className="mb-2">
-                    Enter a color in either **HEX** or **RGB** format to instantly view its equivalent in **HEX**, **RGB**, and **HSL** formats:
+                    Enter a color in either <strong>HEX</strong> or <strong>RGB</strong> format to instantly view its equivalent in <strong>HEX</strong>, <strong>RGB</strong>, and <strong>HSL</strong> formats:
                 </p>
                 <ul className="list-disc list-inside ml-6 mb-2">
                     <li><strong>HEX Input:</strong> Enter a HEX code (e.g., #ff5733) to view the color’s RGB and HSL equivalents.</li>
@@ -138,7 +138,7 @@ const ColorConverter: React.FC = () => {
                     <li><strong>HSL</strong> (e.g., hsl(9, 100%, 60%)) - Beneficial for adjusting saturation and brightness while keeping a consistent hue.</li>
                 </ul>
                 <p className="mt-2">
-                    Try the **Color Converter** tool to streamline your workflow and simplify color transformations in any project!
+                    Try the <strong>Color Converter</strong> tool to streamline your workflow and simplify color transformations in any project!
                 </p>
             </div>
         </>
