@@ -446,6 +446,26 @@ const Navbar = () => {
                                         href: "/tools/date-time-utilities",
                                         text: "Date and Time Utilities",
                                     },
+                                    {
+                                        href: "/tools/password-generator",
+                                        text: "Password Generator",
+                                    },
+                                    {
+                                        href: "/tools/text-case-converter",
+                                        text: "Text Case Converter",
+                                    },
+                                    {
+                                        href: "/tools/json-formatter",
+                                        text: "Json Formatter",
+                                    },
+                                    {
+                                        href: "/tools/regex-tester",
+                                        text: "Regex Tester",
+                                    },
+                                    {
+                                        href: "/tools/colour-converter",
+                                        text: "Colour Converter",
+                                    }
                                 ].map((item, index) => (
                                     <li key={index}>
                                         <Link
@@ -605,6 +625,26 @@ const Navbar = () => {
                                         href: "/tools/date-time-utilities",
                                         text: "Date and Time Utilities",
                                     },
+                                    {
+                                        href: "/tools/password-generator",
+                                        text: "Password Generator",
+                                    },
+                                    {
+                                        href: "/tools/text-case-converter",
+                                        text: "Text Case Converter",
+                                    },
+                                    {
+                                        href: "/tools/json-formatter",
+                                        text: "Json Formatter",
+                                    },
+                                    {
+                                        href: "/tools/regex-tester",
+                                        text: "Regex Tester",
+                                    },
+                                    {
+                                        href: "/tools/colour-converter",
+                                        text: "Colour Converter",
+                                    }
                                 ].map((item, index) => (
                                     <li key={index}>
                                         <hr className="border-t border-gray-500 my-1" />

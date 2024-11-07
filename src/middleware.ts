@@ -5,17 +5,22 @@ export function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
 
     const toolsEndpoints = [
+        "/tools/jwt-decoder",
         "/tools/base64-encoder-decoder",
         "/tools/uuid-generator",
         "/tools/url-encoder-decoder",
         "/tools/date-time-utilities",
-        "/tools/jwt-decoder",
+        "/tools/password-generator",
+        "/tools/text-case-converter",
+        "/tools/json-formatter",
+        "/tools/regex-tester",
+        "/tools/colour-converter"
     ]
 
     if (toolsEndpoints.includes(pathname)) {
         return NextResponse.next()
     } else {
-        return NextResponse.redirect(new URL("/tools/base64-encoder-decoder", request.nextUrl))
+        return NextResponse.redirect(new URL("/tools/jwt-decoder", request.nextUrl))
     }
 }
 

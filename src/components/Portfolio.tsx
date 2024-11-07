@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { motion } from 'framer-motion';
@@ -78,7 +77,7 @@ const Portfolio = () => {
                                 <h3 className={`text-2xl font-bold mb-4 dark:text-primary text-primary`}>
                                     {project.title}
                                 </h3>
-                                <p className={`text-lg mb-4 px-3 dark:bg-dark dark:text-darkText  text-lightText}`}>
+                                <p className={`text-lg mb-4 px-3 dark:text-darkText  text-lightText}`}>
                                     {project.description}
                                 </p>
                                 <Link
@@ -108,7 +107,7 @@ const Portfolio = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
                         >
-                            <FaChevronDown className="dark:darkTex lightText animate-bounce" size={24} /> {/* Added animation */}
+                            <FaChevronDown className="dark:darkTex lightText animate-bounce" size={24} />
                         </motion.div>
                     </Link>
                 </div>

@@ -112,7 +112,7 @@ const portfolioData: Array<PortfolioData_Type> = [
     },
 ];
 
-function PortfolioPage () {
+function PortfolioPage() {
     const [activeCategory, setActiveCategory] = useState("All");
 
     const filteredData =
@@ -137,11 +137,11 @@ function PortfolioPage () {
                     </motion.h2>
 
                     {/* Category Filter */}
-                    <div className="flex justify-center mb-12">
+                    <div className="flex flex-wrap justify-center mb-12 gap-4">
                         {categories.map((category, index) => (
                             <button
                                 key={index}
-                                className={`px-4 py-2 mx-2 rounded-full text-lg transition-colors ${activeCategory === category
+                                className={`px-4 py-2 rounded-full text-lg transition-colors ${activeCategory === category
                                     ? "bg-primary text-white"
                                     : "bg-white text-primary hover:bg-primary hover:text-white"
                                     }`}
